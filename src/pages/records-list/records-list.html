@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end (click)="onToolbarMapClick()" *ngIf="showMapWithInToolbar">
+      <button ion-button icon-only color="royal">
+        <ion-icon name="map"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{dataset._name}}</ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+
+    <ion-card *ngFor="let record of records" (click)="onRecordClicked(record)">
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/ic_avatar_circle_gray.png">
+        </ion-avatar>
+        <h2>{{record._createdby}}</h2>
+        <p>{{record._createdon | date: 'dd/MM/yyyy'}}</p>
+      </ion-item>
+    
+      <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-list-image">
+    
+      <ion-card-content>
+
+        <!-- title -->
+        <ion-card-title *ngIf="!record._title; else templateTitle" class="truncate">
+          <!-- title not valid -->
+          {{record._id}}
+        </ion-card-title>
+        <!-- title valid -->
+        <ng-template #templateTitle>
+          <ion-card-title class="truncate"> {{record._title}}</ion-card-title>
+        </ng-template>
+
+        <!-- tags -->
+        <p *ngIf="record.tags">tags: {{record.tags}}</p>
+      
+        <!-- description -->
+        <p class="truncate-block" *ngIf="record._description">{{record._description}}</p>
+      
+      </ion-card-content>
+    
+    </ion-card>
+
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-list>
+</ion-content>

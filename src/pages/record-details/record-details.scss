@@ -1,0 +1,22 @@
+page-record-details {
+
+    .card-header {
+        // font-size: 18px;
+        padding-left: 16px;
+        padding-top: 16px;
+    }
+
+    .custom-data-key {
+        font-weight: bold;
+    }
+
+    .record-description {
+        padding-top: 16px;
+        padding-top: 4px !important;
+    }
+
+    .record-details-image {
+        object-fit: cover;
+        background-color:#e5e5e5;
+    }
+}

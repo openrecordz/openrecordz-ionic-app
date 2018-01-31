@@ -6,6 +6,28 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="card-background-page">
+
+  <ion-card>
+    <div class="container">
+      <img src="assets/imgs/open-recordz-logo.jpg" style="width:100%;">
+      <div class="centered-horizontal">
+        <div class="card-subtitle">Powered by</div>
+        <div class="card-title">Openrecordz</div>
+      </div>
+    </div>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header center text-center>
+      <h2 class="app-name" >{{this.appName}}</h2>
+      <span (click)="openUrl();">
+        <a href="#">Visita il sito</a>
+      </span>
+    </ion-card-header>
+    <ion-card-content center text-center>
+      ver. {{this.versionCode}} build {{this.versionNumber}}
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

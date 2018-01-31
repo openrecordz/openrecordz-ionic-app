@@ -1,0 +1,42 @@
+<!--
+  Generated template for the DatasetsListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Datasets</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let dataset of datasets" (click)="onDatasetClicked(dataset)">
+      <ion-item *ngIf="dataset">
+
+        <img class="minified-image circle-image" src="{{dataset._main_image}}" *ngIf="dataset._main_image"  item-left>
+
+        <ion-card-content>
+          <!-- title -->
+          <ion-card-title *ngIf="!dataset._name; else templateTitle" class="truncate">
+            <!-- title not valid -->
+            {{dataset._id}}
+          </ion-card-title>
+          <!-- title valid -->
+          <ng-template #templateTitle>
+            <ion-card-title class="truncate"> {{dataset._name}}</ion-card-title>
+          </ng-template>
+
+          <!-- description -->
+          <p *ngIf="dataset._description">{{dataset._description}}</p>
+        </ion-card-content>
+
+        <ion-icon clear item-right name="ios-arrow-forward"></ion-icon>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,97 @@
+<!--
+  Generated template for the RecordDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <!-- title -->
+    <ion-title *ngIf="!record._title; else templateTitle">
+      <!-- title not valid -->
+      {{record.id}}
+    </ion-title>
+
+    <!-- title valid -->
+    <ng-template #templateTitle>
+      <ion-title>{{record._title}}</ion-title>
+    </ng-template>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content *ngIf="record">
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/ic_avatar_circle_gray.png">
+      </ion-avatar>
+      <h2>{{record._createdby}}</h2>
+      <p>{{record._createdon | date: 'dd/MM/yyyy'}}</p>
+    </ion-item>
+
+    <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-details-image">
+
+    <ion-card-content>
+        <ion-item *ngIf="record._image_small || record.tags">
+          <ion-avatar *ngIf="record._image_small" item-start>
+            <img src="{{record._image_small}}">
+          </ion-avatar>
+
+          <h2 *ngIf="record.tags">
+            {{record.tags}}
+          </h2>
+        </ion-item>
+
+        <p class="record-description" *ngIf="record._description">{{record._description}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- map -->
+  <ion-card *ngIf="record.map_url" (click)="onMapClicked()">
+    <img *ngIf="record.map_url" src="{{record.map_url}}">
+
+    <!-- <ion-fab *ngIf="this.currentLat && this.currentLon && this.recordLat && this.recordLon" ight top >
+        <button ion-fab >
+          <ion-icon name="pin"></ion-icon>
+        </button>
+      </ion-fab> -->
+
+    <ion-item>
+      <!-- <ion-icon name="map" item-start large></ion-icon> -->
+      <h2 *ngIf="record._title">{{record._title}}</h2>
+      <h3>Click on the map to get directions to the road</h3>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="(record._phone && record._phone !== '' && record._phone !== ' ' ) || (record._email && record._email !== '' && record._email !== ' ') ">
+    <ion-card-header class="card-header">Contact us on</ion-card-header>
+    <!-- phone -->
+    <ion-item *ngIf="record._phone && record._phone !== '' && record._phone !== ' '">
+      <a href="tel: {{phoneno}}">{{record._phone}}</a>
+      <ion-icon clear item-left name="call"></ion-icon>
+    </ion-item>
+
+    <!-- email -->
+    <ion-item *ngIf="record._email && record._email !== '' && record._email !== ' '">
+      <a href="mailto:{{record._email}}" target="_top">{{record._email}}</a>
+      <ion-icon clear item-left name="mail"></ion-icon>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="keys && keys.length > 0">
+    <!-- <ion-card-header class="card-header">
+      Custom Data
+    </ion-card-header> -->
+
+    <ion-list *ngIf="keys && keys.length > 0">
+      <ion-item *ngFor="let key of keys;">
+        <h2 class="custom-data-key">{{key}}</h2>
+        <p>{{record[key]}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+</ion-content>
