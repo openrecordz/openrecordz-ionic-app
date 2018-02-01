@@ -6,6 +6,7 @@ import { DatasetService } from '../../providers/dataset-service';
 
 // pages
 import { RecordsListPage } from '../records-list/records-list';
+import { SearchPage } from '../search/search';
 
 /**
  * Generated class for the DatasetsListPage page.
@@ -23,7 +24,8 @@ export class DatasetsListPage {
 
   private datasets: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public datasetService: DatasetService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+     public datasetService: DatasetService) {
     // this.loadDatasets();
   }
 
@@ -33,7 +35,7 @@ export class DatasetsListPage {
     this.loadDatasets();
   }
 
-  loadDatasets() {
+  private loadDatasets() {
     this.datasetService.load()
       .then(datasets => {
         // console.log(datasets);
@@ -41,11 +43,19 @@ export class DatasetsListPage {
       });
   }
 
-  onDatasetClicked(dataset) {
+  private onDatasetClicked(dataset) {
     // console.log(dataset.id + " clicked");
 
     this.navCtrl.push(RecordsListPage,
       { dataset: dataset }
+    );
+  }
+
+  private onToolbarSearchClick() {
+    console.log("DatasetsListPage.onToolbarSearchClick");
+
+    this.navCtrl.push(SearchPage,
+      // { text: text }
     );
   }
 }

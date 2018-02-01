@@ -1,0 +1,41 @@
+page-search {
+
+    .suggestion-label {
+        padding-top: 8px;
+        // padding-bottom: 8px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .empty-ion-card {
+        // background-color:#f9f9f9 !important;
+        position: relative;
+        text-align: center;
+    }
+
+    .empty-ion-card-img {
+        display: inline-block;
+        height: 50%;
+        width: auto;
+        // change png color
+        filter: hue-rotate(230deg) brightness(90%);
+    }
+
+    .empty-ion-card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        // color: #fff;
+    }
+
+    .empty-ion-card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        // color: #fff;
+    }
+
+}

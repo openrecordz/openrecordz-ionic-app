@@ -5,11 +5,14 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
+    <ion-buttons end (click)="onToolbarSearchClick()">
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Datasets</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 

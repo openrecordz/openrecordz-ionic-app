@@ -11,6 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { RecordsListPage } from '../pages/records-list/records-list';
 import { RecordDetailsPage } from '../pages/record-details/record-details';
 import { GoogleMapsPage } from '../pages/google-maps/google-maps';
+import { SearchPage } from '../pages/search/search';
 
 // providers
 import { StatusBar } from '@ionic-native/status-bar';
@@ -43,6 +44,7 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     RecordsListPage,
     RecordDetailsPage,
     GoogleMapsPage,
+    SearchPage,
     // pipes
     MomentPipe,
   ],
@@ -67,13 +69,13 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     TabsPage,
     RecordsListPage,
     RecordDetailsPage,
-    GoogleMapsPage
+    GoogleMapsPage,
+    SearchPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
-    // BackgroundGeolocation,
     LocationTrackerProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ConnectivityProvider,
