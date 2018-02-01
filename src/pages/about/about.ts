@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
-import { NavController, Platform, Config} from 'ionic-angular';
+import { Component, Inject} from '@angular/core';
+import { NavController, Platform/*, Config*/} from 'ionic-angular';
 
 // providers
 import { AppVersion } from '@ionic-native/app-version';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+
+// context
+import { MyApp } from '../../app/app.component';
 
 @Component({
   selector: 'page-about',
@@ -19,14 +22,20 @@ export class AboutPage {
   private versionCode : any;
   private appName : any;
 
-  constructor(public navCtrl: NavController, private platform: Platform, public appVersion: AppVersion, private iab: InAppBrowser, private config: Config) {
+  constructor(public navCtrl: NavController, private platform: Platform, 
+    public appVersion: AppVersion, private iab: InAppBrowser/*, private config: Config*/
+  ) {
     this.developer = "Openrecordz";
     // this.appName = this.appVersion.getAppName();
     // this.packageName = this.appVersion.getPackageName();
     // this.versionCode = this.appVersion.getVersionCode();
     // this.versionNumber = this.appVersion.getVersionNumber();
-    this.domain = this.config.get("domain");
-    this.siteUrl = "http://" + this.domain + "/datasets#";
+
+
+    this.domain = MyApp.appConfig.domain;
+    // this.domain = this.config.get("domain");
+    // this.siteUrl = "http://" + this.domain + "/datasets#";
+    this.siteUrl = MyApp.appConfig.webSite;
   }
 
   ionViewDidLoad() {

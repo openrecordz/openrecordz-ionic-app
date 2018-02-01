@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { NavController, Config } from 'ionic-angular';
+import { NavController/*, Config*/ } from 'ionic-angular';
 
 // providers
 import { RecordService } from '../../providers/record-service';
 
 // pages
 import {RecordDetailsPage} from '../record-details/record-details'
+
+// context
+import { MyApp } from '../../app/app.component';
 
 @Component({
   selector: 'page-calendar',
@@ -20,9 +23,10 @@ export class CalendarPage {
   private records: any = [];
   private currentPage: number = 0;
 
-  constructor(public navCtrl: NavController, private config: Config, private recordService: RecordService) {
+  constructor(public navCtrl: NavController, /*private config: Config,*/ private recordService: RecordService) {
     this.datasetId = "5a70b3bde4b0f940ec4ed6df";
-    this.domain = this.config.get("domain");
+    // this.domain = this.config.get("domain");
+    this.domain = MyApp.appConfig.domain;
   }
 
   ionViewDidLoad() {

@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
-import {NavController, NavParams, Config, Events } from 'ionic-angular';
+import { Component, Inject } from '@angular/core';
+import {NavController, NavParams, /*Config, */Events } from 'ionic-angular';
 import { RecordService } from '../../providers/record-service';
 
 // pages
 import { RecordDetailsPage } from '../record-details/record-details';
 import { GoogleMapsPage } from '../google-maps/google-maps';
+
+// context
+import { MyApp } from '../../app/app.component';
 
 /**
  * Generated class for the RecordsListPage page.
@@ -27,9 +30,11 @@ export class RecordsListPage {
   private pageSize: number = 10;
   private showMapWithInToolbar : false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, config: Config, public recordService: RecordService, public events: Events) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, /*config: Config, */
+    public recordService: RecordService, public events: Events) {
     this.dataset = navParams.get('dataset');
-    this.domain = config.get("domain");
+    // this.domain = config.get("domain");
+    this.domain = MyApp.appConfig.domain;
   }
 
   ionViewDidLoad() {

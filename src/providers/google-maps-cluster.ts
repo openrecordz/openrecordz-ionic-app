@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import * as MarkerClusterer from 'node-js-marker-clusterer';
 import 'rxjs/add/operator/map';
-import { Config, Events} from 'ionic-angular';
+import { /*Config,*/ Events} from 'ionic-angular';
 
+// context
+import { MyApp } from '../app/app.component';
 
 /*
   Generated class for the GoogleMapsClusterProvider provider.
@@ -19,10 +21,11 @@ export class GoogleMapsClusterProvider {
   urlApi: String;
   datasetId : String;
 
-  constructor(public http: Http, config: Config, public events: Events) {
+  constructor(public http: Http, /*config: Config,*/ public events: Events) {
     // console.log('GoogleMapsClusterProvider Provider');
 
-    this.urlApi = config.get("urlApi");
+    // this.urlApi = config.get("urlApi");
+    this.urlApi = MyApp.appConfig.urlApi;
     // console.log("GoogleMapsClusterProvider.constructor: urlApi == " + this.urlApi);
   }
 

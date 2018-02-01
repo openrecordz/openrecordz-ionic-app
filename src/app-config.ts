@@ -1,0 +1,30 @@
+
+
+// source : https://stackoverflow.com/questions/39576991/ionic2-angular2-read-a-custom-config-file
+
+import { InjectionToken } from '@angular/core';
+
+// Although the ApplicationConfig interface plays no role in dependency injection, 
+// it supports typing of the configuration object within the class.
+export interface ApplicationConfig {
+    urlApi: string;
+    domain: string;
+    webSite : string;
+}
+
+// Configuration values for our app
+export const APP_CONFIG: ApplicationConfig = {
+    domain: 'soleto.openrecordz.com',
+    webSite:  "http://soleto.openrecordz.com/datasets#",
+    urlApi: 'http://soleto.api.openrecordz.com/service/v1',
+
+    // domain: 'stefanotestopendata.openrecordz.com',
+    // webSite: "http://stefanotestopendata.openrecordz.com/datasets#",
+    // urlApi: 'http://stefanotestopendata.api.openrecordz.com/service/v1',
+
+    
+   
+};
+
+// Create a config token to avoid naming conflicts
+export const APP_CONFIG_TOKEN = new InjectionToken<ApplicationConfig>('openrecordz-soleto-opendata');

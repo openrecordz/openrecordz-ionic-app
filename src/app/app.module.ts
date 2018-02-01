@@ -29,6 +29,9 @@ import { AppVersion } from '@ionic-native/app-version';
 // pipes
 import { MomentPipe } from '../pipes/moment';
 
+// custom configurations
+import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -46,12 +49,14 @@ import { MomentPipe } from '../pipes/moment';
   imports: [
     BrowserModule, HttpModule, // http
     BrowserModule,
-    IonicModule.forRoot(MyApp, 
-      {
-        // urlApi: 'http://stefanotestopendata.api.openrecordz.com/service/v1',
-        urlApi: 'http://soleto.api.openrecordz.com/service/v1',
-        domain: 'soleto.openrecordz.com',
-      })
+    IonicModule.forRoot(MyApp
+      // , 
+      // {
+      //   // urlApi: 'http://stefanotestopendata.api.openrecordz.com/service/v1',
+      //   urlApi: 'http://soleto.api.openrecordz.com/service/v1',
+      //   domain: 'soleto.openrecordz.com',
+      // }
+    )
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -77,7 +82,8 @@ import { MomentPipe } from '../pipes/moment';
     DatasetService,
     // RecordService,
     InAppBrowser,
-    AppVersion
+    AppVersion,
+    { provide: APP_CONFIG_TOKEN, useValue: APP_CONFIG }
   ]
 })
 export class AppModule {}

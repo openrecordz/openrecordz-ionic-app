@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Config , Events} from 'ionic-angular';
+import { /*Config ,*/ Events} from 'ionic-angular';
 import 'rxjs/add/operator/map';
+
+// context
+import { MyApp } from '../app/app.component';
 
 /*
   Generated class for the RecordService provider.
@@ -15,10 +18,12 @@ export class RecordService {
   //data: any;
   urlApi: String;
 
-    constructor(public http: Http, config: Config, public events: Events) {
+    constructor(public http: Http,/* config: Config,*/ public events: Events) {
     console.log('Hello RecordService Provider');
-    this.urlApi=config.get("urlApi");
-    console.log("urlApi : "+ this.urlApi);
+    // this.urlApi=config.get("urlApi");
+    // console.log("urlApi : "+ this.urlApi);
+
+    this.urlApi = MyApp.appConfig.urlApi;
   }
 
 load(datasetId:String, page:number=0, pageSize:number=10) {
