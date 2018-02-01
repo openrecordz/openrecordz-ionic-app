@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import {NavController, NavParams, /*Config, */Events } from 'ionic-angular';
 import { RecordService } from '../../providers/record-service';
 
