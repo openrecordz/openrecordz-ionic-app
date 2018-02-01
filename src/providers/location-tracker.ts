@@ -1,5 +1,4 @@
 import { Injectable, NgZone } from '@angular/core';
-// import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
 import { Geolocation, Geoposition } from '@ionic-native/geolocation';
 import 'rxjs/add/operator/filter';
 import { Events } from 'ionic-angular';
@@ -17,57 +16,16 @@ import { MyApp } from '../app/app.component';
 @Injectable()
 export class LocationTrackerProvider {
 
-  // private backgroundGeolocation: BackgroundGeolocation;
-
   public watch: any;
   public lat: number = 0;
   public lng: number = 0;
 
-  constructor(public zone: NgZone/*, backgroundGeolocation: BackgroundGeolocation*/, public geolocation: Geolocation , public events: Events) {
+  constructor(public zone: NgZone, public geolocation: Geolocation , public events: Events) {
     // console.log('LocationTrackerProvider Provider');
     
-    // this.backgroundGeolocation = backgroundGeolocation;
   }
 
   startTracking() {
-
-    // // Background Tracking
-
-    // let config = {
-    //   desiredAccuracy: 0,
-    //   stationaryRadius: 20,
-    //   distanceFilter: 10,
-    //   debug: true,
-    //   interval: 3000
-    // };
-
-    // this.backgroundGeolocation.configure(config).subscribe((location) => {
-
-    //   // console.log('BackgroundGeolocation:  ' + location.latitude + ',' + location.longitude);
-
-    //   // Run update inside of Angular's zone
-    //   this.zone.run(() => {
-    //     this.lat = location.latitude;
-    //     this.lng = location.longitude;
-
-    //     MyApp.currentLat = this.lat ;
-    //     MyApp.currentLon = this.lng;
-
-    //     console.log('BackgroundGeolocation:  ' + this.lat + ',' + this.lng);
-
-    //     this.events.publish('current-location', this.lat, this.lng); 
-    //   });
-
-    // }, (err) => {
-
-    //   console.log(err);
-
-    // });
-
-    // // Turn ON the background-geolocation system.
-    // this.backgroundGeolocation.start();
-
-
     // Foreground Tracking
 
     let options = {
