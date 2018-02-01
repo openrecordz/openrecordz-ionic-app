@@ -6,11 +6,18 @@
 
 </ion-header>
 
-<ion-content padding >
-  
-  <h1 class="suggestion-label">Cerca contenuti all'interno del dataset</h1>
+<ion-content  >
 
-  <ion-searchbar placeholder="Cerca" (ionInput)="filter($event)"></ion-searchbar>
+  <ion-card>
+    <ion-card-title>
+      <h1 class="suggestion-label">Cerca contenuti all'interno del dataset</h1>     
+    </ion-card-title>
+
+    <ion-card-content no-padding>
+      <ion-searchbar placeholder="Cerca" (ionInput)="filter($event)"></ion-searchbar>
+    </ion-card-content>
+  </ion-card>
+
 
 
   <ion-list *ngIf="records && records.length > 0; else emptyTemplate">
@@ -45,7 +52,7 @@
   <!-- title valid -->
   <ng-template #emptyTemplate>
     <ion-card class="empty-ion-card">
-      <img class="empty-ion-card-img" src="/assets/imgs/error_view_cloud.png" />
+      <img class="empty-ion-card-img" src="assets/imgs/error_view_cloud.png" />
       <div class="empty-ion-card-title">Nessun risultato</div>
       <div class="empty-ion-card-subtitle">Siamo spiacenti, non abbiamo trovato nessun risultato per la tua ricerca!</div>
     </ion-card>
