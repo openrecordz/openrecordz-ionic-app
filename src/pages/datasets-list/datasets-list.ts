@@ -36,7 +36,7 @@ export class DatasetsListPage {
   loadDatasets() {
     this.datasetService.load()
       .then(datasets => {
-        console.log(datasets);
+        // console.log(datasets);
         this.datasets = datasets;
       });
   }
