@@ -6,17 +6,14 @@
 
 </ion-header>
 
-<ion-content >
-  <ion-card>
-    <ion-card-title>
-      <h1 class="suggestion-label">Cerca contenuti all'interno del dataset</h1>     
-    </ion-card-title>
+<ion-content >  
+  
+  <!-- searchbar -->
+  <div class="searchbar-container">
+    <ion-searchbar placeholder="Cerca" (ionInput)="filter($event)"></ion-searchbar>
+  </div>
 
-    <ion-card-content no-padding>
-      <ion-searchbar placeholder="Cerca" (ionInput)="filter($event)"></ion-searchbar>
-    </ion-card-content>
-  </ion-card>
-
+  <!-- search results -->
   <ion-list *ngIf="records && records.length > 0; else emptyTemplate">
     <ion-card *ngFor="let item of records" (click)="onItemClicked(item)">
       <ion-item *ngIf="item">
