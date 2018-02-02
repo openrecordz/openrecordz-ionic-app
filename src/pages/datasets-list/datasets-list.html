@@ -19,7 +19,7 @@
 <ion-content>
   <ion-list>
     <ion-card *ngFor="let dataset of datasets" (click)="onDatasetClicked(dataset)">
-      <ion-item *ngIf="dataset">
+      <ion-item *ngIf="dataset && dataset._tags && dataset._tags.indexOf('inApp') !== -1 && dataset._tags.indexOf('inHome') !== -1">
 
         <img class="minified-image circle-image" src="{{dataset._main_image}}" *ngIf="dataset._main_image"  item-left>
 
