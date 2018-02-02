@@ -6,6 +6,7 @@ import { MyApp } from '../../app/app.component';
 
 // providers
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { CallNumber } from '@ionic-native/call-number';
 
 /**
  * Generated class for the RecordDetailsPage page.
@@ -35,7 +36,7 @@ export class RecordDetailsPage {
 
   private clickableMapUrl : string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, public iab: InAppBrowser) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, public iab: InAppBrowser, public callNumber: CallNumber) {
     this.pageTitle = navParams.get('title');
     this.record = navParams.get('record');
   }
@@ -180,5 +181,11 @@ export class RecordDetailsPage {
     this.iab.create(this.clickableMapUrl, "_system");
     // const browser = this.iab.create(this.clickableMapUrl, "_system");
     // browser.show()
+  }
+
+  private onPhoneNumberClick(phoneNumber) {
+    this.callNumber.callNumber(phoneNumber, true)
+      .then(() => console.log('Launched dialer!'))
+      .catch(() => console.log('Error launching dialer'));
   }
 }

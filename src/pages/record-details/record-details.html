@@ -70,7 +70,7 @@
     <ion-card-header class="card-header">Contact us on</ion-card-header>
     <!-- phone -->
     <ion-item *ngIf="record._phone && record._phone !== '' && record._phone !== ' '">
-      <a href="tel: {{phoneno}}">{{record._phone}}</a>
+      <a (click)="onPhoneNumberClick(record._phone)" >{{record._phone}}</a>
       <ion-icon clear item-left name="call"></ion-icon>
     </ion-item>
 

@@ -26,6 +26,7 @@ import { DatasetService } from '../providers/dataset-service';
 // import { RecordService } from '../providers/record-service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { AppVersion } from '@ionic-native/app-version';
+import { CallNumber } from '@ionic-native/call-number';
 
 // pipes
 import { MomentPipe } from '../pipes/moment';
@@ -85,6 +86,7 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     // RecordService,
     InAppBrowser,
     AppVersion,
+    CallNumber,
     { provide: APP_CONFIG_TOKEN, useValue: APP_CONFIG }
   ]
 })

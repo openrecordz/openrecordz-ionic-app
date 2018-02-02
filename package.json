@@ -21,6 +21,7 @@
     "@angular/platform-browser": "5.0.3",
     "@angular/platform-browser-dynamic": "5.0.3",
     "@ionic-native/app-version": "^3.14.0",
+    "@ionic-native/call-number": "^4.5.3",
     "@ionic-native/core": "4.4.0",
     "@ionic-native/geolocation": "^4.5.3",
     "@ionic-native/in-app-browser": "^4.5.2",
@@ -29,6 +30,7 @@
     "@ionic-native/status-bar": "4.4.0",
     "@ionic/storage": "2.1.3",
     "@types/google-maps": "3.2.0",
+    "call-number": "^1.0.1",
     "cordova-android": "7.0.0",
     "cordova-plugin-app-version": "^0.1.9",
     "cordova-plugin-device": "^1.1.4",
@@ -75,7 +77,8 @@
         "API_KEY_FOR_IOS": "AIzaSyCzp7FQfk6nLRZNBZd80a-ivUK0DI15faU",
         "LOCATION_WHEN_IN_USE_DESCRIPTION": "Show your location on the map",
         "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Trace your location on the map"
-      }
+      },
+      "mx.ferreyra.callnumber": {}
     },
     "platforms": [
       "android"
