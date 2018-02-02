@@ -24,7 +24,10 @@ import { RecordDetailsPage } from '../record-details/record-details';
 })
 export class SearchPage {
 
-  records: any;
+  private records: any;
+
+   isFirstSearch : boolean ;
+   hasResults : boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     
@@ -38,6 +41,9 @@ export class SearchPage {
     //   console.log(records);
     //   this.records = records;
     // });
+
+    this.isFirstSearch = true;
+    console.log("isFirstSearch", this.isFirstSearch);
   
   }
 
@@ -45,12 +51,21 @@ export class SearchPage {
 
     let term = ev.target.value;
 
-
     // We will only perform the search if we have 3 or more characters
     if (term && term.trim() !== '' && term.trim().length > 3) { 
       this.search(term).then(records => {
         console.log(records);
         this.records = records;
+        this.isFirstSearch = false;
+
+        if (this.records && this.records.length > 0 ) {
+          this.hasResults = true;
+        } else {
+          this.hasResults = false;
+        }
+
+        console.log("hasResults", this.hasResults);
+        console.log("isFirstSearch", this.isFirstSearch);
       });
     }
   }
