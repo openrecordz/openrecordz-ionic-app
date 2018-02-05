@@ -63,12 +63,12 @@
     <ion-item>
       <!-- <ion-icon name="map" item-start large></ion-icon> -->
       <h2 *ngIf="record._title">{{record._title}}</h2>
-      <h3>Click on the map to get directions to the road</h3>
+      <h3>Clicca sulla mappa per le indizicazioni stradali</h3>
     </ion-item>
   </ion-card>
 
   <ion-card *ngIf="(record._phone && record._phone !== '' && record._phone !== ' ' ) || (record._email && record._email !== '' && record._email !== ' ') ">
-    <ion-card-header class="card-header">Contact us on</ion-card-header>
+    <ion-card-header class="card-header">Contattaci</ion-card-header>
     <!-- phone -->
     <ion-item *ngIf="record._phone && record._phone !== '' && record._phone !== ' '">
       <a (click)="onPhoneNumberClick(record._phone)" >{{record._phone}}</a>

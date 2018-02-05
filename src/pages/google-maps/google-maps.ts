@@ -50,7 +50,7 @@ export class GoogleMapsPage {
 
     // create loading spinner
     this.loading = loadingController.create({
-      content: 'Please wait...'
+      content: 'Caricamento in corso..'
     });
 
     this.loading.present(); // show loading spinner
