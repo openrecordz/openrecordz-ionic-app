@@ -27,6 +27,9 @@ import { DatasetService } from '../providers/dataset-service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { AppVersion } from '@ionic-native/app-version';
 import { CallNumber } from '@ionic-native/call-number';
+// src https://www.npmjs.com/package/ionic-img-viewer
+// add the plugin in this way  --> npm i rxjs@5.5.2 and npm i ionic-img-viewer@2.8.0 <--
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 // pipes
 import { MomentPipe } from '../pipes/moment';
@@ -52,6 +55,7 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
   imports: [
     BrowserModule, HttpModule, // http
     BrowserModule,
+    IonicImageViewerModule,
     IonicModule.forRoot(MyApp
       // , 
       // {
@@ -71,7 +75,7 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     RecordsListPage,
     RecordDetailsPage,
     GoogleMapsPage,
-    SearchPage
+    SearchPage,
   ],
   providers: [
     StatusBar,

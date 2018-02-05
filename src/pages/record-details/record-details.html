@@ -32,7 +32,8 @@
       <p>{{record._createdon | date: 'dd/MM/yyyy'}}</p>
     </ion-item>
 
-    <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-details-image">
+    <!-- <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-details-image" (click)="onImageClick(record._title, record._main_image)"> -->
+    <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-details-image" imageViewer />
 
     <ion-card-content>
         <ion-item *ngIf="record._image_small || record.tags">

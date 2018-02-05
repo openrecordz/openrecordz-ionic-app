@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Events} from 'ionic-angular';
+import { NavController, ModalController, NavParams, Events} from 'ionic-angular';
 
 // context
 import { MyApp } from '../../app/app.component';
@@ -36,7 +36,8 @@ export class RecordDetailsPage {
 
   private clickableMapUrl : string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, public iab: InAppBrowser, public callNumber: CallNumber) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController,public navParams: NavParams, public events: Events, 
+    public iab: InAppBrowser, public callNumber: CallNumber) {
     this.pageTitle = navParams.get('title');
     this.record = navParams.get('record');
   }
@@ -188,4 +189,16 @@ export class RecordDetailsPage {
       .then(() => console.log('Launched dialer!'))
       .catch(() => console.log('Error launching dialer'));
   }
+
+  private onImageClick(title, image) {
+    // let modal = this.modalCtrl.create(ImagePreviewPage, 
+    //   { title: title, image : image }
+    // );
+    // modal.onDidDismiss(data => {
+    // console.log("Return From modal");
+    // console.log(data);
+    // });
+    // modal.present();
+  }
+  
 }
