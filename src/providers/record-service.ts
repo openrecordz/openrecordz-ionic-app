@@ -19,7 +19,7 @@ export class RecordService {
   urlApi: String;
 
     constructor(public http: Http,/* config: Config,*/ public events: Events) {
-    console.log('Hello RecordService Provider');
+    console.log('RecordService Provider');
     // this.urlApi=config.get("urlApi");
     // console.log("urlApi : "+ this.urlApi);
 
@@ -40,7 +40,7 @@ load(datasetId:String, page:number=0, pageSize:number=10) {
             //  this.data = data;
             //resolve(this.data);
 
-            console.log("loaded records: ", data);
+            // console.log("loaded records: ", data);
 
             if (data.length > 0) {
                 for (let element of data) {
