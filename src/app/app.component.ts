@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 // providers
 import { LocationTrackerProvider } from '../providers/location-tracker';
+import { OneSignal } from '@ionic-native/onesignal';
 
 // custom configurations
 import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
@@ -26,9 +27,14 @@ export class MyApp {
   public static currentLon : any;
   public static appConfig: ApplicationConfig;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
-     public locationTracker: LocationTrackerProvider, public events: Events, 
-     @Inject(APP_CONFIG_TOKEN) private config: ApplicationConfig) {
+  constructor(
+    platform: Platform, 
+    statusBar: StatusBar, 
+    splashScreen: SplashScreen,
+    public locationTracker: LocationTrackerProvider, 
+    public events: Events, 
+    private oneSignal: OneSignal,
+    @Inject(APP_CONFIG_TOKEN) private config: ApplicationConfig) {
 
     MyApp.appConfig = config;
 
@@ -50,6 +56,26 @@ export class MyApp {
         MyApp.currentLon = lon;
 
       });
+
+      this.initOneSignal();
     });
+  }
+
+  private initOneSignal() {
+    this.oneSignal.startInit(MyApp.appConfig.oneSignalAppId, MyApp.appConfig.firebaseSenderId);
+
+    this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
+
+    this.oneSignal.handleNotificationReceived().subscribe(() => {
+      // do something when notification is received
+      console.log();
+    });
+
+    this.oneSignal.handleNotificationOpened().subscribe(() => {
+      // do something when a notification is opened
+      console.log();
+    });
+
+    this.oneSignal.endInit();
   }
 }

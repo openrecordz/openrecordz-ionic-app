@@ -11,6 +11,8 @@ export interface ApplicationConfig {
     domain: string;
     devWebSite : string;
     sites: Array<any>;
+    oneSignalAppId: string;
+    firebaseSenderId: string;
 }
 
 // Configuration values for our app
@@ -27,7 +29,9 @@ export const APP_CONFIG: ApplicationConfig = {
             "key": "Privacy",
             "value": "http://www.comune.soleto.le.it/sezione-informazioni/privacy"
         },
-    ]
+    ],
+    oneSignalAppId: "0e1c23bc-c1bd-455f-a408-da2739870c4f",
+    firebaseSenderId: "537289267777",
 };
 
 // Create a config token to avoid naming conflicts

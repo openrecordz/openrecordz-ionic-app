@@ -30,6 +30,7 @@ import { CallNumber } from '@ionic-native/call-number';
 // src https://www.npmjs.com/package/ionic-img-viewer
 // add the plugin in this way  --> npm i rxjs@5.5.2 and npm i ionic-img-viewer@2.8.0 <--
 import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { OneSignal } from '@ionic-native/onesignal';
 
 // pipes
 import { MomentPipe } from '../pipes/moment';
@@ -91,6 +92,7 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     InAppBrowser,
     AppVersion,
     CallNumber,
+    OneSignal,
     { provide: APP_CONFIG_TOKEN, useValue: APP_CONFIG }
   ]
 })
