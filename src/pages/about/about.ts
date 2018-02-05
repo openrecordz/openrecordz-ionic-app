@@ -35,7 +35,7 @@ export class AboutPage {
     this.domain = MyApp.appConfig.domain;
     // this.domain = this.config.get("domain");
     // this.siteUrl = "http://" + this.domain + "/datasets#";
-    this.siteUrl = MyApp.appConfig.webSite;
+    this.siteUrl = MyApp.appConfig.devWebSite;
   }
 
   ionViewDidLoad() {

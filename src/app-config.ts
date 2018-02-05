@@ -9,13 +9,13 @@ import { InjectionToken } from '@angular/core';
 export interface ApplicationConfig {
     urlApi: string;
     domain: string;
-    webSite : string;
+    devWebSite : string;
 }
 
 // Configuration values for our app
 export const APP_CONFIG: ApplicationConfig = {
     domain: "soleto.openrecordz.com",
-    webSite: "http://soleto.openrecordz.com/datasets#",
+    devWebSite: "http://soleto.openrecordz.com/datasets#",
     urlApi: "http://soleto.api.openrecordz.com/service/v1",   
 };
 
