@@ -57,25 +57,27 @@ export class MyApp {
 
       });
 
-      this.initOneSignal();
+      this.initOneSignal(platform);
     });
   }
 
-  private initOneSignal() {
-    this.oneSignal.startInit(MyApp.appConfig.oneSignalAppId, MyApp.appConfig.firebaseSenderId);
+  private initOneSignal(platform) {
+    if (!platform.is('core')) {
+      this.oneSignal.startInit(MyApp.appConfig.oneSignalAppId, MyApp.appConfig.firebaseSenderId);
 
-    this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
+      this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
 
-    this.oneSignal.handleNotificationReceived().subscribe(() => {
-      // do something when notification is received
-      console.log();
-    });
+      this.oneSignal.handleNotificationReceived().subscribe(() => {
+        // do something when notification is received
+        console.log();
+      });
 
-    this.oneSignal.handleNotificationOpened().subscribe(() => {
-      // do something when a notification is opened
-      console.log();
-    });
+      this.oneSignal.handleNotificationOpened().subscribe(() => {
+        // do something when a notification is opened
+        console.log();
+      });
 
-    this.oneSignal.endInit();
+      this.oneSignal.endInit();
+    }
   }
 }
