@@ -10,6 +10,7 @@ export interface ApplicationConfig {
     urlApi: string;
     domain: string;
     devWebSite : string;
+    sites: Array<any>;
 }
 
 // Configuration values for our app
@@ -17,6 +18,16 @@ export const APP_CONFIG: ApplicationConfig = {
     domain: "soleto.openrecordz.com",
     devWebSite: "http://soleto.openrecordz.com/datasets#",
     urlApi: "http://soleto.api.openrecordz.com/service/v1",   
+    sites: [
+        {
+            "key" : "Sito Istituzionale", 
+            "value": "http://www.comune.soleto.le.it/", 
+        },
+        { 
+            "key": "Privacy",
+            "value": "http://www.comune.soleto.le.it/sezione-informazioni/privacy"
+        },
+    ]
 };
 
 // Create a config token to avoid naming conflicts

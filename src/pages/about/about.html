@@ -21,13 +21,38 @@
   <ion-card>
     <ion-card-header center text-center>
       <h2 class="app-name" >{{this.appName}}</h2>
-      <span (click)="openUrl();">
+      <span (click)="openUrl(this.devWebSite);">
         <a href="#">Visita il sito</a>
       </span>
     </ion-card-header>
     <ion-card-content center text-center>
       ver. {{this.versionCode}} build {{this.versionNumber}}
     </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="sites">
+    <!-- <ion-card-header center text-center>
+      <h2 class="app-name">{{this.appName}}</h2>
+      <span (click)="openUrl();">
+        <a href="#">Visita il sito</a>
+      </span>
+    </ion-card-header>
+    <ion-card-content center text-center>
+      {{sites}}
+    </ion-card-content> -->
+
+    
+    <ion-card-content> 
+      <ion-list>
+        <ion-item *ngFor="let site of sites">
+        <!-- <ion-item-divider *ngFor="let site of sites"> -->
+          <span (click)="openUrl(site['value']);">
+            <a href="#">{{site["key"]}}</a>
+          </span>
+        </ion-item>
+        <!-- </ion-item-divider> -->
+      </ion-list>
+    </ion-card-content> 
   </ion-card>
 
 </ion-content>

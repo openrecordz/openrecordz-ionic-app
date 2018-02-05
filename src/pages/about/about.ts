@@ -16,7 +16,8 @@ export class AboutPage {
 
   private developer: String;
   private domain: String;
-  private siteUrl : string;
+  private devWebSite : string;
+  private sites : Array<any>;
 
   private versionNumber : any;
   private versionCode : any;
@@ -34,8 +35,10 @@ export class AboutPage {
 
     this.domain = MyApp.appConfig.domain;
     // this.domain = this.config.get("domain");
-    // this.siteUrl = "http://" + this.domain + "/datasets#";
-    this.siteUrl = MyApp.appConfig.devWebSite;
+    // this.devWebSite = "http://" + this.domain + "/datasets#";
+    this.devWebSite = MyApp.appConfig.devWebSite;
+
+    this.sites = MyApp.appConfig.sites;
   }
 
   ionViewDidLoad() {
@@ -67,8 +70,8 @@ export class AboutPage {
     // }
   }
 
-  openUrl() {
-    this.iab.create(this.siteUrl, "_system");
+  openUrl(url) {
+    this.iab.create(url, "_system");
     // const browser = this.iab.create(this.siteUrl, "_system");
     // browser.show()
   } 
