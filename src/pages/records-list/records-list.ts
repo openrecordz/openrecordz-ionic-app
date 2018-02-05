@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NavController, NavParams, /*Config, */Events } from 'ionic-angular';
 import { RecordService } from '../../providers/record-service';
+import { TranslateService } from '@ngx-translate/core';
 
 // pages
 import { RecordDetailsPage } from '../record-details/record-details';
@@ -30,10 +31,20 @@ export class RecordsListPage {
   private pageSize: number = 10;
   private showMapWithInToolbar : false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, /*config: Config, */
-    public recordService: RecordService, public events: Events) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public recordService: RecordService, 
+    public events: Events,
+    translate: TranslateService) {
+
+    // ########### begin translations ###########
+    // this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang(MyApp.appConfig.defaultLanguage);
+    translate.use(MyApp.appConfig.defaultLanguage)
+    // ########### end translations ###########
+
     this.dataset = navParams.get('dataset');
-    // this.domain = config.get("domain");
     this.domain = MyApp.appConfig.domain;
   }
 

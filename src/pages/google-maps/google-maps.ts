@@ -9,6 +9,7 @@ import { MyApp } from '../../app/app.component';
 // providers
 import { GoogleMapsClusterProvider } from '../../providers/google-maps-cluster';
 import { ConnectivityProvider } from '../../providers/connectivity';
+import { TranslateService } from '@ngx-translate/core';
 
 import { RecordService } from '../../providers/record-service';
 
@@ -44,8 +45,23 @@ export class GoogleMapsPage {
   private markers = [];//some array
   private loading: Loading;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform, public connectivityService: ConnectivityProvider,
-    public mapCluster: GoogleMapsClusterProvider, public events: Events, public recordService: RecordService, loadingController: LoadingController) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public platform: Platform, 
+    public connectivityService: ConnectivityProvider,
+    public mapCluster: GoogleMapsClusterProvider, 
+    public events: Events, 
+    public recordService: RecordService, 
+    loadingController: LoadingController,
+    translate: TranslateService) {
+
+    // ########### begin translations ###########
+    // this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang(MyApp.appConfig.defaultLanguage);
+    translate.use(MyApp.appConfig.defaultLanguage)
+    // ########### end translations ###########
+
     this.dataset = navParams.get('dataset');
 
     // create loading spinner
@@ -79,11 +95,11 @@ export class GoogleMapsPage {
 
     if (typeof google == "undefined" || typeof google.maps == "undefined") {
 
-      console.log("Google maps JavaScript needs to be loaded.");
+      // console.log("Google maps JavaScript needs to be loaded.");
       this.disableMap();
 
       if (this.connectivityService.isOnline()) {
-        console.log("online, loading map");
+        // console.log("online, loading map");
 
         //Load the SDK
         window['mapInit'] = () => {
@@ -105,11 +121,11 @@ export class GoogleMapsPage {
       }
     } else {
       if (this.connectivityService.isOnline()) {
-        console.log("showing map");
+        // console.log("showing map");
         this.initMap();
         this.enableMap();
       }  else {
-        console.log("disabling map");
+        // console.log("disabling map");
         this.disableMap();
       }
     }
@@ -132,11 +148,11 @@ export class GoogleMapsPage {
   }
 
   disableMap() {
-    console.log("disable map");
+    // console.log("disable map");
   }
 
   enableMap() {
-    console.log("enable map");
+    // console.log("enable map");
 
     // this.loadMarkersCluster();
 
@@ -144,12 +160,12 @@ export class GoogleMapsPage {
   }
 
   loadRecords() {
-    console.log('GoogleMapsPage.loadRecord');
+    // console.log('GoogleMapsPage.loadRecord');
 
     this.recordService.load(this.dataset.id)
       .then(data => {
         this.recordsLoaded = true;
-        console.log("recordsLoaded ", this.recordsLoaded);
+        // console.log("recordsLoaded ", this.recordsLoaded);
         this.records = data;
 
         //  console.log("adding markers");
@@ -226,7 +242,7 @@ export class GoogleMapsPage {
   }
 
   addMarkersToMap() {
-    console.log("GoogleMapsPage.addMarkersToMap");
+    // console.log("GoogleMapsPage.addMarkersToMap");
 
     var bounds = new google.maps.LatLngBounds();
     for (var i = 0; i < this.markers.length; i++) {

@@ -7,8 +7,10 @@ import { InjectionToken } from '@angular/core';
 // Although the ApplicationConfig interface plays no role in dependency injection, 
 // it supports typing of the configuration object within the class.
 export interface ApplicationConfig {
+    defaultLanguage: string;
     urlApi: string;
     domain: string;
+    developer : string;
     devWebSite : string;
     sites: Array<any>;
     oneSignalAppId: string;
@@ -17,9 +19,11 @@ export interface ApplicationConfig {
 
 // Configuration values for our app
 export const APP_CONFIG: ApplicationConfig = {
-    domain: "soleto.openrecordz.com",
-    devWebSite: "http://soleto.openrecordz.com/datasets#",
+    defaultLanguage: "it",
     urlApi: "http://soleto.api.openrecordz.com/service/v1",   
+    domain: "soleto.openrecordz.com",
+    developer: "Openrecordz",
+    devWebSite: "http://soleto.openrecordz.com/datasets#",
     sites: [
         {
             "key" : "Sito Istituzionale", 

@@ -1,0 +1,21 @@
+{
+    "page_about_title": "About",
+    "page_about_powered_by": "Powered by",
+    "page_about_see_dev_website": "See website",
+
+    "page_calendar_title": "Calendar",
+    "page_calendar_loading_data": "Loading..",
+
+    "page_datasets_list_title": "Home",
+
+    "page_google_maps_title": "Map",
+
+    "page_record_details_directions": "Click on the map for road information",
+    "page_record_details_contacts": "Contacts",
+
+    "page_record_list_loading_data": "Loading..",
+
+    "page_search_title": "Search",
+    "page_search_no_results_title": "No resutls",
+    "page_search_no_results_subtitle": "Sorry, we could not find any results for your search!"
+}

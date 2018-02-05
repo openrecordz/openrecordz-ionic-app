@@ -7,6 +7,7 @@ import { MyApp } from '../../app/app.component';
 // providers
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { CallNumber } from '@ionic-native/call-number';
+import { TranslateService } from '@ngx-translate/core';
 
 /**
  * Generated class for the RecordDetailsPage page.
@@ -36,8 +37,21 @@ export class RecordDetailsPage {
 
   private clickableMapUrl : string;
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController,public navParams: NavParams, public events: Events, 
-    public iab: InAppBrowser, public callNumber: CallNumber) {
+  constructor(
+    public navCtrl: NavController, 
+    public modalCtrl: ModalController,
+    public navParams: NavParams, 
+    public events: Events, 
+    public iab: InAppBrowser,
+    public callNumber: CallNumber,
+    translate: TranslateService) {
+
+    // ########### begin translations ###########
+    // this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang(MyApp.appConfig.defaultLanguage);
+    translate.use(MyApp.appConfig.defaultLanguage)
+    // ########### end translations ###########
+
     this.pageTitle = navParams.get('title');
     this.record = navParams.get('record');
   }
@@ -189,16 +203,4 @@ export class RecordDetailsPage {
       .then(() => console.log('Launched dialer!'))
       .catch(() => console.log('Error launching dialer'));
   }
-
-  private onImageClick(title, image) {
-    // let modal = this.modalCtrl.create(ImagePreviewPage, 
-    //   { title: title, image : image }
-    // );
-    // modal.onDidDismiss(data => {
-    // console.log("Return From modal");
-    // console.log(data);
-    // });
-    // modal.present();
-  }
-  
 }

@@ -7,6 +7,7 @@ import { MyApp } from '../../app/app.component';
 // providers
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { TranslateService } from '@ngx-translate/core';
 
 // pages
 import { RecordDetailsPage } from '../record-details/record-details';
@@ -29,7 +30,17 @@ export class SearchPage {
    isFirstSearch : boolean ;
    hasResults : boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public http: Http,
+    translate: TranslateService) {
+
+    // ########### begin translations ###########
+    // this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang(MyApp.appConfig.defaultLanguage);
+    translate.use(MyApp.appConfig.defaultLanguage)
+    // ########### end translations ###########
     
   }
 

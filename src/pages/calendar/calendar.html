@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Calendario</ion-title>
+    <ion-title>{{ 'page_calendar_title' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -53,7 +53,7 @@
 
     <!-- paginated scroll -->
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{ 'page_calendar_loading_data' | translate }}">
       </ion-infinite-scroll-content>
     </ion-infinite-scroll>
   </ion-list>

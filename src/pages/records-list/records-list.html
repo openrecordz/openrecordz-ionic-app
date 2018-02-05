@@ -49,7 +49,7 @@
 
 
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Carico altri dati..">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{ 'page_record_list_loading_data' | translate }}">
       </ion-infinite-scroll-content>
     </ion-infinite-scroll>
   </ion-list>

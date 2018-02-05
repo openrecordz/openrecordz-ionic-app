@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar no-border-bottom>
-    <ion-title>Ricerca</ion-title>
+    <ion-title>{{ 'page_search_title' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -46,8 +46,8 @@
   <ng-template #emptyTemplate>
     <ion-card class="empty-ion-card" *ngIf="!isFirstSearch && !hasResults">
       <img class="empty-ion-card-img" src="assets/imgs/error_view_cloud.png" />
-      <div class="empty-ion-card-title">Nessun risultato</div>
-      <div class="empty-ion-card-subtitle">Siamo spiacenti, non abbiamo trovato nessun risultato per la tua ricerca!</div>
+      <div class="empty-ion-card-title">{{ 'page_search_no_results_title' | translate }}</div>
+      <div class="empty-ion-card-subtitle">{{ 'page_search_no_results_subtitle' | translate }}</div>
     </ion-card>
   </ng-template>
 </ion-content>

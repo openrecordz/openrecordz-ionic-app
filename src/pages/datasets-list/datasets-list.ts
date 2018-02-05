@@ -3,10 +3,14 @@ import { NavController, NavParams } from 'ionic-angular';
 
 // providers
 import { DatasetService } from '../../providers/dataset-service';
+import { TranslateService } from '@ngx-translate/core';
 
 // pages
 import { RecordsListPage } from '../records-list/records-list';
 import { SearchPage } from '../search/search';
+
+// context
+import { MyApp } from '../../app/app.component';
 
 /**
  * Generated class for the DatasetsListPage page.
@@ -24,8 +28,18 @@ export class DatasetsListPage {
 
   private datasets: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-     public datasetService: DatasetService) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public datasetService: DatasetService,
+    translate: TranslateService) {
+
+    // ########### begin translations ###########
+    // this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang(MyApp.appConfig.defaultLanguage);
+    translate.use(MyApp.appConfig.defaultLanguage)
+    // ########### end translations ###########
+
     // this.loadDatasets();
   }
 

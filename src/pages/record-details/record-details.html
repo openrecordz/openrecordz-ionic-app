@@ -32,7 +32,6 @@
       <p>{{record._createdon | date: 'dd/MM/yyyy'}}</p>
     </ion-item>
 
-    <!-- <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-details-image" (click)="onImageClick(record._title, record._main_image)"> -->
     <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-details-image" imageViewer />
 
     <ion-card-content>
@@ -63,12 +62,12 @@
     <ion-item>
       <!-- <ion-icon name="map" item-start large></ion-icon> -->
       <h2 *ngIf="record._title">{{record._title}}</h2>
-      <h3>Clicca sulla mappa per le indizicazioni stradali</h3>
+      <h3>{{ 'page_record_details_directions' | translate }}</h3>
     </ion-item>
   </ion-card>
 
   <ion-card *ngIf="(record._phone && record._phone !== '' && record._phone !== ' ' ) || (record._email && record._email !== '' && record._email !== ' ') ">
-    <ion-card-header class="card-header">Contattaci</ion-card-header>
+    <ion-card-header class="card-header">{{ 'page_record_details_contacts' | translate }}</ion-card-header>
     <!-- phone -->
     <ion-item *ngIf="record._phone && record._phone !== '' && record._phone !== ' '">
       <a (click)="onPhoneNumberClick(record._phone)" >{{record._phone}}</a>

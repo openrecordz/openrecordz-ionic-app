@@ -3,6 +3,7 @@ import { NavController/*, Config*/ } from 'ionic-angular';
 
 // providers
 import { RecordService } from '../../providers/record-service';
+import { TranslateService } from '@ngx-translate/core';
 
 // pages
 import {RecordDetailsPage} from '../record-details/record-details'
@@ -23,9 +24,18 @@ export class CalendarPage {
   private records: any = [];
   private currentPage: number = 0;
 
-  constructor(public navCtrl: NavController, /*private config: Config,*/ private recordService: RecordService) {
+  constructor(
+    public navCtrl: NavController,
+    private recordService: RecordService,
+    translate: TranslateService) {
+
+    // ########### begin translations ###########
+    // this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang(MyApp.appConfig.defaultLanguage);
+    translate.use(MyApp.appConfig.defaultLanguage)
+    // ########### end translations ###########
+
     this.datasetId = "5a70b3bde4b0f940ec4ed6df";
-    // this.domain = this.config.get("domain");
     this.domain = MyApp.appConfig.domain;
   }
 

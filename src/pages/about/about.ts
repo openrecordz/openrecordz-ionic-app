@@ -1,9 +1,10 @@
 import { Component} from '@angular/core';
-import { NavController, Platform/*, Config*/} from 'ionic-angular';
+import { NavController, Platform} from 'ionic-angular';
 
 // providers
 import { AppVersion } from '@ionic-native/app-version';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { TranslateService } from '@ngx-translate/core';
 
 // context
 import { MyApp } from '../../app/app.component';
@@ -23,21 +24,27 @@ export class AboutPage {
   private versionCode : any;
   private appName : any;
 
-  constructor(public navCtrl: NavController, private platform: Platform, 
-    public appVersion: AppVersion, private iab: InAppBrowser/*, private config: Config*/
+  constructor(
+    public navCtrl: NavController,
+    private platform: Platform, 
+    public appVersion: AppVersion,
+    private iab: InAppBrowser,
+    translate: TranslateService
   ) {
-    this.developer = "Openrecordz";
+    this.developer = MyApp.appConfig.developer;
     // this.appName = this.appVersion.getAppName();
     // this.packageName = this.appVersion.getPackageName();
     // this.versionCode = this.appVersion.getVersionCode();
     // this.versionNumber = this.appVersion.getVersionNumber();
 
+    // ########### begin translations ###########
+    // this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang(MyApp.appConfig.defaultLanguage);
+    translate.use(MyApp.appConfig.defaultLanguage)
+    // ########### end translations ###########
 
     this.domain = MyApp.appConfig.domain;
-    // this.domain = this.config.get("domain");
-    // this.devWebSite = "http://" + this.domain + "/datasets#";
     this.devWebSite = MyApp.appConfig.devWebSite;
-
     this.sites = MyApp.appConfig.sites;
   }
 

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-// pages
+// ############# pages #############
 import { AboutPage } from '../pages/about/about';
 import { CalendarPage } from '../pages/calendar/calendar';
 import { DatasetsListPage } from '../pages/datasets-list/datasets-list';
@@ -13,29 +13,41 @@ import { RecordDetailsPage } from '../pages/record-details/record-details';
 import { GoogleMapsPage } from '../pages/google-maps/google-maps';
 import { SearchPage } from '../pages/search/search';
 
-// providers
+// ############# providers #############
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+// begin position
 import { Geolocation } from '@ionic-native/geolocation';
-import { HttpModule } from '@angular/http';
 import { LocationTrackerProvider } from '../providers/location-tracker';
 import { GoogleMapsClusterProvider } from '../providers/google-maps-cluster';
+// end position
+
+// begin network
+import { HttpModule } from '@angular/http';
 import { ConnectivityProvider } from '../providers/connectivity';
 import { Network } from '@ionic-native/network';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+// end network
+
 import { DatasetService } from '../providers/dataset-service';
-// import { RecordService } from '../providers/record-service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { AppVersion } from '@ionic-native/app-version';
-import { CallNumber } from '@ionic-native/call-number';
+import { CallNumber } from '@ionic-native/call-number'; // mobile phone dialer
 // src https://www.npmjs.com/package/ionic-img-viewer
 // add the plugin in this way  --> npm i rxjs@5.5.2 and npm i ionic-img-viewer@2.8.0 <--
-import { IonicImageViewerModule } from 'ionic-img-viewer';
-import { OneSignal } from '@ionic-native/onesignal';
+import { IonicImageViewerModule } from 'ionic-img-viewer'; // pich to zoom
+import { OneSignal } from '@ionic-native/onesignal'; // push notification
 
-// pipes
+// begin translations
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+// end translations
+
+// ############# pipes #############
 import { MomentPipe } from '../pipes/moment';
 
-// custom configurations
+// ############# custom configurations #############
 import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
 
 @NgModule({
@@ -54,17 +66,19 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     MomentPipe,
   ],
   imports: [
-    BrowserModule, HttpModule, // http
+    BrowserModule, HttpModule,// http
     BrowserModule,
     IonicImageViewerModule,
-    IonicModule.forRoot(MyApp
-      // , 
-      // {
-      //   // urlApi: 'http://stefanotestopendata.api.openrecordz.com/service/v1',
-      //   urlApi: 'http://soleto.api.openrecordz.com/service/v1',
-      //   domain: 'soleto.openrecordz.com',
-      // }
-    )
+    IonicModule.forRoot(MyApp),
+    HttpClientModule,
+    // source : https://ionicframework.com/docs/developer-resources/ng2-translate/
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -97,3 +111,7 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
   ]
 })
 export class AppModule {}
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
