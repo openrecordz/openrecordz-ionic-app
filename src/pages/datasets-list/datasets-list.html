@@ -17,12 +17,19 @@
 
 
 <ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <!-- <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."> -->
+      <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="{{ 'page_datasets_list_refreshing_text' | translate }}">
+    </ion-refresher-content>
+  </ion-refresher>
+
   <ion-list>
     <ion-card *ngFor="let dataset of datasets" (click)="onDatasetClicked(dataset)">
+      <!-- shows the dataset only if it contains the tags "inApp" and "inHome" -->
       <ion-item *ngIf="dataset && dataset._tags && dataset._tags.indexOf('inApp') !== -1 && dataset._tags.indexOf('inHome') !== -1">
-
-        <img class="minified-image circle-image" src="{{dataset._main_image}}" *ngIf="dataset._main_image"  item-left>
-
+  
+        <img class="minified-image circle-image" src="{{dataset._main_image}}" *ngIf="dataset._main_image" item-left>
+  
         <ion-card-content>
           <!-- title -->
           <ion-card-title *ngIf="!dataset._name; else templateTitle" class="truncate">
@@ -33,11 +40,11 @@
           <ng-template #templateTitle>
             <ion-card-title class="truncate"> {{dataset._name}}</ion-card-title>
           </ng-template>
-
+  
           <!-- description -->
           <p *ngIf="dataset._description">{{dataset._description}}</p>
         </ion-card-content>
-
+  
         <ion-icon clear item-right name="ios-arrow-forward"></ion-icon>
       </ion-item>
     </ion-card>

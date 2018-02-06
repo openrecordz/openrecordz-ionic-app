@@ -11,8 +11,14 @@
 
 
 <ion-content>
-  <ion-list>
 
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <!-- <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."> -->
+      <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="{{ 'page_records_list_refreshing_text' | translate }}">
+      </ion-refresher-content>
+    </ion-refresher>
+
+  <ion-list>
     <ion-card *ngFor="let record of records" (click)="onRecordClicked(record)">
 
       <ion-item>
@@ -49,7 +55,7 @@
 
 
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{ 'page_record_list_loading_data' | translate }}">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{ 'page_records_list_loading_data' | translate }}">
       </ion-infinite-scroll-content>
     </ion-infinite-scroll>
   </ion-list>

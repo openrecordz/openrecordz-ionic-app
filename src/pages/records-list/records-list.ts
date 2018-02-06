@@ -57,7 +57,7 @@ export class RecordsListPage {
       this.showMapWithInToolbar = showMapWithInToolbar;
     });
 
-    this.loadRecord(this.dataset.id);
+    this.loadRecords(this.dataset.id, null);
   }
 
   // Runs when the page is about to be destroyed and have its elements removed.
@@ -67,10 +67,14 @@ export class RecordsListPage {
     console.log('ionViewWillUnload.unsubscribe');
   } 
 
-  loadRecord(datasetId) {
+  loadRecords(datasetId, refresher) {
     this.recordService.load(datasetId)
       .then(data => {
         this.records = data;
+
+        if (refresher !== undefined && refresher !== null) {
+          refresher.complete();
+        }
 
         // console.log(this.records);
       });
@@ -110,6 +114,10 @@ export class RecordsListPage {
 
         infiniteScroll.complete();
       });
+  }
+
+  doRefresh(refresher) {
+    this.loadRecords(this.dataset.id, refresher);
   }
 
 }

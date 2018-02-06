@@ -46,14 +46,18 @@ export class DatasetsListPage {
   ionViewDidLoad() {
     // console.log('ionViewDidLoad DatasetsListPage');
 
-    this.loadDatasets();
+    this.loadDatasets(null);
   }
 
-  private loadDatasets() {
+  private loadDatasets(refresher) {
     this.datasetService.load()
       .then(datasets => {
         // console.log(datasets);
         this.datasets = datasets;
+
+        if(refresher !== undefined && refresher !== null) {
+          refresher.complete();
+        }
       });
   }
 
@@ -71,5 +75,9 @@ export class DatasetsListPage {
     this.navCtrl.push(SearchPage,
       // { text: text }
     );
+  }
+
+  doRefresh(refresher) {
+    this.loadDatasets(refresher);
   }
 }

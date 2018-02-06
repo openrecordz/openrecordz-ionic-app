@@ -7,13 +7,15 @@
     "page_calendar_loading_data": "Caricamento..",
 
     "page_datasets_list_title": "Home",
+    "page_datasets_list_refreshing_text": "Aggiornamento..",
 
     "page_google_maps_title": "Mappa",
 
     "page_record_details_directions": "Clicca sulla mappa per le indizicazioni stradali",
     "page_record_details_contacts": "Contatti",
 
-    "page_record_list_loading_data": "Caricamento..",
+    "page_records_list_loading_data": "Caricamento..",
+    "page_records_list_refreshing_text": "Aggiornamento..",
 
     "page_search_title": "Ricerca",
     "page_search_no_results_title": "Nessun risultato",
