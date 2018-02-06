@@ -46,13 +46,13 @@
         </ion-item> -->
 
         <!-- title -->
-        <ion-card-title *ngIf="!record._title; else templateTitle" class="truncate">
+        <ion-card-title *ngIf="!record._title; else templateTitle">
           <!-- title not valid -->
           {{record._id}}
         </ion-card-title>
         <!-- title valid -->
         <ng-template #templateTitle>
-          <ion-card-title class="truncate"> {{record._title}}</ion-card-title>
+          <ion-card-title> {{record._title}}</ion-card-title>
         </ng-template>
 
         <p class="record-description" *ngIf="record._description">{{record._description}}</p>
@@ -92,18 +92,13 @@
   </ion-card>
 
   <ion-card *ngIf="keys && keys.length > 0">
-    <!-- <ion-card-header class="card-header">
-      Custom Data
-    </ion-card-header> -->
-
     <ion-list *ngIf="keys && keys.length > 0">
-      <div *ngFor="let key of keys;">
-        <ion-item *ngIf="key && record[key]">
+      <div *ngFor="let key of keys;" padding>
+        <div *ngIf="key && record[key]">
           <h2 class="custom-data-key">{{key}}</h2>
           <p>{{record[key]}}</p>
-        </ion-item>
+        </div>
       </div>
     </ion-list>
   </ion-card>
-
 </ion-content>
