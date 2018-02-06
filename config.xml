@@ -98,5 +98,5 @@
     </plugin>
     <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
     <plugin name="onesignal-cordova-plugin" spec="^2.2.5" />
-    <engine name="android" spec="~7.0.0" />
+    <engine name="android" spec="7.0.0" />
 </widget>
