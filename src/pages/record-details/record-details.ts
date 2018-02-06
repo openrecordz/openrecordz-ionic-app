@@ -87,11 +87,11 @@ export class RecordDetailsPage {
     // record coordinates
     this.setRecordCoordiantes();
 
-    // excludes mapped datas
-    this.excludeReservedData();
-
     // create a static map url
     this.getStaticMapUrl();
+
+    // excludes mapped datas
+    this.excludeReservedData();
   }
 
   // Runs when the page is about to be destroyed and have its elements removed.
@@ -148,13 +148,14 @@ export class RecordDetailsPage {
     return parseFloat(coordinate);
   }
 
-  // remove reserved data wich start with "_" from visible custom data
+  // remove reserved data (wich start with "_") and other reserved data from visible custom data
   private excludeReservedData() {
     var excludedKeys = Array();
     this.keys.forEach(function (key) {
-      if (key !== 'id' && !key.startsWith('_')) {
+      if (key !== 'id' && !key.startsWith('_') && key !== 'map_url') {
         excludedKeys[key] = key;
       }
+
     });
     this.keys = Object.keys(excludedKeys);
   }
