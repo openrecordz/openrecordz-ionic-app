@@ -35,7 +35,7 @@
     <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-details-image" imageViewer />
 
     <ion-card-content>
-        <ion-item *ngIf="record._image_small || record.tags">
+        <!-- <ion-item *ngIf="record._image_small || record.tags">
           <ion-avatar *ngIf="record._image_small" item-start>
             <img src="{{record._image_small}}">
           </ion-avatar>
@@ -43,7 +43,17 @@
           <h2 *ngIf="record.tags">
             {{record.tags}}
           </h2>
-        </ion-item>
+        </ion-item> -->
+
+        <!-- title -->
+        <ion-card-title *ngIf="!record._title; else templateTitle" class="truncate">
+          <!-- title not valid -->
+          {{record._id}}
+        </ion-card-title>
+        <!-- title valid -->
+        <ng-template #templateTitle>
+          <ion-card-title class="truncate"> {{record._title}}</ion-card-title>
+        </ng-template>
 
         <p class="record-description" *ngIf="record._description">{{record._description}}</p>
     </ion-card-content>
@@ -61,7 +71,7 @@
 
     <ion-item>
       <!-- <ion-icon name="map" item-start large></ion-icon> -->
-      <h2 *ngIf="record._title">{{record._title}}</h2>
+      <h2 *ngIf="record.address">{{record.address}}</h2>
       <h3>{{ 'page_record_details_directions' | translate }}</h3>
     </ion-item>
   </ion-card>
@@ -87,10 +97,12 @@
     </ion-card-header> -->
 
     <ion-list *ngIf="keys && keys.length > 0">
-      <ion-item *ngFor="let key of keys;">
-        <h2 class="custom-data-key">{{key}}</h2>
-        <p>{{record[key]}}</p>
-      </ion-item>
+      <div *ngFor="let key of keys;">
+        <ion-item *ngIf="key && record[key]">
+          <h2 class="custom-data-key">{{key}}</h2>
+          <p>{{record[key]}}</p>
+        </ion-item>
+      </div>
     </ion-list>
   </ion-card>
 
