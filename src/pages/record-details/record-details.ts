@@ -54,6 +54,8 @@ export class RecordDetailsPage {
 
     this.pageTitle = navParams.get('title');
     this.record = navParams.get('record');
+
+    console.log(this.record);
   }
 
   // Runs when the page has loaded. 
@@ -204,4 +206,10 @@ export class RecordDetailsPage {
       .then(() => console.log('Launched dialer!'))
       .catch(() => console.log('Error launching dialer'));
   }
+
+  private openUrl(url) {
+    this.iab.create(url, "_system");
+    // const browser = this.iab.create(this.siteUrl, "_system");
+    // browser.show()
+  } 
 }
