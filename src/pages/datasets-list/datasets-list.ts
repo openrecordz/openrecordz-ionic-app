@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 
 // providers
 import { DatasetService } from '../../providers/dataset-service';
@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 // pages
 import { RecordsListPage } from '../records-list/records-list';
 import { SearchPage } from '../search/search';
+import { ReportPage } from '../report/report';
 
 // context
 import { MyApp } from '../../app/app.component';
@@ -32,7 +33,8 @@ export class DatasetsListPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public datasetService: DatasetService,
-    translate: TranslateService) {
+    translate: TranslateService,
+    public modalCtrl: ModalController) {
 
     // ########### begin translations ###########
     // this language will be used as a fallback when a translation isn't found in the current language
@@ -77,7 +79,14 @@ export class DatasetsListPage {
     );
   }
 
-  doRefresh(refresher) {
+  private doRefresh(refresher) {
     this.loadDatasets(refresher);
+  }
+
+  private onSendReportClick() {
+    console.log("DatasetsListPage.onSendReportClick");
+
+    let contactModal = this.modalCtrl.create(ReportPage);
+    contactModal.present();
   }
 }

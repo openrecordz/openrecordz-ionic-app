@@ -28,7 +28,7 @@
       <ion-card *ngIf="dataset && dataset._tags && dataset._tags.indexOf('inApp') !== -1 && dataset._tags.indexOf('inHome') !== -1">
         <!-- shows the dataset only if it contains the tags "inApp" and "inHome" -->
         <ion-item >
-    
+  
           <img class="minified-image circle-image" src="{{dataset._main_image}}" *ngIf="dataset._main_image" item-left>
     
           <ion-card-content>
@@ -51,4 +51,10 @@
       </ion-card>
     </div>
   </ion-list>
+
+  <ion-fab bottom right (click)="onSendReportClick()">
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>
