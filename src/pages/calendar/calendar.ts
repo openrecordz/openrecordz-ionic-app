@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { NavController/*, Config*/ } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
 // providers
 import { RecordService } from '../../providers/record-service';
 import { TranslateService } from '@ngx-translate/core';
+import { DatasetService } from '../../providers/dataset-service';
 
 // pages
 import {RecordDetailsPage} from '../record-details/record-details'
+import { RecordsListPage } from '../records-list/records-list';
 
 // context
 import { MyApp } from '../../app/app.component';
@@ -21,13 +23,17 @@ export class CalendarPage {
   private datasetId: String;
   private domain: String;
 
+  private datasetGlossaryId: String;
+  private datasetGlossary : any;
+
   private records: any = [];
   private currentPage: number = 0;
 
   constructor(
     public navCtrl: NavController,
     private recordService: RecordService,
-    translate: TranslateService) {
+    private datasetService: DatasetService,
+    private translate: TranslateService) {
 
     // ########### begin translations ###########
     // this language will be used as a fallback when a translation isn't found in the current language
@@ -36,12 +42,22 @@ export class CalendarPage {
     // ########### end translations ###########
 
     this.datasetId = "5a70b3bde4b0f940ec4ed6df";
+    this.datasetGlossaryId = "5a79e3bee4b0f940ec4ed90c";
     this.domain = MyApp.appConfig.domain;
   }
 
   ionViewDidLoad() {
     // console.log('ionViewDidLoad CalendarRecordsListPage');
+    this.loadDatasetGlossary(this.datasetGlossaryId);
     this.loadRecords(this.datasetId);
+  }
+
+  private loadDatasetGlossary(datasetId) {
+    this.datasetService.loadById(datasetId)
+      .then(dataset => {
+        // console.log("dataset", dataset);
+        this.datasetGlossary = dataset;
+      });
   }
 
   loadRecords(datasetId) {
@@ -56,12 +72,19 @@ export class CalendarPage {
       });
   }
 
-
   onClick(record) {
     // console.log("record clicked: ");
     // console.log(record);
     this.navCtrl.push(RecordDetailsPage,
       { record: record }
+    );
+  }
+
+  private onToolbarGloassaryClick() {
+    // console.log("onToolbarGloassaryClick");
+  
+    this.navCtrl.push(RecordsListPage,
+      { dataset: this.datasetGlossary }
     );
   }
 

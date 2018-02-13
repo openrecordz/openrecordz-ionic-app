@@ -5,7 +5,7 @@
         <ion-icon name="map"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>{{dataset._name}}</ion-title>
+    <ion-title *ngIf="dataset">{{dataset._name}}</ion-title>
   </ion-navbar>
 </ion-header>
 

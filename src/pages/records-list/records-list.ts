@@ -57,7 +57,7 @@ export class RecordsListPage {
       this.showMapWithInToolbar = showMapWithInToolbar;
     });
 
-    this.loadRecords(this.dataset.id, null);
+    if(this.dataset) this.loadRecords(this.dataset.id, null);
   }
 
   // Runs when the page is about to be destroyed and have its elements removed.

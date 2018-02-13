@@ -55,7 +55,7 @@ export class RecordDetailsPage {
     this.pageTitle = navParams.get('title');
     this.record = navParams.get('record');
 
-    console.log(this.record);
+    // console.log(this.record);
   }
 
   // Runs when the page has loaded. 

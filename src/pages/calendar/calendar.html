@@ -7,6 +7,11 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons *ngIf="datasetGlossary" end (click)="onToolbarGloassaryClick()">
+      <button ion-button icon-only color="royal">
+        <ion-icon name="book"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>{{ 'page_calendar_title' | translate }}</ion-title>
   </ion-navbar>
 
