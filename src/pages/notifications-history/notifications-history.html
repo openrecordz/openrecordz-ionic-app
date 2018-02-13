@@ -14,5 +14,27 @@
 
 
 <ion-content padding>
+  <ion-list>
+    <div *ngFor="let notification of notifications">
+      <ion-card >   
+        
+        <!-- header -->
+        <ion-item>
+          <ion-avatar item-start>
+            <img *ngIf="notification.large_icon" src="{{notification.large_icon}}">
+          </ion-avatar>
+          <!-- notification title -->
+          <h2> {{notification.headings.en}}</h2>
+          <!-- <p>November 5, 1955</p> -->
+        </ion-item>
 
+          <img *ngIf="notification.big_picture" src="{{notification.big_picture}}">
+          
+          <!-- notification message -->
+          <ion-card-content>
+            <p> {{notification.contents.en}}</p>
+          </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-list>
 </ion-content>

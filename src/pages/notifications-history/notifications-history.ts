@@ -40,8 +40,9 @@ export class NotificationsHistoryPage {
   private loadNotifications(limit, offset) {
     this.notificationHistoryProvider.load(limit, offset)
       .then(notifications => {
-        console.log("notifications", notifications);
-        this.notifications;
+        // console.log("notifications", notifications);
+        this.notifications = notifications['notifications'];
+        console.log("notifications", this.notifications);
       });
   }
 
