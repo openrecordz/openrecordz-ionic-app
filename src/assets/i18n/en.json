@@ -20,5 +20,7 @@
 
     "page_search_title": "Search",
     "page_search_no_results_title": "No resutls",
-    "page_search_no_results_subtitle": "Sorry, we could not find any results for your search!"
+    "page_search_no_results_subtitle": "Sorry, we could not find any results for your search!",
+
+    "page_notifications_history_title" : "Notifications"
 }

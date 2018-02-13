@@ -20,6 +20,8 @@
 
     "page_search_title": "Ricerca",
     "page_search_no_results_title": "Nessun risultato",
-    "page_search_no_results_subtitle": "Siamo spiacenti, non abbiamo trovato nessun risultato per la tua ricerca!"
+    "page_search_no_results_subtitle": "Siamo spiacenti, non abbiamo trovato nessun risultato per la tua ricerca!",
+
+    "page_notifications_history_title": "Notifiche"
 
 }
