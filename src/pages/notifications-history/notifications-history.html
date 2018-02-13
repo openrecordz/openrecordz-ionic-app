@@ -20,7 +20,7 @@
         
         <!-- header -->
         <ion-item>
-          <ion-avatar item-start>
+          <ion-avatar item-start *ngIf="notification.large_icon">
             <img *ngIf="notification.large_icon" src="{{notification.large_icon}}">
           </ion-avatar>
           <!-- notification title -->
