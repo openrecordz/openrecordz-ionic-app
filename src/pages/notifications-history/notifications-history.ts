@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+// providers
+import { NotificationHistoryProvider } from '../../providers/notification-history';
+
 /**
  * Generated class for the NotificationsHistoryPage page.
  *
@@ -11,14 +14,35 @@ import { NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-notifications-history',
   templateUrl: 'notifications-history.html',
+  providers: [NotificationHistoryProvider]
 })
 export class NotificationsHistoryPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private notifications: any;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public notificationHistoryProvider: NotificationHistoryProvider
+  ) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NotificationsHistoryPage');
+    // console.log('ionViewDidLoad NotificationsHistoryPage');
+
+    var limit = 50; // default and max of onesignal
+    var offset = 0; // default of onesignal
+
+    this.loadNotifications(limit, offset);
+
+  }
+
+  private loadNotifications(limit, offset) {
+    this.notificationHistoryProvider.load(limit, offset)
+      .then(notifications => {
+        console.log("notifications", notifications);
+        this.notifications;
+      });
   }
 
 }

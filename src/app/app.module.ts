@@ -114,7 +114,7 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     AppVersion,
     CallNumber,
     OneSignal,
-    { provide: APP_CONFIG_TOKEN, useValue: APP_CONFIG }
+    { provide: APP_CONFIG_TOKEN, useValue: APP_CONFIG },
   ]
 })
 export class AppModule {}

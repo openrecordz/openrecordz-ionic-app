@@ -1,7 +1,6 @@
 import { Injectable  } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-// import { Config } from 'ionic-angular';
 
 // context
 import { MyApp } from '../app/app.component';
@@ -20,10 +19,7 @@ export class DatasetService {
   datasets: any;
   urlApi: String;
 
-  constructor(public http: Http/*, config: Config*/) {
-    // console.log('DatasetService Provider');
-    // this.urlApi=config.get("urlApi");
-    // console.log("urlApi : "+ this.urlApi);
+  constructor(public http: Http) {
 
     this.urlApi = MyApp.appConfig.urlApi;
     // console.log("urlApi : "+ this.urlApi);
