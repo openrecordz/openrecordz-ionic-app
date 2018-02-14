@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 // providers
 import { NotificationHistoryProvider } from '../../providers/notification-history';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 /**
  * Generated class for the NotificationsHistoryPage page.
@@ -23,7 +24,8 @@ export class NotificationsHistoryPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public notificationHistoryProvider: NotificationHistoryProvider
+    public notificationHistoryProvider: NotificationHistoryProvider,
+    public iab: InAppBrowser,
   ) {
   }
 
@@ -44,6 +46,10 @@ export class NotificationsHistoryPage {
         this.notifications = notifications['notifications'];
         console.log("notifications", this.notifications);
       });
+  }
+
+  private onNotificationClick(notificationUrl) {
+    this.iab.create(notificationUrl, "_system");
   }
 
 }

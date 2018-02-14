@@ -13,10 +13,10 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-list>
     <div *ngFor="let notification of notifications">
-      <ion-card >   
+      <ion-card (click)="onNotificationClick(notification.url)">   
         
         <!-- header -->
         <ion-item>
