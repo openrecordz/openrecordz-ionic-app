@@ -49,7 +49,7 @@ export class NotificationsHistoryPage {
   }
 
   private onNotificationClick(notificationUrl) {
-    this.iab.create(notificationUrl, "_system");
+    if(notificationUrl) this.iab.create(notificationUrl, "_system");
   }
 
 }
