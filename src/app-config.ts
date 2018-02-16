@@ -36,11 +36,11 @@ export const APP_CONFIG: ApplicationConfig = {
             "value": "http://www.comune.soleto.le.it/sezione-informazioni/privacy"
         },
     ],
-    oneSignalAppId: "0e1c23bc-c1bd-455f-a408-da2739870c4f",
-    oneSignalRestApiKey: "ZDRlY2Q2ZjUtODBlMi00NzVhLTliODEtMzc0Y2JmMzNkNzgz",
-    firebaseSenderId: "537289267777",
-    mailgunUrl: "sandbox208ae9b676e04fd88e5674984a56aad6.mailgun.org",
-    mailgunApiKey: "api:key-bb704680746b52474673275176ae7216"
+    oneSignalAppId: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    oneSignalRestApiKey: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    firebaseSenderId: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    mailgunUrl: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    mailgunApiKey: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 };
 
 // Create a config token to avoid naming conflicts
