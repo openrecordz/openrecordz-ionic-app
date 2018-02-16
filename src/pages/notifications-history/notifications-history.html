@@ -14,6 +14,12 @@
 
 
 <ion-content>
+ <ion-refresher (ionRefresh)="doRefresh($event)">
+    <!-- <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."> -->
+      <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="{{ 'page_datasets_list_refreshing_text' | translate }}">
+    </ion-refresher-content>
+  </ion-refresher>
+  
   <ion-list>
     <div *ngFor="let notification of notifications">
       <ion-card (click)="onNotificationClick(notification.url)">   

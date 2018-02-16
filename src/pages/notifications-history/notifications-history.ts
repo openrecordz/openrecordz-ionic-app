@@ -21,6 +21,9 @@ export class NotificationsHistoryPage {
 
   private notifications: any;
 
+  private DEFAULT_LIMIT : integer = 50;  // default and max of onesignal
+  private DEFAULT_OFFSET : integer = 0; // default of onesignal
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -32,24 +35,28 @@ export class NotificationsHistoryPage {
   ionViewDidLoad() {
     // console.log('ionViewDidLoad NotificationsHistoryPage');
 
-    var limit = 50; // default and max of onesignal
-    var offset = 0; // default of onesignal
-
-    this.loadNotifications(limit, offset);
+    this.loadNotifications(null, this.DEFAULT_LIMIT, this.DEFAULT_OFFSET);
 
   }
 
-  private loadNotifications(limit, offset) {
+  private loadNotifications(refresher, limit, offset) {
     this.notificationHistoryProvider.load(limit, offset)
       .then(notifications => {
         // console.log("notifications", notifications);
         this.notifications = notifications['notifications'];
         // console.log("notifications", this.notifications);
+
+        if(refresher !== undefined && refresher !== null) refresher.complete();
+        
       });
   }
 
   private onNotificationClick(notificationUrl) {
     if(notificationUrl) this.iab.create(notificationUrl, "_system");
+  }
+
+  private doRefresh(refresher) {
+   this.loadNotifications(refresher, this.DEFAULT_LIMIT, this.DEFAULT_OFFSET);
   }
 
 }
