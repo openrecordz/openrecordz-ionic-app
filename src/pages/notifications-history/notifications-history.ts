@@ -44,7 +44,7 @@ export class NotificationsHistoryPage {
       .then(notifications => {
         // console.log("notifications", notifications);
         this.notifications = notifications['notifications'];
-        console.log("notifications", this.notifications);
+        // console.log("notifications", this.notifications);
       });
   }
 
