@@ -25,29 +25,33 @@
 
     <!-- email -->
     <ion-item>
-      <ion-label>Email</ion-label>
+      <ion-label>  {{ 'page_report_email_label' | translate }}</ion-label>
       <ion-input type="email" formControlName="email" placeholder="example@domain.com"></ion-input>
     </ion-item>
 
     <!-- phone -->
     <ion-item>
-      <ion-label>Phone</ion-label>
+      <ion-label>  {{ 'page_report_phone_label' | translate }}</ion-label>
       <ion-input type="tel" formControlName="phone" placeholder="(+55) 555-5555555"></ion-input>
     </ion-item>
 
     <!-- address -->
     <ion-item>
-      <ion-label>Address</ion-label>
+      <ion-label>  {{ 'page_report_address_label' | translate }}</ion-label>
       <ion-textarea formControlName="address" placeholder="enter your address"></ion-textarea>
     </ion-item>
 
     <!-- description -->
     <ion-item>
-      <ion-label>Description</ion-label>
+      <ion-label>  {{ 'page_report_description_label' | translate }}</ion-label>
       <ion-textarea formControlName="description" placeholder="quantity, size.. "></ion-textarea>
     </ion-item>
 
-    <button ion-button type="submit" [disabled]="!form.valid">Submit</button>
+    <!-- btn submit -->
+    <div text-center class="btn-submit">
+      <button ion-button large type="submit" [disabled]="!form.valid">  {{ 'page_report_submit_label' | translate }}</button>
+    </div>
+
   </form>
 
 </ion-content>

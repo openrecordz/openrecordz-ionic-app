@@ -34,5 +34,10 @@
     "page_report_email_template_label_place" : "Place of withdrawal:",
     "page_report_email_template_label_description" : "Request:",
     "page_report_email_template_label_greetings" : "Best regards:",
-    "page_report_email_template_label_developer" : " Team"
+    "page_report_email_template_label_developer" : " Team",
+    "page_report_email_label" : "Email",
+    "page_report_phone_label" : "Phone",
+    "page_report_address_label" : "Address",
+    "page_report_description_label" : "Description",
+    "page_report_submit_label" : "Submit"
 }

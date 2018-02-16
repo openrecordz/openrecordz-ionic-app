@@ -34,7 +34,12 @@
     "page_report_email_template_label_place" : "Luogo del ritiro:",
     "page_report_email_template_label_description" : "Richiesta:",
     "page_report_email_template_label_greetings" : "Cordiali saluti:",
-    "page_report_email_template_label_developer" : "Il team di "
+    "page_report_email_template_label_developer" : "Il team di ",
+    "page_report_email_label" : "Email",
+    "page_report_phone_label" : "Telefono",
+    "page_report_address_label" : "Indirizzo",
+    "page_report_description_label" : "Descrizione",
+    "page_report_submit_label" : "Invia"
     
 
     
