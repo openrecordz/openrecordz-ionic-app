@@ -21,8 +21,8 @@ export class NotificationsHistoryPage {
 
   private notifications: any;
 
-  private DEFAULT_LIMIT : integer = 50;  // default and max of onesignal
-  private DEFAULT_OFFSET : integer = 0; // default of onesignal
+  private DEFAULT_LIMIT : number = 50;  // default and max of onesignal
+  private DEFAULT_OFFSET : number = 0; // default of onesignal
 
   constructor(
     public navCtrl: NavController,
