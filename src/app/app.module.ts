@@ -19,6 +19,14 @@ import { NotificationsHistoryPage } from '../pages/notifications-history/notific
 // ############# providers #############
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DatasetService } from '../providers/dataset-service';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { AppVersion } from '@ionic-native/app-version';
+import { CallNumber } from '@ionic-native/call-number'; // mobile phone dialer
+// src https://www.npmjs.com/package/ionic-img-viewer
+// add the plugin in this way  --> npm i rxjs@5.5.2 and npm i ionic-img-viewer@2.8.0 <--
+import { IonicImageViewerModule } from 'ionic-img-viewer'; // pich to zoom
+import { OneSignal } from '@ionic-native/onesignal'; // push notification
 
 // begin position
 import { Geolocation } from '@ionic-native/geolocation';
@@ -32,15 +40,6 @@ import { ConnectivityProvider } from '../providers/connectivity';
 import { Network } from '@ionic-native/network';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 // end network
-
-import { DatasetService } from '../providers/dataset-service';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { AppVersion } from '@ionic-native/app-version';
-import { CallNumber } from '@ionic-native/call-number'; // mobile phone dialer
-// src https://www.npmjs.com/package/ionic-img-viewer
-// add the plugin in this way  --> npm i rxjs@5.5.2 and npm i ionic-img-viewer@2.8.0 <--
-import { IonicImageViewerModule } from 'ionic-img-viewer'; // pich to zoom
-import { OneSignal } from '@ionic-native/onesignal'; // push notification
 
 // begin translations
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';

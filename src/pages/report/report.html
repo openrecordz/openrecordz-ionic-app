@@ -21,16 +21,33 @@
 
 <ion-content padding>
 
-  <form [formGroup]="todo" (ngSubmit)="logForm()">
+  <form [formGroup]="form" (ngSubmit)="subtmitForm()">
+
+    <!-- email -->
     <ion-item>
-      <ion-label>Todo</ion-label>
-      <ion-input type="text" formControlName="title"></ion-input>
+      <ion-label>Email</ion-label>
+      <ion-input type="email" formControlName="email" placeholder="example@domain.com"></ion-input>
     </ion-item>
+
+    <!-- phone -->
+    <ion-item>
+      <ion-label>Phone</ion-label>
+      <ion-input type="tel" formControlName="phone" placeholder="(+55) 555-5555555"></ion-input>
+    </ion-item>
+
+    <!-- address -->
+    <ion-item>
+      <ion-label>Address</ion-label>
+      <ion-textarea formControlName="address" placeholder="enter your address"></ion-textarea>
+    </ion-item>
+
+    <!-- description -->
     <ion-item>
       <ion-label>Description</ion-label>
-      <ion-textarea formControlName="description"></ion-textarea>
+      <ion-textarea formControlName="description" placeholder="quantity, size.. "></ion-textarea>
     </ion-item>
-    <button ion-button type="submit" [disabled]="!todo.valid">Submit</button>
+
+    <button ion-button type="submit" [disabled]="!form.valid">Submit</button>
   </form>
 
 </ion-content>
