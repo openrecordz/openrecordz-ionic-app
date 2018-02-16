@@ -27,8 +27,11 @@ export class SearchPage {
 
   private records: any;
 
-   isFirstSearch : boolean ;
-   hasResults : boolean;
+  isFirstSearch : boolean ;
+  hasResults : boolean;
+
+  private criteria : string;
+  private datasetId : string;
 
   constructor(
     public navCtrl: NavController, 
@@ -41,11 +44,14 @@ export class SearchPage {
     translate.setDefaultLang(MyApp.appConfig.defaultLanguage);
     translate.use(MyApp.appConfig.defaultLanguage)
     // ########### end translations ###########
+
+    this.criteria = navParams.get('criteria');
+    this.datasetId = navParams.get('datasetId');
     
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchPage');
+    // console.log('ionViewDidLoad SearchPage');
 
     // var term = "*";
     // this.search(term).then(records => {
@@ -54,7 +60,7 @@ export class SearchPage {
     // });
 
     this.isFirstSearch = true;
-    console.log("isFirstSearch", this.isFirstSearch);
+    // console.log("isFirstSearch", this.isFirstSearch);
   
   }
 
@@ -65,8 +71,14 @@ export class SearchPage {
     // We will only perform the search if we have 3 or more characters
     if (term && term.trim() !== '' && term.trim().length > 3) { 
       this.search(term).then(records => {
-        console.log(records);
+        // console.log(records);
         this.records = records;
+
+        if(this.criteria === 'record') {
+          this.records = records['records'];
+          // console.log(results)
+        }
+
         this.isFirstSearch = false;
 
         if (this.records && this.records.length > 0 ) {
@@ -75,15 +87,22 @@ export class SearchPage {
           this.hasResults = false;
         }
 
-        console.log("hasResults", this.hasResults);
-        console.log("isFirstSearch", this.isFirstSearch);
+        // console.log("hasResults", this.hasResults);
+        // console.log("isFirstSearch", this.isFirstSearch);
       });
     }
   }
 
   search(searchParam: string) {
+    // deafult search is within datasets
     var url = MyApp.appConfig.urlApi + "/search?text=" + searchParam +"&crossdomainsearch=false";
-    console.log('SearchPage.search: url ==  ', url);
+    if(this.criteria === 'record') {
+      // search within records
+      if(this.datasetId) {
+        url = MyApp.appConfig.urlApi + "/datasets/"+ this.datasetId+ ".map?page=0&pagesize=200&text=" + searchParam;
+      }
+    } 
+    // console.log('SearchPage.search: url ==  ', url);
 
     return new Promise(resolve => {
       this.http.get(url)

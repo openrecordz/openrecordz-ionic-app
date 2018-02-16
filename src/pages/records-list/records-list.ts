@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 // pages
 import { RecordDetailsPage } from '../record-details/record-details';
 import { GoogleMapsPage } from '../google-maps/google-maps';
+import { SearchPage } from '../search/search';
 
 // context
 import { MyApp } from '../../app/app.component';
@@ -91,11 +92,20 @@ export class RecordsListPage {
     );
   }
 
-  onToolbarMapClick() {
+  private onToolbarMapClick() {
     // console.log("record-list.onToolbarMapClick");
     
     this.navCtrl.push(GoogleMapsPage,
       { dataset: this.dataset }
+    );
+  }
+
+  private onToolbarSearchClick() {
+    this.navCtrl.push(SearchPage,
+      { 
+        criteria: "record",
+        datasetId: this.dataset.id
+      }
     );
   }
 

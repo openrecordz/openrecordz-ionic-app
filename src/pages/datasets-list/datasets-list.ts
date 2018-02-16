@@ -75,7 +75,7 @@ export class DatasetsListPage {
     console.log("DatasetsListPage.onToolbarSearchClick");
 
     this.navCtrl.push(SearchPage,
-      // { text: text }
+      { criteria: "dataset" }
     );
   }
 
