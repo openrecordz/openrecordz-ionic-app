@@ -39,7 +39,11 @@
     "page_report_phone_label" : "Telefono",
     "page_report_address_label" : "Indirizzo",
     "page_report_description_label" : "Descrizione",
-    "page_report_submit_label" : "Invia"
+    "page_report_submit_label" : "Invia",
+    "page_report_placeholder_email_label" : "example@domain.com",
+    "page_report_placeholder_phone_label" : "(+55) 555-5555555",
+    "page_report_placeholder_address_label" : "inserisci il tuo indirizzo",
+    "page_report_placeholder_description_label" : "quantità, numero di oggetti.. "
     
 
     
