@@ -67,13 +67,20 @@ export class MyApp {
 
       this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
 
-      this.oneSignal.handleNotificationReceived().subscribe(() => {
         // do something when notification is received
-        console.log();
+      this.oneSignal.handleNotificationReceived().subscribe((push) => {  
+        console.log("MyApp.initOneSignal.handleNotificationReceived: push.payload == ", push.payload);
+    
+        if (push.payload.additionalData != undefined) {
+          console.log("MyApp.initOneSignal.handleNotificationReceived: push.payload.additionalData == ", push.payload.additionalData);
+          // let productId = push.payload.additionalData.id;
+          // console.log('product Id ', productId)
+        }
+
       });
 
+      // do something when a notification is opened
       this.oneSignal.handleNotificationOpened().subscribe(() => {
-        // do something when a notification is opened
         console.log();
       });
 
