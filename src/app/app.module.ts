@@ -15,7 +15,6 @@ import { SearchPage } from '../pages/search/search';
 import { ReportPage } from '../pages/report/report';
 import { NotificationsHistoryPage } from '../pages/notifications-history/notifications-history';
 
-
 // ############# providers #############
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,6 +26,7 @@ import { CallNumber } from '@ionic-native/call-number'; // mobile phone dialer
 // add the plugin in this way  --> npm i rxjs@5.5.2 and npm i ionic-img-viewer@2.8.0 <--
 import { IonicImageViewerModule } from 'ionic-img-viewer'; // pich to zoom
 import { OneSignal } from '@ionic-native/onesignal'; // push notification
+import { IonicStorageModule } from '@ionic/storage';
 
 // begin position
 import { Geolocation } from '@ionic-native/geolocation';
@@ -74,6 +74,7 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     BrowserModule,
     IonicImageViewerModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     HttpClientModule,
     // source : https://ionicframework.com/docs/developer-resources/ng2-translate/
     TranslateModule.forRoot({

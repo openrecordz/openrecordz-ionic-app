@@ -5,6 +5,8 @@ import { NavController, Platform} from 'ionic-angular';
 import { AppVersion } from '@ionic-native/app-version';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { TranslateService } from '@ngx-translate/core';
+import { OneSignal } from '@ionic-native/onesignal';
+import { Storage } from '@ionic/storage';
 
 // context
 import { MyApp } from '../../app/app.component';
@@ -24,12 +26,17 @@ export class AboutPage {
   private versionCode : any;
   private appName : any;
 
+  // true if the notification is enabled, false otherwise.
+  private notificationSetting: boolean = false; // false by default
+
   constructor(
     public navCtrl: NavController,
     private platform: Platform, 
     public appVersion: AppVersion,
     private iab: InAppBrowser,
-    translate: TranslateService
+    private translate: TranslateService,
+    private oneSignal: OneSignal,
+    private storage: Storage
   ) {
     this.developer = MyApp.appConfig.developer;
     // this.appName = this.appVersion.getAppName();
@@ -75,6 +82,13 @@ export class AboutPage {
     //  else {
     //   console.log("platform is core");
     // }
+
+    // retrieve the value of setting notification from storage
+    this.storage.get('setting-notification').then((val) => {
+      console.log('notification settings is ', val);
+
+      this.notificationSetting = val;
+    });
   }
 
   openUrl(url) {
@@ -82,4 +96,18 @@ export class AboutPage {
     // const browser = this.iab.create(this.siteUrl, "_system");
     // browser.show()
   } 
+
+  private toggleNotifications(event) {
+    var toggleValue = event.checked;
+    console.log("toggleNotifications", toggleValue );
+
+    if (!this.platform.is('core')) {
+      this.oneSignal.setSubscription(toggleValue);
+
+      // update the setting value on storage
+      this.storage.set('setting-notification', toggleValue);
+
+      this.notificationSetting = toggleValue;
+    }
+  }
 }
