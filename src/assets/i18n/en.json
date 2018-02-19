@@ -2,6 +2,8 @@
     "page_about_title": "About",
     "page_about_powered_by": "Powered by",
     "page_about_see_dev_website": "See website",
+    "page_about_settings_title" : "Settings", 
+    "page_about_setting_notification" : "Push Notifications",
 
     "page_calendar_title": "Calendar",
     "page_calendar_loading_data": "Loading..",
