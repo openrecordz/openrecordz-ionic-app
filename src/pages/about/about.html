@@ -46,11 +46,11 @@
 
   <ion-card>
     <ion-card-header>
-      Settings
+       {{ 'page_about_settings_title' | translate }}
     </ion-card-header>
     <ion-card-content>
     <ion-item>
-      <ion-label> Push notification</ion-label>
+      <ion-label>  {{ 'page_about_setting_notification' | translate }}</ion-label>
       <ion-toggle (ionChange)="toggleNotifications($event)" checked="{{notificationSetting}}"></ion-toggle>
     </ion-item>
     </ion-card-content>
