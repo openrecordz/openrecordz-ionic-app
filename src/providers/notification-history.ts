@@ -26,7 +26,8 @@ export class NotificationHistoryProvider {
    * @param offset Result offset. Default is 0. Results are sorted by queued_at in descending order. 
   *                Queued_at is the unixtime representation of the time that the notification was queued.
    */
-  load(limit, offset) {
+  // load(limit, offset) {
+  load() {
     let headers = new Headers(
       { 'Authorization': 'Basic ' + this.oneSignalRestApiKey }
     );
@@ -39,7 +40,7 @@ export class NotificationHistoryProvider {
       // We're using Angular HTTP provider to request the data,
       // then on the response, it'll map the JSON data to a parsed JS object.
       // Next, we process the data and resolve the promise with the new data.
-      this.http.get('https://onesignal.com/api/v1/notifications?app_id=' + this.oneSignalAppId + '&limit=' + limit + '&offset=' + offset, options)
+      this.http.get('https://onesignal.com/api/v1/notifications?app_id=' + this.oneSignalAppId /*+ '&limit=' + limit + '&offset=' + offset*/, options)
         .map(res => res.json())
         .subscribe(notifications => {
           // we've got back the raw data, now generate the core schedule data
