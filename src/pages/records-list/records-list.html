@@ -22,7 +22,7 @@
       </ion-refresher-content>
     </ion-refresher>
 
-  <ion-list>
+  <ion-list *ngIf="records && records.length > 0 else emptyTemplate">
     <ion-card *ngFor="let record of records" (click)="onRecordClicked(record)">
 
       <ion-item>
@@ -63,4 +63,10 @@
       </ion-infinite-scroll-content>
     </ion-infinite-scroll>
   </ion-list>
+
+  <ng-template #emptyTemplate>
+    <ion-card-title class="truncate" padding> 
+     {{ 'page_records_list_data_unavailable' | translate }}
+    </ion-card-title>
+  </ng-template>
 </ion-content>

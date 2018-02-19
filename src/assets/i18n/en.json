@@ -17,6 +17,7 @@
 
     "page_records_list_loading_data": "Loading..",
     "page_records_list_refreshing_text": "Refreshing..",
+    "page_records_list_data_unavailable": "No data available",
 
     "page_search_title": "Search",
     "page_search_no_results_title": "No resutls",
