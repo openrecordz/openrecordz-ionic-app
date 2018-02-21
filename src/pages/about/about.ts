@@ -20,7 +20,7 @@ export class AboutPage {
   private developer: String;
   private domain: String;
   private devWebSite : string;
-  private sites : Array<any>;
+  private aboutMap : Array<any>;
 
   private versionNumber : any;
   private versionCode : any;
@@ -52,7 +52,7 @@ export class AboutPage {
 
     this.domain = MyApp.appConfig.domain;
     this.devWebSite = MyApp.appConfig.devWebSite;
-    this.sites = MyApp.appConfig.sites;
+    this.aboutMap = MyApp.appConfig.aboutMap;
   }
 
   ionViewDidLoad() {
