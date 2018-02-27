@@ -33,17 +33,18 @@
     
           <ion-card-content>
             <!-- title -->
-            <ion-card-title *ngIf="!dataset._name; else templateTitle" class="truncate">
+            <h2  text-wrap *ngIf="!dataset._name; else templateTitle">
               <!-- title not valid -->
               {{dataset._id}}
-            </ion-card-title>
+            </h2>
             <!-- title valid -->
             <ng-template #templateTitle>
-              <ion-card-title class="truncate"> {{dataset._name}}</ion-card-title>
+              <h2 text-wrap> {{dataset._name}}</h2>
             </ng-template>
     
             <!-- description -->
-            <p class="truncate-block" *ngIf="dataset._description">{{dataset._description}}</p>
+            <!-- <p class="truncate-block" *ngIf="dataset._description">{{dataset._description}}</p> -->
+            <p  text-wrap *ngIf="dataset._description">{{dataset._description}}</p>
           </ion-card-content>
     
           <ion-icon clear item-right name="ios-arrow-forward"></ion-icon>

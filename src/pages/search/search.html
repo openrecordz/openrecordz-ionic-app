@@ -24,17 +24,17 @@
   
         <ion-card-content>
           <!-- title -->
-          <ion-card-title *ngIf="!item._title; else templateTitle" class="truncate">
+          <h1 *ngIf="!item._title; else templateTitle"  text-wrap>
             <!-- title not valid -->
             {{item._id}}
-          </ion-card-title>
+          </h1>
           <!-- title valid -->
           <ng-template #templateTitle>
-            <ion-card-title class="truncate"> {{item._title}}</ion-card-title>
+            <h1  text-wrap> {{item._title}}</h1>
           </ng-template>
   
           <!-- description -->
-          <p *ngIf="item._description">{{item._description}}</p>
+          <p  text-wrap *ngIf="item._description">{{item._description}}</p>
         </ion-card-content>
   
         <ion-icon clear item-right name="ios-arrow-forward"></ion-icon>

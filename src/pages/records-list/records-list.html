@@ -9,7 +9,7 @@
         <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title *ngIf="dataset">{{dataset._name}}</ion-title>
+    <ion-title *ngIf="dataset"  text-wrap>{{dataset._name}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -23,39 +23,47 @@
     </ion-refresher>
 
   <ion-list *ngIf="records && records.length > 0 else emptyTemplate">
-    <ion-card *ngFor="let record of records" (click)="onRecordClicked(record)">
+    <div *ngFor="let record of records">
 
-      <ion-item>
-        <ion-avatar item-start>
-          <img src="assets/imgs/ic_avatar_circle_gray.png">
-        </ion-avatar>
-        <h2>{{record._createdby}}</h2>
-        <p>{{record._createdon | date: 'dd/MM/yyyy'}}</p>
-      </ion-item>
-    
-      <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-list-image">
-    
-      <ion-card-content>
-
-        <!-- title -->
-        <ion-card-title *ngIf="!record._title; else templateTitle" class="truncate">
-          <!-- title not valid -->
-          {{record._id}}
-        </ion-card-title>
-        <!-- title valid -->
-        <ng-template #templateTitle>
-          <ion-card-title class="truncate"> {{record._title}}</ion-card-title>
-        </ng-template>
-
-        <!-- tags -->
-        <!-- <p *ngIf="record.tags">tags: {{record.tags}}</p> -->
+      <ion-card (click)="onRecordClicked(record)">
       
-        <!-- description -->
-        <p class="truncate-block" *ngIf="record._description">{{record._description}}</p>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/imgs/ic_avatar_circle_gray.png">
+          </ion-avatar>
+          <h2 text-wrap>{{record._createdby}}</h2>
+          <p>{{record._createdon | date: 'dd/MM/yyyy'}}</p>
+        </ion-item>
       
-      </ion-card-content>
-    
-    </ion-card>
+        <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-list-image">
+      
+        <ion-card-content>
+      
+          <!-- title -->
+          <ion-item no-lines no-padding no-margin>
+            <h1 text-wrap *ngIf="!record._title; else templateTitle">
+              <!-- title not valid -->
+              {{record._id}}
+            </h1>
+            <!-- title valid -->
+            <ng-template #templateTitle>
+              <h1 text-wrap> {{record._title}}</h1>
+            </ng-template>
+
+            <ion-icon clear item-right name="ios-arrow-forward"></ion-icon>
+          </ion-item>
+      
+          <!-- tags -->
+          <!-- <p *ngIf="record.tags">tags: {{record.tags}}</p> -->
+      
+          <!-- description -->
+          <!-- <p class="truncate-block" *ngIf="record._description">{{record._description}}</p> -->
+          <p text-wrap *ngIf="record._description">{{record._description}}</p>
+      
+        </ion-card-content>
+      </ion-card>
+    </div>
+   
 
 
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
@@ -65,8 +73,8 @@
   </ion-list>
 
   <ng-template #emptyTemplate>
-    <ion-card-title class="truncate" padding> 
+    <h1  text-wrap padding> 
      {{ 'page_records_list_data_unavailable' | translate }}
-    </ion-card-title>
+    </h1>
   </ng-template>
 </ion-content>
