@@ -11,6 +11,9 @@ import { Storage } from '@ionic/storage';
 // context
 import { MyApp } from '../../app/app.component';
 
+// pages
+import { NotificationsPage } from '../settings/notifications/notifications';
+
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html',
@@ -26,8 +29,8 @@ export class AboutPage {
   private versionCode : any;
   private appName : any;
 
-  // true if the notification is enabled, false otherwise.
-  private notificationSetting: boolean = false; // false by default
+  // // true if the notification is enabled, false otherwise.
+  // private notificationSetting: boolean = false; // false by default
 
   constructor(
     public navCtrl: NavController,
@@ -36,7 +39,7 @@ export class AboutPage {
     private iab: InAppBrowser,
     private translate: TranslateService,
     private oneSignal: OneSignal,
-    private storage: Storage
+    // private storage: Storage
   ) {
     this.developer = MyApp.appConfig.developer;
     // this.appName = this.appVersion.getAppName();
@@ -83,12 +86,12 @@ export class AboutPage {
     //   console.log("platform is core");
     // }
 
-    // retrieve the value of setting notification from storage
-    this.storage.get('setting-notification').then((val) => {
-      console.log('notification settings is ', val);
+    // // retrieve the value of setting notification from storage
+    // this.storage.get('setting-notification').then((val) => {
+    //   console.log('notification settings is ', val);
 
-      this.notificationSetting = val;
-    });
+    //   this.notificationSetting = val;
+    // });
   }
 
   openUrl(url) {
@@ -97,17 +100,29 @@ export class AboutPage {
     // browser.show()
   } 
 
-  private toggleNotifications(event) {
-    var toggleValue = event.checked;
-    console.log("toggleNotifications", toggleValue );
+  // private toggleNotifications(event) {
+  //   var toggleValue = event.checked;
+  //   console.log("toggleNotifications", toggleValue );
 
-    if (!this.platform.is('core')) {
-      this.oneSignal.setSubscription(toggleValue);
+  //   if (!this.platform.is('core')) {
+  //     this.oneSignal.setSubscription(toggleValue);
 
-      // update the setting value on storage
-      this.storage.set('setting-notification', toggleValue);
+  //     // update the setting value on storage
+  //     this.storage.set('setting-notification', toggleValue);
 
-      this.notificationSetting = toggleValue;
-    }
+  //     this.notificationSetting = toggleValue;
+  //   }
+  // }
+
+  private onNotificationSettingsClick() {
+    // alert("BZZ");
+
+    this.openNotificationPage();
+  }
+
+  private openNotificationPage() {
+    this.navCtrl.push(NotificationsPage,
+      // { record: record, title: title }
+    );
   }
 }

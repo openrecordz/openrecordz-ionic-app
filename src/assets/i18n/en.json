@@ -46,7 +46,10 @@
     "page_report_placeholder_email_label" : "example@domain.com",
     "page_report_placeholder_phone_label" : "(+55) 555-5555555",
     "page_report_placeholder_address_label" : "enter your address",
-    "page_report_placeholder_description_label" : "quantity, size.. "
+    "page_report_placeholder_description_label" : "quantity, size.. ",
+
+    "page_settings_notification_enable_push_lable" : "Enable push notifications"
+
 
 
 }

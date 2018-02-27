@@ -14,6 +14,7 @@ import { GoogleMapsPage } from '../pages/google-maps/google-maps';
 import { SearchPage } from '../pages/search/search';
 import { ReportPage } from '../pages/report/report';
 import { NotificationsHistoryPage } from '../pages/notifications-history/notifications-history';
+import { NotificationsPage } from '../pages/settings/notifications/notifications';
 
 // ############# providers #############
 import { StatusBar } from '@ionic-native/status-bar';
@@ -66,6 +67,7 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     SearchPage,
     ReportPage,
     NotificationsHistoryPage,
+    NotificationsPage,
     // pipes
     MomentPipe,
   ],
@@ -97,7 +99,8 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     GoogleMapsPage,
     SearchPage,
     ReportPage,
-    NotificationsHistoryPage
+    NotificationsHistoryPage,
+    NotificationsPage,
   ],
   providers: [
     StatusBar,
