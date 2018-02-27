@@ -13,13 +13,6 @@ import { ReportPage } from '../report/report';
 // context
 import { MyApp } from '../../app/app.component';
 
-/**
- * Generated class for the DatasetsListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-datasets-list',
   templateUrl: 'datasets-list.html',

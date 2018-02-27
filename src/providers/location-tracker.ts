@@ -4,15 +4,9 @@ import 'rxjs/add/operator/filter';
 import { Events } from 'ionic-angular';
 import { MyApp } from '../app/app.component';
 
-// tutorial: 
+// source: 
 // https://www.joshmorony.com/adding-background-geolocation-to-an-ionic-2-application/
 
-/*
-  Generated class for the LocationTrackerProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class LocationTrackerProvider {
 
@@ -60,8 +54,6 @@ export class LocationTrackerProvider {
   stopTracking() {
 
     // console.log('stopTracking');
-
-    // this.backgroundGeolocation.finish();
     this.watch.unsubscribe();
 
   }

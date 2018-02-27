@@ -1,19 +1,11 @@
-<!--
-  Generated template for the RecordDetailsPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
     <!-- title -->
     <ion-title *ngIf="!record._title; else templateTitle">
-      <!-- title not valid -->
       {{record.id}}
     </ion-title>
-
-    <!-- title valid -->
     <ng-template #templateTitle>
       <ion-title>{{record._title}}</ion-title>
     </ng-template>
@@ -35,22 +27,10 @@
     <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-details-image" imageViewer />
 
     <ion-card-content>
-        <!-- <ion-item *ngIf="record._image_small || record.tags">
-          <ion-avatar *ngIf="record._image_small" item-start>
-            <img src="{{record._image_small}}">
-          </ion-avatar>
-
-          <h2 *ngIf="record.tags">
-            {{record.tags}}
-          </h2>
-        </ion-item> -->
-
         <!-- title -->
         <h1 *ngIf="!record._title; else templateTitle">
-          <!-- title not valid -->
           {{record._id}}
         </h1>
-        <!-- title valid -->
         <ng-template #templateTitle>
           <h1> {{record._title}}</h1>
         </ng-template>

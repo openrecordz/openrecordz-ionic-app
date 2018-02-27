@@ -47,7 +47,6 @@ export class CalendarPage {
   }
 
   ionViewDidLoad() {
-    // console.log('ionViewDidLoad CalendarRecordsListPage');
     this.loadDatasetGlossary(this.datasetGlossaryId);
     this.loadRecords(this.datasetId);
   }
@@ -65,10 +64,6 @@ export class CalendarPage {
       .then(data => {
         // records retrieved 
         this.records = data;
-        
-        // this.records.forEach(element => {
-        //   console.log(element.when);
-        // });
       });
   }
 

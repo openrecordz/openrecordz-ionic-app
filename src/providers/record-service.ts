@@ -1,36 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { /*Config ,*/ Events} from 'ionic-angular';
+import { Events} from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
 // context
 import { MyApp } from '../app/app.component';
 
-/*
-  Generated class for the RecordService provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class RecordService {
 
   //data: any;
   urlApi: String;
 
-    constructor(public http: Http,/* config: Config,*/ public events: Events) {
+    constructor(public http: Http, public events: Events) {
     console.log('RecordService Provider');
-    // this.urlApi=config.get("urlApi");
     // console.log("urlApi : "+ this.urlApi);
 
     this.urlApi = MyApp.appConfig.urlApi;
   }
 
 load(datasetId:String, page:number=0, pageSize:number=10) {
- // if (this.data) {
-    // already loaded data
-  //  return Promise.resolve(this.data);
- // }
 
     this.http.get(this.urlApi + '/datasets/' + datasetId + '?page=' + 0 + "&pagesize=" + pageSize)
         .map(res => res.json())

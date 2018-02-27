@@ -3,12 +3,6 @@ import 'rxjs/add/operator/map';
 import { Injectable } from '@angular/core';
 import { MyApp } from "../app/app.component";
 
-/*
-  Generated class for the MailgunProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class MailgunProvider {
 
@@ -36,15 +30,12 @@ export class MailgunProvider {
       { headers: headers }
     );
 
-
     const formData = new FormData();
     formData.append('from', recipient);
     formData.append('to', recipient);
     formData.append('subject', subject);
     formData.append('html', message);
     // formData.append('attachment', attachment, 'report.txt');
-
-
 
     return new Promise(resolve => {
       // We're using Angular HTTP provider to request the data,
@@ -57,21 +48,5 @@ export class MailgunProvider {
           resolve(response);
         });
     });
-
-
-
-    // this.http.post(this.mailgunUrl, formData, options)
-    //       .map(result => result.json())
-    //       .subscribe(
-    //         result => console.log('success!', result),
-    //         error => console.error('fail', error)
-    //       );
-    //   }
   }
-
-
-
-
-  
-
 }

@@ -24,7 +24,7 @@ export class NotificationHistoryProvider {
   /**
    * @param limit How many notifications to return. Max is 50. Default is 50
    * @param offset Result offset. Default is 0. Results are sorted by queued_at in descending order. 
-  *                Queued_at is the unixtime representation of the time that the notification was queued.
+   *                Queued_at is the unixtime representation of the time that the notification was queued.
    */
   // load(limit, offset) {
   load() {

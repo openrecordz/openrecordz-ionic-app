@@ -9,13 +9,6 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { CallNumber } from '@ionic-native/call-number';
 import { TranslateService } from '@ngx-translate/core';
 
-/**
- * Generated class for the RecordDetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-record-details',
   templateUrl: 'record-details.html',
@@ -186,19 +179,12 @@ export class RecordDetailsPage {
   }
 
   private upsetClickableMapUrl(currentLat, currentLon) {
-    this.clickableMapUrl = "https://www.google.com/maps/dir/?api=1&origin=" + currentLat + "," + currentLon + "&destination=" + this.recordLat + "," + this.recordLon + "&travelmode=walking";
+    this.clickableMapUrl = "https://www.google.com/maps/dir/?api=1&origin=" + currentLat + "," + currentLon +
+     "&destination=" + this.recordLat + "," + this.recordLon + "&travelmode=walking";
   }
 
   private onMapClicked() {
-    // console.log("RecordDetailsPage.onMapClicked");
-    // console.log("RecordDetailsPage.onMapClicked: this.currentLat == " + this.currentLat);
-    // console.log("RecordDetailsPage.onMapClicked: this.currentLon == " + this.currentLon);
-    // console.log("RecordDetailsPage.onMapClicked: this.recordLat == " + this.recordLat);
-    // console.log("RecordDetailsPage.onMapClicked: this.recordLon == " + this.recordLon);
-
     this.iab.create(this.clickableMapUrl, "_system");
-    // const browser = this.iab.create(this.clickableMapUrl, "_system");
-    // browser.show()
   }
 
   private onPhoneNumberClick(phoneNumber) {
@@ -209,7 +195,5 @@ export class RecordDetailsPage {
 
   private openUrl(url) {
     this.iab.create(url, "_system");
-    // const browser = this.iab.create(this.siteUrl, "_system");
-    // browser.show()
   } 
 }

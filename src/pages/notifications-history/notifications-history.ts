@@ -5,13 +5,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { NotificationHistoryProvider } from '../../providers/notification-history';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
-/**
- * Generated class for the NotificationsHistoryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-notifications-history',
   templateUrl: 'notifications-history.html',

@@ -10,13 +10,6 @@ import { MyApp } from '../../app/app.component';
 import { MailgunProvider } from '../../providers/mailgun';
 import { TranslateService } from '@ngx-translate/core';
 
-/**
- * Generated class for the ReportPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-report',
   templateUrl: 'report.html',

@@ -1,9 +1,3 @@
-<!--
-  Generated template for the CalendarRecordsListPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -22,8 +16,6 @@
   <ion-list>
     <ion-card *ngFor="let record of records" (click)="onClick(record)">
 
-      <!-- check if the file is a record (exclude binaries and datasets) -->
-      <!-- <ion-item *ngIf="record._type === 'record'"> -->
       <ion-item>
         <ion-avatar item-left *ngIf="record._main_image">
           <img src="{{record._main_image}}">
@@ -31,10 +23,8 @@
 
         <!-- title -->
         <h2 text-wrap *ngIf="!record._title; else templateTitle" class="record-title">
-          <!-- title not valid -->
           {{record.id}}
         </h2>
-        <!-- title valid -->
         <ng-template #templateTitle>
           <h2  text-wrap class="record-title"> {{record._title}}</h2>
         </ng-template>
@@ -42,6 +32,7 @@
         <!-- week of day -->
         <span *ngIf="record.when" class="day-of-week-background" text-uppercase>{{record.when | moment:'dddd'}}</span>
 
+        <!-- transfer method -->
         <p *ngIf="record.transfer_method"  text-wrap >{{record.transfer_method}}</p>
 
         <!-- day of month and month name -->

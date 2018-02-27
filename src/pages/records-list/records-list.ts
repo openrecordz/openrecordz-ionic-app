@@ -11,13 +11,6 @@ import { SearchPage } from '../search/search';
 // context
 import { MyApp } from '../../app/app.component';
 
-/**
- * Generated class for the RecordsListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-records-list',
   templateUrl: 'records-list.html',

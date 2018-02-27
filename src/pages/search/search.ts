@@ -12,13 +12,6 @@ import { TranslateService } from '@ngx-translate/core';
 // pages
 import { RecordDetailsPage } from '../record-details/record-details';
 
-/**
- * Generated class for the SearchPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-search',
   templateUrl: 'search.html',

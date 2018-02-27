@@ -5,13 +5,6 @@ import 'rxjs/add/operator/map';
 // context
 import { MyApp } from '../app/app.component';
 
-
-/*
-  Generated class for the RecordService provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class DatasetService {
 
@@ -26,10 +19,6 @@ export class DatasetService {
   }
 
   load() {
-  // if (this.datasets) {
-      // already loaded datasets
-  //   return Promise.resolve(this.datasets);
-    //}
 
     // don't have the data yet
     return new Promise(resolve => {

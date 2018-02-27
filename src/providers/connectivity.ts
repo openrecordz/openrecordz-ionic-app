@@ -3,14 +3,6 @@ import { Network } from '@ionic-native/network';
 import { Platform } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 
-// declare var Connection;
-
-/*
-  Generated class for the ConnectivityProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class ConnectivityProvider {
 

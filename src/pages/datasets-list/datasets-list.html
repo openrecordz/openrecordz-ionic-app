@@ -1,9 +1,4 @@
-<!--
-  Generated template for the DatasetsListPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <ion-buttons end (click)="onToolbarSearchClick()">
@@ -18,15 +13,15 @@
 
 <ion-content>
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <!-- <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."> -->
       <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="{{ 'page_datasets_list_refreshing_text' | translate }}">
     </ion-refresher-content>
   </ion-refresher>
 
   <ion-list>
     <div *ngFor="let dataset of datasets" (click)="onDatasetClicked(dataset)">
+      <!-- shows the dataset only if it contains the tags "inApp" and "inHome" -->
       <ion-card *ngIf="dataset && dataset._tags && dataset._tags.indexOf('inApp') !== -1 && dataset._tags.indexOf('inHome') !== -1">
-        <!-- shows the dataset only if it contains the tags "inApp" and "inHome" -->
+      
         <ion-item >
   
           <img class="minified-image circle-image" src="{{dataset._main_image}}" *ngIf="dataset._main_image" item-left>
@@ -34,16 +29,13 @@
           <ion-card-content>
             <!-- title -->
             <h2  text-wrap *ngIf="!dataset._name; else templateTitle">
-              <!-- title not valid -->
               {{dataset._id}}
             </h2>
-            <!-- title valid -->
             <ng-template #templateTitle>
               <h2 text-wrap> {{dataset._name}}</h2>
             </ng-template>
     
             <!-- description -->
-            <!-- <p class="truncate-block" *ngIf="dataset._description">{{dataset._description}}</p> -->
             <p  text-wrap *ngIf="dataset._description">{{dataset._description}}</p>
           </ion-card-content>
     

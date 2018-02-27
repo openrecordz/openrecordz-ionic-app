@@ -17,7 +17,6 @@
 <ion-content>
 
     <ion-refresher (ionRefresh)="doRefresh($event)">
-      <!-- <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."> -->
       <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="{{ 'page_records_list_refreshing_text' | translate }}">
       </ion-refresher-content>
     </ion-refresher>
@@ -42,30 +41,22 @@
           <!-- title -->
           <ion-item no-lines no-padding no-margin>
             <h1 text-wrap *ngIf="!record._title; else templateTitle">
-              <!-- title not valid -->
               {{record._id}}
             </h1>
-            <!-- title valid -->
             <ng-template #templateTitle>
               <h1 text-wrap> {{record._title}}</h1>
             </ng-template>
 
             <ion-icon clear item-right name="ios-arrow-forward"></ion-icon>
           </ion-item>
-      
-          <!-- tags -->
-          <!-- <p *ngIf="record.tags">tags: {{record.tags}}</p> -->
-      
+    
           <!-- description -->
-          <!-- <p class="truncate-block" *ngIf="record._description">{{record._description}}</p> -->
           <p text-wrap *ngIf="record._description">{{record._description}}</p>
       
         </ion-card-content>
       </ion-card>
     </div>
    
-
-
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
       <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{ 'page_records_list_loading_data' | translate }}">
       </ion-infinite-scroll-content>

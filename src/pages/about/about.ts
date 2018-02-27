@@ -29,33 +29,24 @@ export class AboutPage {
   private versionCode : any;
   private appName : any;
 
-  // // true if the notification is enabled, false otherwise.
-  // private notificationSetting: boolean = false; // false by default
-
   constructor(
     public navCtrl: NavController,
     private platform: Platform, 
     public appVersion: AppVersion,
     private iab: InAppBrowser,
     private translate: TranslateService,
-    private oneSignal: OneSignal,
-    // private storage: Storage
-  ) {
-    this.developer = MyApp.appConfig.developer;
-    // this.appName = this.appVersion.getAppName();
-    // this.packageName = this.appVersion.getPackageName();
-    // this.versionCode = this.appVersion.getVersionCode();
-    // this.versionNumber = this.appVersion.getVersionNumber();
+    private oneSignal: OneSignal) {
+      this.developer = MyApp.appConfig.developer;
 
-    // ########### begin translations ###########
-    // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang(MyApp.appConfig.defaultLanguage);
-    translate.use(MyApp.appConfig.defaultLanguage)
-    // ########### end translations ###########
+      // ########### begin translations ###########
+      // this language will be used as a fallback when a translation isn't found in the current language
+      translate.setDefaultLang(MyApp.appConfig.defaultLanguage);
+      translate.use(MyApp.appConfig.defaultLanguage)
+      // ########### end translations ###########
 
-    this.domain = MyApp.appConfig.domain;
-    this.devWebSite = MyApp.appConfig.devWebSite;
-    this.aboutMap = MyApp.appConfig.aboutMap;
+      this.domain = MyApp.appConfig.domain;
+      this.devWebSite = MyApp.appConfig.devWebSite;
+      this.aboutMap = MyApp.appConfig.aboutMap;
   }
 
   ionViewDidLoad() {
@@ -82,47 +73,18 @@ export class AboutPage {
         this.appName = appName;
       });
     }
-    //  else {
-    //   console.log("platform is core");
-    // }
-
-    // // retrieve the value of setting notification from storage
-    // this.storage.get('setting-notification').then((val) => {
-    //   console.log('notification settings is ', val);
-
-    //   this.notificationSetting = val;
-    // });
   }
 
   openUrl(url) {
     this.iab.create(url, "_system");
-    // const browser = this.iab.create(this.siteUrl, "_system");
-    // browser.show()
   } 
 
-  // private toggleNotifications(event) {
-  //   var toggleValue = event.checked;
-  //   console.log("toggleNotifications", toggleValue );
-
-  //   if (!this.platform.is('core')) {
-  //     this.oneSignal.setSubscription(toggleValue);
-
-  //     // update the setting value on storage
-  //     this.storage.set('setting-notification', toggleValue);
-
-  //     this.notificationSetting = toggleValue;
-  //   }
-  // }
-
   private onNotificationSettingsClick() {
-    // alert("BZZ");
-
     this.openNotificationPage();
   }
 
   private openNotificationPage() {
-    this.navCtrl.push(NotificationsPage,
-      // { record: record, title: title }
+    this.navCtrl.push(NotificationsPage
     );
   }
 }
