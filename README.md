@@ -10,8 +10,6 @@ Per creare un'App con Openrecordz assicurarsi di avere installato:
 
 Per ulteriori dettagli si consiglia di seguire la [Dcoumentazione ufficiale](https://ionicframework.com/docs/v1/guide/installation.html)
 
-https://ionicframework.com/docs/v1/guide/installation.html
-
 ### Altri requisiti
 Registrati su [Openrecordz](http://www.openrecordz.com) e accedi alla tua dashboard
 
