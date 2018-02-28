@@ -15,7 +15,7 @@ Registrati su [Openrecordz](http://www.openrecordz.com) e accedi alla tua dashbo
 
 Per l'utilizzo della [console](http://apps.openrecordz.com/dashboard) fare riferimento al [wiki](https://github.com/openrecordz/openrecordz-ionic-app/wiki)
 
-### Installazione
+## Installazione
 Clonare o scaricare Openrecordz Ionic [Sample App](https://github.com/openrecordz/openrecordz-ionic-app) sulla tua macchina
 
 Estrarre l'archivio e posizionarsi nella root del progetto appena scaricato ed eseguire il comando 
@@ -40,3 +40,20 @@ Estrarre l'archivio e posizionarsi nella root del progetto appena scaricato ed e
 * **firebaseSenderId**: Sender id necessario per l'invio delle notifiche push
 * **mailgunUrl** : URL di Mailgun necessario per l'invio delle emaill - fornito da Mailgun
 * **mailgunApiKey** : Chiave necessaria per l'invio delle email - fornita da Mailgun
+
+## Avvio
+### Piattaforme supportate
+Posizionarsi nalla root del progetto e aggiungere la piattaforma desiderata 
+
+`$ ionic cordova platform add android`  per Android 
+
+`$ ionic cordova platform add ios` per iOS
+
+### Emulatori
+
+`$ ionic cordova emulate android --prod`  per Android 
+
+`$ ionic cordova emulate ios --prod`  per iOS 
+
+### Dispositivi fisici
+`$ ionic cordova run android --device --prod`  per Android 
