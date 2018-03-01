@@ -15,6 +15,10 @@
 
 <ion-content padding>
 
+  <p text-wrap>{{ 'page_report_message_label' | translate }}</p>
+
+  <button ion-button block (click)="showExample()">{{'page_report_btn_example_label' | translate }}</button>
+
   <form [formGroup]="form" (ngSubmit)="subtmitForm()">
 
     <!-- email -->

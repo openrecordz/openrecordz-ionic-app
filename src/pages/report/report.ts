@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController} from 'ionic-angular';
+import { NavController, NavParams, ViewController, ToastController} from 'ionic-angular';
 
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
@@ -24,7 +24,8 @@ export class ReportPage {
     private formBuilder: FormBuilder,
     public viewCtrl: ViewController, 
     private mailgun: MailgunProvider,
-    private translate: TranslateService) {
+    private translate: TranslateService,
+    private toastCtrl: ToastController) {
 
     // ########### begin translations ###########
     // this language will be used as a fallback when a translation isn't found in the current language
@@ -111,6 +112,17 @@ export class ReportPage {
 
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+
+  private showExample() {
+    var reportExample = this.translate.get('page_report_example_label')['value'];
+
+    const toast = this.toastCtrl.create({
+      message: reportExample,
+      showCloseButton: true,
+      closeButtonText: 'Ok'
+    });
+    toast.present();
   }
 
 }
