@@ -13,6 +13,9 @@ import { OneSignal } from '@ionic-native/onesignal';
 // custom configurations
 import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
 
+// constants
+import { TAG_NOTIFICATION_RECYCLING } from '../utils/Constants';
+
 @Component({
   templateUrl: 'app.html',
   providers: [LocationTrackerProvider]
@@ -37,7 +40,6 @@ export class MyApp {
     @Inject(APP_CONFIG_TOKEN) private config: ApplicationConfig) {
 
     MyApp.appConfig = config;
-
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -85,6 +87,22 @@ export class MyApp {
       });
 
       this.oneSignal.endInit();
+
+      console.log('*** sendTags::');
+      this.oneSignal.getTags()
+        .then(tags => {
+          console.log(tags);
+          let jsonTags = JSON.stringify(tags);
+          console.log('Tags Received: ', jsonTags, jsonTags.length);
+          if (jsonTags.length <= 2) {
+            this.oneSignal.sendTag(TAG_NOTIFICATION_RECYCLING, "true");
+          }
+
+
+        })
+        .catch((err) => {
+          console.log('Unable to get tags.', err);
+        });
     }
   }
 }

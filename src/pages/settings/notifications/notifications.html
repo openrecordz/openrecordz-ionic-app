@@ -19,4 +19,15 @@
     </div>
   </ion-card>
 
+  <ion-card>
+    <ion-list>    
+      <span *ngFor="let tag of tags; let i = index">
+        <ion-item>
+          <ion-label>{{tagsName[i]}}</ion-label>
+          <ion-toggle checked="{{tagsStatus[tag]}}" (ionChange)="setTagsValues($event, tag)"></ion-toggle>
+        </ion-item>
+      </span>
+    </ion-list>
+  </ion-card>
+
 </ion-content>

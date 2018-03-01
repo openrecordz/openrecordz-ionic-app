@@ -19,26 +19,32 @@
 
     <!-- email -->
     <ion-item>
-      <ion-label>  {{ 'page_report_email_label' | translate }}</ion-label>
-      <ion-input type="email" formControlName="email" placeholder="{{ 'page_report_placeholder_email_label' | translate }}"></ion-input>
+      <ion-label text-wrap floating>{{ 'page_report_email_label' | translate }}</ion-label>
+      <ion-input text-wrap type="email" formControlName="email"></ion-input>
+    </ion-item>
+
+    <!-- email -->
+    <ion-item>
+      <ion-label text-wrap floating>  {{ 'page_report_email_label' | translate }}</ion-label>
+      <ion-input text-wrap type="email" formControlName="email"></ion-input>
     </ion-item>
 
     <!-- phone -->
     <ion-item>
-      <ion-label>  {{ 'page_report_phone_label' | translate }}</ion-label>
-      <ion-input type="tel" formControlName="phone" placeholder="{{ 'page_report_placeholder_phone_label' | translate }}"></ion-input>
+      <ion-label text-wrap floating>  {{ 'page_report_phone_label' | translate }}</ion-label>
+      <ion-input text-wrap type="tel" formControlName="phone"></ion-input>
     </ion-item>
 
     <!-- address -->
     <ion-item>
-      <ion-label>  {{ 'page_report_address_label' | translate }}</ion-label>
-      <ion-textarea formControlName="address" placeholder="{{ 'page_report_placeholder_address_label' | translate }}"></ion-textarea>
+      <ion-label text-wrap floating>  {{ 'page_report_address_label' | translate }}</ion-label>
+      <ion-textarea text-wrap formControlName="address" ></ion-textarea>
     </ion-item>
 
     <!-- description -->
     <ion-item>
-      <ion-label>  {{ 'page_report_description_label' | translate }}</ion-label>
-      <ion-textarea formControlName="description" placeholder="{{ 'page_report_placeholder_description_label' | translate }}"></ion-textarea>
+      <ion-label text-wrap floating>  {{ 'page_report_description_label' | translate }}</ion-label>
+      <ion-textarea text-wrap formControlName="description" ></ion-textarea>
     </ion-item>
 
     <!-- btn submit -->
