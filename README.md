@@ -114,11 +114,11 @@ Add the platform with
 
 `$ ionic cordova platform add android`  
 
-To run on an emulator run the following
+To run on an **emulator** run the following
 
 `$ ionic cordova emulate android --prod`
 
-To run on a real device run the following 
+To run on a **real device** run the following 
 
 `$ ionic cordova run android --device --prod`
 
@@ -128,6 +128,6 @@ Add the platform with
 
 `$ ionic cordova platform add ios`
 
-To run on an emulator run the following
+To run on an **emulator** run the following
 
 `$ ionic cordova emulate ios --prod` 
