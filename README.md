@@ -36,14 +36,73 @@ Open the file  **app-config.ts** under **/src/** and edit it with your settings:
 * **domain** : Domain for a portal. i.e.: "<MY_PORTAL>.openrecordz.com";
 * **developer** : Developer name within About tab;
 * **devWebSite** : Developer website  within About tab;
-* **aboutMap** : @TODO
 * **oneSignalAppId** : Onesignal [App ID](https://documentation.onesignal.com/docs/accounts-and-keys#section-app-id);
 * **oneSignalRestApiKey** : Onesignal [rest API Key](https://documentation.onesignal.com/docs/accounts-and-keys#section-app-auth-key);
 * **firebaseSenderId**: Firebase [sender ID](https://firebase.google.com/docs/cloud-messaging/concept-options#credentials) for push notifications;
 * **mailgunUrl** : Mailgun domain (i.e.: XXXXXXXXXXXXX.mailgun.org);
 * **mailgunApiKey** : Mailgun API Key
+* **aboutMap** : It is possible to customize the menu within the About tab adding a json structured as follows
+```
+[
+       {
+           "header": "<CARD TITLE>",
+           "values" : [
+               {
+                   "key": "<ITEM>",
+                   "value": "<VALUE >",
+               },
+               ....
+           ]
+       },
+       .....
+]
+```
 
-## Start
+For example the following map 
+```
+aboutMap: [
+       {
+           "header": "Socials",
+           "values" : [
+               {
+                   "key": "Facebook",
+                   "value": "https://www.facebook.com/",
+               },
+               {
+                   "key": "Twitter",
+                   "value": "https://twitter.com/"
+               },
+               {
+                   "key": "LinkedIn",
+                   "value": "https://www.linkedin.com/"
+               },
+           ]
+       },
+
+        {
+            "header": "Search engines",
+            "values": [
+                {
+                    "key": "Google",
+                    "value": "https://www.google.com/",
+                },
+                {
+                    "key": "Bing",
+                    "value": "https://www.bing.com/"
+                },
+                {
+                    "key": "Ask.com",
+                    "value": "https://it.ask.com/"
+                },
+            ]
+        },
+    ],
+```
+will generate the following result 
+<img src="https://preview.ibb.co/cD5H3H/Screenshot_20180301_161547.png">
+
+
+## Run 
 ### Supported platforms
 
 The supported platforms are Android and iOS
@@ -56,18 +115,18 @@ Add the platform with
 
 To run on an emulator run the following
 
-`$ ionic cordova emulate android --prod`  per Android 
+`$ ionic cordova emulate android --prod`
 
 To run on a real device run the following 
 
-`$ ionic cordova run android --device --prod`  per Android 
+`$ ionic cordova run android --device --prod`
 
-### iOS
+#### iOS
 
 Add the platform with 
 
-`$ ionic cordova platform add ios` per iOS
+`$ ionic cordova platform add ios`
 
 To run on an emulator run the following
 
-`$ ionic cordova emulate ios --prod`  per iOS 
+`$ ionic cordova emulate ios --prod` 
