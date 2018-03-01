@@ -99,7 +99,8 @@ aboutMap: [
     ],
 ```
 will generate the following result 
-<img src="https://preview.ibb.co/cD5H3H/Screenshot_20180301_161547.png">
+
+<img src="https://preview.ibb.co/cD5H3H/Screenshot_20180301_161547.png" width="250">
 
 
 ## Run 
