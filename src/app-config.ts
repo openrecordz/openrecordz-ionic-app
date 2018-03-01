@@ -21,28 +21,32 @@ export interface ApplicationConfig {
 
 // Configuration values for our app
 export const APP_CONFIG: ApplicationConfig = {
-    defaultLanguage: "en",
-    urlApi: "",
-    domain: "",
-    developer: "",
-    devWebSite: "",
+    defaultLanguage: "it",
+    urlApi: "http://soleto.api.openrecordz.com/service/v1",
+    domain: "soleto.openrecordz.com",
+    developer: "Openrecordz",
+    devWebSite: "http://soleto.openrecordz.com/datasets#",
     aboutMap: [
        {
            "header": "Informazioni",
            "values" : [
                {
+                   "key": "Sito Istituzionale",
+                   "value": "http://www.comune.soleto.le.it/",
+               },
+               {
                    "key": "Privacy",
-                   "value": ""
+                   "value": "http://www.comune.soleto.le.it/sezione-informazioni/privacy"
                },
            ]
        }
     ],
-    oneSignalAppId: "",
-    oneSignalRestApiKey: "",
-    firebaseSenderId: "",
-    mailgunUrl: "",
-    mailgunApiKey: ""
+    oneSignalAppId: "0e1c23bc-c1bd-455f-a408-da2739870c4f",
+    oneSignalRestApiKey: "ZDRlY2Q2ZjUtODBlMi00NzVhLTliODEtMzc0Y2JmMzNkNzgz",
+    firebaseSenderId: "537289267777",
+    mailgunUrl: "sandbox208ae9b676e04fd88e5674984a56aad6.mailgun.org",
+    mailgunApiKey: "api:key-bb704680746b52474673275176ae7216"
 };
 
 // Create a config token to avoid naming conflicts
-export const APP_CONFIG_TOKEN = new InjectionToken<ApplicationConfig>('');
+export const APP_CONFIG_TOKEN = new InjectionToken<ApplicationConfig>('openrecordz-soleto-opendata');
