@@ -35,6 +35,7 @@ export class NotificationsHistoryPage {
       translate.setDefaultLang(MyApp.appConfig.defaultLanguage);
       translate.use(MyApp.appConfig.defaultLanguage)
       // ########### end translations ###########
+
       this.spinner = this.createSpinner();
   }
 
@@ -50,6 +51,7 @@ export class NotificationsHistoryPage {
   // private loadNotifications(refresher, limit, offset) {
   //  this.notificationHistoryProvider.load(limit, offset)
   private loadNotifications(refresher) {
+    
     this.showLoading();
 
     this.notificationHistoryProvider.load()

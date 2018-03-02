@@ -23,11 +23,11 @@ export class DatasetsListPage {
   private datasets: any;
 
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams,
-    public datasetService: DatasetService,
-    translate: TranslateService,
-    public modalCtrl: ModalController) {
+    private navCtrl: NavController, 
+    private navParams: NavParams,
+    private datasetService: DatasetService,
+    private translate: TranslateService,
+    private modalCtrl: ModalController) {
 
     // ########### begin translations ###########
     // this language will be used as a fallback when a translation isn't found in the current language
@@ -45,14 +45,13 @@ export class DatasetsListPage {
   }
 
   private loadDatasets(refresher) {
+
     this.datasetService.load()
       .then(datasets => {
         // console.log(datasets);
         this.datasets = datasets;
 
-        if(refresher !== undefined && refresher !== null) {
-          refresher.complete();
-        }
+        if(refresher !== undefined && refresher !== null)   refresher.complete();
       });
   }
 
