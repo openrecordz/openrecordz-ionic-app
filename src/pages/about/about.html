@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
+    <ion-title text-wrap>
        {{ 'page_about_title' | translate }}
     </ion-title>
   </ion-navbar>
@@ -20,8 +20,8 @@
 
   <ion-card>
     <ion-card-header center text-center>
-      <h2 class="app-name" >{{this.appName}}</h2>
-      <span (click)="openUrl(this.devWebSite);">
+      <h2 class="app-name"  text-wrap>{{this.appName}}</h2>
+      <span text-wrap (click)="openUrl(this.devWebSite);">
         <a href="#">{{ 'page_about_see_dev_website' | translate }}</a>
       </span>
     </ion-card-header>
@@ -40,7 +40,7 @@
         <div *ngFor="let itemValue of item.values">
           <ion-list>
             <ion-item >
-              <span (click)="openUrl(itemValue['value']);">
+              <span text-wrap (click)="openUrl(itemValue['value']);">
                 <a href="#">{{itemValue["key"]}}</a>
               </span>
             </ion-item>
@@ -57,7 +57,7 @@
     
     <div>
       <ion-item (click)="onNotificationSettingsClick()">
-        <ion-label> {{ 'page_about_setting_notification' | translate }}</ion-label>
+        <ion-label text-wrap> {{ 'page_about_setting_notification' | translate }}</ion-label>
         <ion-icon clear item-right name="ios-arrow-forward"></ion-icon>
       </ion-item>
     </div>

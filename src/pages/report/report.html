@@ -7,7 +7,7 @@
       </button>
     </ion-buttons>
     
-    <ion-title>Report</ion-title>
+    <ion-title text-wrap>{{ 'page_report_title' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,7 +17,7 @@
 
   <p text-wrap>{{ 'page_report_message_label' | translate }}</p>
 
-  <button ion-button block (click)="showExample()">{{'page_report_btn_example_label' | translate }}</button>
+  <button ion-button block clear (click)="showExample()">{{'page_report_btn_example_label' | translate }}</button>
 
   <form [formGroup]="form" (ngSubmit)="subtmitForm()">
 

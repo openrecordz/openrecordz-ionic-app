@@ -30,15 +30,15 @@
         </ng-template>
 
         <!-- week of day -->
-        <span *ngIf="record.when" class="day-of-week-background" text-uppercase>{{record.when | moment:'dddd'}}</span>
+        <span *ngIf="record.when" class="day-of-week-background" text-wrap text-uppercase>{{record.when | moment:'dddd'}}</span>
 
         <!-- transfer method -->
         <p *ngIf="record.transfer_method"  text-wrap >{{record.transfer_method}}</p>
 
         <!-- day of month and month name -->
         <div clear item-right text-center *ngIf="record.when">
-          <span class="day-of-month">{{record.when | moment:'DD'}}</span>
-          <span class="month-name">{{record.when | moment:'MMM'}}</span>
+          <span text-wrap class="day-of-month">{{record.when | moment:'DD'}}</span>
+          <span text-wrap class="month-name">{{record.when | moment:'MMM'}}</span>
         </div>
 
         <!-- <button clear item-right>View</button> -->

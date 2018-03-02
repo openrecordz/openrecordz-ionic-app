@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar no-border-bottom>
-    <ion-title>{{ 'page_search_title' | translate }}</ion-title>
+    <ion-title text-wrap>{{ 'page_search_title' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -24,7 +24,7 @@
   
         <ion-card-content>
           <!-- title -->
-          <h1 *ngIf="!item._title; else templateTitle"  text-wrap>
+          <h1 text-wrap *ngIf="!item._title; else templateTitle"  >
             <!-- title not valid -->
             {{item._id}}
           </h1>
@@ -46,8 +46,8 @@
   <ng-template #emptyTemplate>
     <ion-card class="empty-ion-card" *ngIf="!isFirstSearch && !hasResults">
       <img class="empty-ion-card-img" src="assets/imgs/error_view_cloud.png" />
-      <div class="empty-ion-card-title">{{ 'page_search_no_results_title' | translate }}</div>
-      <div class="empty-ion-card-subtitle">{{ 'page_search_no_results_subtitle' | translate }}</div>
+      <div  text-wrap class="empty-ion-card-title">{{ 'page_search_no_results_title' | translate }}</div>
+      <div text-wrap  class="empty-ion-card-subtitle">{{ 'page_search_no_results_subtitle' | translate }}</div>
     </ion-card>
   </ng-template>
 </ion-content>

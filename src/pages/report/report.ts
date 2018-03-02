@@ -51,7 +51,7 @@ export class ReportPage {
     let from = "stefano.depascalis@frontiere21.it";
     let to = "stefano.depascalis@frontiere21.it";
 
-    var labelSubject = this.translate.get('page_report_email_template_subject_label')['value'];;
+    var labelSubject = this.translate.get('page_report_email_template_subject_label')['value'];
      // console.log("labelSubject", labelSubject);
     var labelTitle = this.translate.get('page_report_email_template_label_title')['value'];
     // console.log("labelTitle", labelTitle);

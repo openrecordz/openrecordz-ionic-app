@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Notifications Settings</ion-title>
+    <ion-title text-wrap>{{ 'page_settings_notification_title' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -13,7 +13,7 @@
   <ion-card>
     <div>
       <ion-item>
-        <ion-label> {{ 'page_settings_notification_enable_push_lable' | translate }}</ion-label>
+        <ion-label text-wrap> {{ 'page_settings_notification_enable_push_lable' | translate }}</ion-label>
         <ion-toggle (ionChange)="enablePush($event)" checked="{{notificationSetting}}"></ion-toggle>
       </ion-item>
     </div>
@@ -23,7 +23,7 @@
     <ion-list>    
       <span *ngFor="let tag of tags; let i = index">
         <ion-item>
-          <ion-label>{{tagsName[i]}}</ion-label>
+          <ion-label text-wrap>{{tagsName[i]}}</ion-label>
           <ion-toggle checked="{{tagsStatus[tag]}}" (ionChange)="setTagsValues($event, tag)"></ion-toggle>
         </ion-item>
       </span>

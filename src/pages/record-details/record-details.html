@@ -3,11 +3,11 @@
 
   <ion-navbar>
     <!-- title -->
-    <ion-title *ngIf="!record._title; else templateTitle">
+    <ion-title text-wrap *ngIf="!record._title; else templateTitle">
       {{record.id}}
     </ion-title>
     <ng-template #templateTitle>
-      <ion-title>{{record._title}}</ion-title>
+      <ion-title text-wrap>{{record._title}}</ion-title>
     </ng-template>
   </ion-navbar>
 
@@ -20,22 +20,22 @@
       <ion-avatar item-start>
         <img src="assets/imgs/ic_avatar_circle_gray.png">
       </ion-avatar>
-      <h2>{{record._createdby}}</h2>
-      <p>{{record._createdon | date: 'dd/MM/yyyy'}}</p>
+      <h2 text-wrap>{{record._createdby}}</h2>
+      <p text-wrap>{{record._createdon | date: 'dd/MM/yyyy'}}</p>
     </ion-item>
 
     <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-details-image" imageViewer />
 
     <ion-card-content>
         <!-- title -->
-        <h1 *ngIf="!record._title; else templateTitle">
+        <h1 text-wrap *ngIf="!record._title; else templateTitle">
           {{record._id}}
         </h1>
         <ng-template #templateTitle>
-          <h1> {{record._title}}</h1>
+          <h1 text-wrap> {{record._title}}</h1>
         </ng-template>
 
-        <p class="record-description" *ngIf="record._description">{{record._description}}</p>
+        <p text-wrap class="record-description" *ngIf="record._description">{{record._description}}</p>
     </ion-card-content>
   </ion-card>
 
@@ -51,8 +51,8 @@
 
     <ion-item>
       <!-- <ion-icon name="map" item-start large></ion-icon> -->
-      <h2 *ngIf="record.address">{{record.address}}</h2>
-      <h3>{{ 'page_record_details_directions' | translate }}</h3>
+      <h2 text-wrap *ngIf="record.address">{{record.address}}</h2>
+      <h3 text-wrap >{{ 'page_record_details_directions' | translate }}</h3>
     </ion-item>
   </ion-card>
 
@@ -60,7 +60,7 @@
     (record._phone && record._phone !== '' && record._phone !== ' ' ) || 
     (record._email && record._email !== '' && record._email !== ' ') ||
     (record._website && record._website !== '' && record._website !== ' ')">
-    <ion-card-header class="card-header">{{ 'page_record_details_contacts' | translate }}</ion-card-header>
+    <ion-card-header text-wrap class="card-header">{{ 'page_record_details_contacts' | translate }}</ion-card-header>
     <!-- phone -->
     <ion-item *ngIf="record._phone && record._phone !== '' && record._phone !== ' '">
       <a (click)="onPhoneNumberClick(record._phone)" >{{record._phone}}</a>
@@ -84,8 +84,8 @@
     <ion-list *ngIf="keys && keys.length > 0">
       <div *ngFor="let key of keys;" padding>
         <div *ngIf="key && record[key]">
-          <h2 class="custom-data-key">{{key}}</h2>
-          <p>{{record[key]}}</p>
+          <h2 text-wrap class="custom-data-key">{{key}}</h2>
+          <p text-wrap>{{record[key]}}</p>
         </div>
       </div>
     </ion-list>
