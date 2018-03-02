@@ -26,7 +26,9 @@
     "page_search_no_results_subtitle": "Siamo spiacenti, non abbiamo trovato nessun risultato per la tua ricerca!",
 
     "page_notifications_history_title": "Notifiche",
+    "page_notifications_history_loading_message": "Caricamento..",
 
+    "page_report_title": "Prenotazione raccolta rifiuti",
     "page_report_message_label": "Prenota la raccolta di rifiuti ingombranti. Specificare le dimensioni del rifiuto, data e ora preferite per il ritiro. Sarete contattati dallo staff per fissare un appuntamento.",
     "page_report_btn_example_label": "Vedi un esempio",
     "page_report_example_label": "Oggetto: frigorifero; Dimensioni: 67,5 x 171,5 x 66,8 cm. Sarei disponibile mercoledì 21 Marzo verso le 17.30",
@@ -51,6 +53,7 @@
     "page_report_placeholder_address_label" : "inserisci il tuo indirizzo",
     "page_report_placeholder_description_label" : "quantità, dimensioni.. ",
 
+    "page_settings_notification_title": "Notifiche push",
     "page_settings_notification_enable_push_lable": "Abilita notifiche push"
     
 
