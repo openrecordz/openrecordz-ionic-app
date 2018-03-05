@@ -13,13 +13,13 @@ export class NotificationsPage {
   // true if the notification is enabled, false otherwise.
   private notificationSetting: boolean = false; // false by default
 
-  private tagsStatus : any = {};
-  private tags: any =  [];
+  private tagsStatus;
+  private arrayKey: Array<string>;
   private tagsName : any = [];
 
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams,
+    private navCtrl: NavController, 
+    private navParams: NavParams,
     private platform: Platform,
     private oneSignal: OneSignal,
     private storage: Storage) {
@@ -31,8 +31,9 @@ export class NotificationsPage {
       this.notificationSetting = val;
     });
     
-    this.tags = [TAG_NOTIFICATION_RECYCLING]; // @TODO add other tags 
-    this.initTagsNames(this.tags);
+    this.arrayKey = [TAG_NOTIFICATION_RECYCLING]; // @TODO add other tags 
+    this.tagsStatus = {};
+    this.initTagsNames(this.arrayKey);
 
     if (this.platform.is('cordova')) {
       console.log('I am an cordova!');
@@ -75,28 +76,31 @@ export class NotificationsPage {
   }
 
   private getTagsValues() {
-    console.log(' +++ GET TAG VALUES ', this.tagsStatus);
+    console.log("****** NotificationsPage.getTagsValues ******");
     this.oneSignal.getTags()
       .then(tags => {
         let tagsStr = JSON.stringify(tags);
-        //console.log("tagsStr", tagsStr);
         JSON.parse(tagsStr, (key, value) => {
           this.tagsStatus[key] = value;
+          console.log("key: ", key);
+          console.log("value: ",  this.tagsStatus[key]);
         });
-        console.log("tagsStatus", this.tagsStatus);
       });
   }
-
+  
   private setTagsValues(event, key) {
+    console.log("****** NotificationsPage.setTagsValues ******");
     this.tagsStatus[key] = event.value;
-    console.log("key:::status", event.value, key, this.tagsStatus[key]);
+    // console.log("key:::status", event.value, key, this.tagsStatus[key]);
     if (this.platform.is('cordova')) {
-      this.oneSignal.sendTag(key, "'" + event.value + "'");
-      console.log('send tag value ', event.value)
+      this.oneSignal.sendTag(key, event.value.toString());
+      console.log("key: ", key);
+      console.log("value: ", event.value.toString());
     }
   }
 
   private disableAllSettings() {
+    // alert("disableAllSettings");
     this.mapObject(this.tagsStatus).forEach(tagStatus => {
       console.log("disableAllSettings.tagStatus", tagStatus)
     });

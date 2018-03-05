@@ -88,21 +88,20 @@ export class MyApp {
 
       this.oneSignal.endInit();
 
-      console.log('*** sendTags::');
-      this.oneSignal.getTags()
-        .then(tags => {
-          console.log(tags);
-          let jsonTags = JSON.stringify(tags);
-          console.log('Tags Received: ', jsonTags, jsonTags.length);
-          if (jsonTags.length <= 2) {
-            this.oneSignal.sendTag(TAG_NOTIFICATION_RECYCLING, "true");
-          }
+      // console.log('*** sendTags::');
+      // this.oneSignal.getTags()
+      //   .then(tags => {
+      //     // let jsonTags = JSON.stringify(tags);
+      //     // console.log('Tags Received: ', jsonTags, jsonTags.length);
+      //     // if (jsonTags.length <= 2) {
+      //     //   this.oneSignal.sendTag(TAG_NOTIFICATION_RECYCLING, "true");
+      //     // }
+      //     console.log("tag", tags);
 
-
-        })
-        .catch((err) => {
-          console.log('Unable to get tags.', err);
-        });
+      //   })
+      //   .catch((err) => {
+      //     console.log('Unable to get tags.', err);
+      //   });
     }
   }
 }

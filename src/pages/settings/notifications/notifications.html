@@ -21,10 +21,10 @@
 
   <ion-card>
     <ion-list>    
-      <span *ngFor="let tag of tags; let i = index">
+      <span *ngFor="let key of arrayKey; let i = index">
         <ion-item>
           <ion-label text-wrap>{{tagsName[i]}}</ion-label>
-          <ion-toggle checked="{{tagsStatus[tag]}}" (ionChange)="setTagsValues($event, tag)"></ion-toggle>
+          <ion-toggle checked="{{tagsStatus[key]}}" (ionChange)="setTagsValues($event, key)"></ion-toggle>
         </ion-item>
       </span>
     </ion-list>
