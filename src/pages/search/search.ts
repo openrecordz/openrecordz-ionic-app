@@ -62,7 +62,7 @@ export class SearchPage {
     let term = ev.target.value;
 
     // We will only perform the search if we have 3 or more characters
-    if (term && term.trim() !== '' && term.trim().length > 3) { 
+    if (term && term.trim() !== '' /*&& term.trim().length > 3*/) { 
       this.search(term).then(records => {
         // console.log(records);
         this.records = records;
