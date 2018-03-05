@@ -100,10 +100,12 @@ export class NotificationsPage {
   }
 
   private disableAllSettings() {
-    // alert("disableAllSettings");
-    this.mapObject(this.tagsStatus).forEach(tagStatus => {
-      console.log("disableAllSettings.tagStatus", tagStatus)
-    });
+    for (var tag in this.tagsStatus) {
+      this.tagsStatus[tag] = false; // local changes
+      if (this.platform.is('cordova')) {
+        this.oneSignal.sendTag(tag, this.tagsStatus[tag]);
+      }
+    }
   }
 
   private mapObject(obj) {
