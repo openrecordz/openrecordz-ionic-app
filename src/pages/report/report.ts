@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController, ToastController} from 'ionic-angular';
+import { NavController, NavParams, ViewController, AlertController, Events} from 'ionic-angular';
 
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
@@ -25,7 +25,8 @@ export class ReportPage {
     public viewCtrl: ViewController, 
     private mailgun: MailgunProvider,
     private translate: TranslateService,
-    private toastCtrl: ToastController) {
+    public alertCtrl: AlertController,
+    public events: Events) {
 
     // ########### begin translations ###########
     // this language will be used as a fallback when a translation isn't found in the current language
@@ -42,11 +43,23 @@ export class ReportPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ReportPage');
+    // email not sent 
+    this.events.subscribe('email-sent:false', (err) => {
+      // console.log('error', err);
+      this.promtEmailNotSent();
+    });
+
+    // email  sent
+    this.events.subscribe('email-sent:true', (res) => {
+      // console.log('response', res);
+      this.promptEmailSent();
+    });
   }
 
   private subtmitForm() {
     console.log(this.form.value);
+
+    var context = this;
 
     let from = "stefano.depascalis@frontiere21.it";
     let to = "stefano.depascalis@frontiere21.it";
@@ -94,36 +107,72 @@ export class ReportPage {
         TEMPLATE += res;
     });    
 
-
     // send the email
     this.mailgun.send(
       from,
       to,
       labelSubject,
       TEMPLATE 
-    ).then(response => {
-      console.log("response", response);
-
-      // @TODO check response 200
-      this.dismiss();
-
-    });
+    );
  }
+
+  private promptEmailSent() {
+    var title = this.translate.get('page_report_alert_email_sent_title')['value'];
+    var message = this.translate.get('page_report_alert_email_sent_message')['value'];
+    var btnConfirm = this.translate.get('page_report_alert_email_btn_success')['value'];
+
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: message,
+      buttons: [{
+          text: btnConfirm,
+          handler: () => {
+            alert.dismiss();
+            this.dismiss();
+          }
+        }, ]
+    });
+
+    alert.present();
+  }
 
   dismiss() {
     this.viewCtrl.dismiss();
   }
 
-  private showExample() {
-    var reportExample = this.translate.get('page_report_example_label')['value'];
+  private promptExample() {
+    var title = this.translate.get('page_report_alert_example_title')['value'];
+    var message = this.translate.get('page_report_alert_example_message')['value'];
+    var btnConfirm = this.translate.get('page_report_alert_btn_confirm')['value'];
 
-    const toast = this.toastCtrl.create({
-      message: reportExample,
-      showCloseButton: true,
-      closeButtonText: 'Ok'
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: message,
+      buttons: [btnConfirm]
     });
-    toast.present();
+
+    alert.present();
   }
 
+  private promtEmailNotSent() {
+
+    var title = this.translate.get('page_report_alert_email_not_sent_title')['value'];
+    var message = this.translate.get('page_report_alert_email_not_sent_message')['value'];
+    var btnConfirm = this.translate.get('page_report_alert_email_not_btn_success')['value'];
+
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: message,
+      buttons: [{
+          text: btnConfirm,
+          handler: () => {
+            alert.dismiss();
+            this.dismiss();
+          }
+        }, ]
+    });
+
+    alert.present();
+  }
 }
 

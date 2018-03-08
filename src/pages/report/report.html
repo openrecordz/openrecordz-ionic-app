@@ -17,15 +17,9 @@
 
   <p text-wrap>{{ 'page_report_message_label' | translate }}</p>
 
-  <button ion-button block clear (click)="showExample()">{{'page_report_btn_example_label' | translate }}</button>
+  <button ion-button block clear (click)="promptExample()">{{'page_report_btn_example_label' | translate }}</button>
 
-  <form [formGroup]="form" (ngSubmit)="subtmitForm()">
-
-    <!-- email -->
-    <ion-item>
-      <ion-label text-wrap floating>{{ 'page_report_email_label' | translate }}</ion-label>
-      <ion-input text-wrap type="email" formControlName="email"></ion-input>
-    </ion-item>
+  <form [formGroup]="form">
 
     <!-- email -->
     <ion-item>
@@ -52,10 +46,22 @@
     </ion-item>
 
     <!-- btn submit -->
-    <div text-center class="btn-submit">
-      <button ion-button large type="submit" [disabled]="!form.valid">  {{ 'page_report_submit_label' | translate }}</button>
-    </div>
+    <!-- <div text-center class="btn-submit">
+      <button ion-button full type="submit" [disabled]="!form.valid">  {{ 'page_report_submit_label' | translate }}</button>
+    </div> -->
 
   </form>
 
 </ion-content>
+
+
+
+<!-- logout -->
+<ion-footer no-shadow>
+  <ion-row bottom class="logout-container">
+    <ion-col class="logout-col">
+      <button ion-button full  type="submit" (click)="subtmitForm()" [disabled]="!form.valid"> {{ 'page_report_submit_label' | translate }} </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
+
