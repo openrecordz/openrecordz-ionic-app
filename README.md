@@ -106,7 +106,11 @@ will generate the following result
 ## Run 
 ### Supported platforms
 
-The supported platforms are Android and iOS
+The supported platforms are Web, Android and iOS
+
+#### Web (Dev mode)
+
+`$ ionic serve`
 
 #### Android 
 
