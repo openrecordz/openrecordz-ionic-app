@@ -22,10 +22,10 @@ export interface ApplicationConfig {
 // Configuration values for our app
 export const APP_CONFIG: ApplicationConfig = {
     defaultLanguage: "en",
-    urlApi: "http://XXXXXXX.api.openrecordz.com/service/v1",
-    domain: "XXXXXXX.openrecordz.com",
+    urlApi: "http://soleto.api.openrecordz.com/service/v1",
+    domain: "soleto.openrecordz.com",
     developer: "Openrecordz",
-    devWebSite: "http://XXXXXXX.openrecordz.com/datasets#",
+    devWebSite: "http://soleto.openrecordz.com/datasets#",
     aboutMap: [
        {
            "header": "About",
