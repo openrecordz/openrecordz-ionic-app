@@ -7,9 +7,11 @@
 
     "page_calendar_title": "Calendar",
     "page_calendar_loading_data": "Loading..",
+    "page_calendar_unavailable": "The calendar is not available",
 
     "page_datasets_list_title": "Home",
     "page_datasets_list_refreshing_text": "Refreshing..",
+    "page_datasets_list_datasets_unavailable": "No dataset available",
 
     "page_google_maps_title": "Map",
 
@@ -27,6 +29,7 @@
 
     "page_notifications_history_title" : "Notifications",
     "page_notifications_history_loading_message": "Loading..",
+    "page_notifications_history_unavailable": "No notification available",
 
     "page_report_title" : "Waste collection reservation",
     "page_report_message_label" : "Book the collection of bulky waste. Specify the size of the waste, preferred date and time for collection. You will be contacted by the staff to make an appointment.",

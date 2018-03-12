@@ -14,27 +14,34 @@
     </ion-refresher-content>
   </ion-refresher>
   
-  <ion-list>
-    <div *ngFor="let notification of notifications">
-      <ion-card (click)="onNotificationClick(notification.url)">   
-        
-        <!-- header -->
-        <ion-item>
-          <ion-avatar item-start *ngIf="notification.large_icon">
-            <img *ngIf="notification.large_icon" src="{{notification.large_icon}}">
-          </ion-avatar>
-          <!-- notification title -->
-          <h2 text-wrap> {{notification.headings.en}}</h2>
-          <!-- <p>November 5, 1955</p> -->
-        </ion-item>
+  <div *ngIf="notifications else notificationsUnavailable">
+    <ion-list>
+        <div *ngFor="let notification of notifications">
+          <ion-card (click)="onNotificationClick(notification.url)">   
+            
+            <!-- header -->
+            <ion-item>
+              <ion-avatar item-start *ngIf="notification.large_icon">
+                <img *ngIf="notification.large_icon" src="{{notification.large_icon}}">
+              </ion-avatar>
+              <!-- notification title -->
+              <h2 text-wrap> {{notification.headings.en}}</h2>
+              <!-- <p>November 5, 1955</p> -->
+            </ion-item>
 
-          <img *ngIf="notification.big_picture" src="{{notification.big_picture}}">
-          
-          <!-- notification message -->
-          <ion-card-content>
-            <p text-wrap> {{notification.contents.en}}</p>
-          </ion-card-content>
-      </ion-card>
-    </div>
-  </ion-list>
+              <img *ngIf="notification.big_picture" src="{{notification.big_picture}}">
+              
+              <!-- notification message -->
+              <ion-card-content>
+                <p text-wrap> {{notification.contents.en}}</p>
+              </ion-card-content>
+          </ion-card>
+        </div>
+    </ion-list>
+  </div>
+
+  <!-- datasets unavailable -->
+  <ng-template #notificationsUnavailable>
+    <p padding> {{ 'page_notifications_history_unavailable' | translate }} </p>
+  </ng-template>
 </ion-content>

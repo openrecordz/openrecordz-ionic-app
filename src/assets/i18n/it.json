@@ -7,9 +7,11 @@
 
     "page_calendar_title": "Calendario",
     "page_calendar_loading_data": "Caricamento..",
+    "page_calendar_unavailable": "Calendario non disponibile",
 
     "page_datasets_list_title": "Home",
     "page_datasets_list_refreshing_text": "Aggiornamento..",
+    "page_datasets_list_datasets_unavailable": "Nessun dataset disponibile",
 
     "page_google_maps_title": "Mappa",
 
@@ -27,6 +29,7 @@
 
     "page_notifications_history_title": "Notifiche",
     "page_notifications_history_loading_message": "Caricamento..",
+    "page_notifications_history_unavailable": "Nessuna notifica disponibile",
 
     "page_report_title": "Prenotazione raccolta rifiuti",
     "page_report_message_label": "Prenota la raccolta di rifiuti ingombranti. Specificare le dimensioni del rifiuto, data e ora preferite per il ritiro. Sarete contattati dallo staff per fissare un appuntamento.",
