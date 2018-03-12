@@ -31,20 +31,18 @@ export class DatasetService {
           // we've got back the raw data, now generate the core schedule data
           // and save the data for later reference
 
-          if(datasets) {
-            // iterate each dataset
-            datasets.forEach(dataset => {
-              // check if the dataset contains tags
-              if (dataset._tags) {
-                dataset = this.addInAppPosition(dataset);
-              }
-            });
+          // iterate each dataset
+          datasets.forEach(dataset => {
+            // check if the dataset contains tags
+            if (dataset._tags) {
+              dataset = this.addInAppPosition(dataset);
+            }
+          });
 
-            // console.log("BEFORE SORT", datasets);
-            datasets = this.sortByPostion(datasets);
-            console.log("AFTER SORT", datasets);
-          }
-
+          // console.log("BEFORE SORT", datasets);
+          datasets = this.sortByPostion(datasets);
+          console.log("AFTER SORT", datasets);
+          
           this.datasets = datasets;
 
           resolve(this.datasets);
@@ -95,13 +93,15 @@ export class DatasetService {
     });
 
     // sort by position
-    var sorted = this.mergeSort(toSort, 'position');
-    // console.log("sorted", sorted)
+    if (toSort && toSort.length > 0) {
+      var sorted = this.mergeSort(toSort, 'position');
+      // console.log("sorted", sorted)
 
-    // concatenates the "sorted" and "unsorted" arrays 
-    // adding before the "sorted" elements then the "unsorted" elements
-    datasets = sorted.concat(unsorted); 
-    // console.log("datasets", datasets);
+      // concatenates the "sorted" and "unsorted" arrays 
+      // adding before the "sorted" elements then the "unsorted" elements
+      datasets = sorted.concat(unsorted); 
+      // console.log("datasets", datasets);
+    }
 
     return datasets;
   }
