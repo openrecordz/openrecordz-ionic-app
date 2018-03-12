@@ -14,6 +14,7 @@ export class MomentPipe implements PipeTransform {
   transform(date, format) {
 
     // return moment(date, "DD/MM/YYYY").lang("it").format(format);
-    return moment(date, "DD/MM/YYYY").lang(MyApp.appConfig.defaultLanguage).format(format);
+    // return moment(date, "DD/MM/YYYY").lang(MyApp.appConfig.defaultLanguage).format(format);
+      return moment(date).locale(MyApp.appConfig.defaultLanguage).format(format);
   }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Events} from 'ionic-angular';
 import 'rxjs/add/operator/map';
+import * as moment from 'moment';
 
 // context
 import { MyApp } from '../app/app.component';
@@ -128,5 +129,73 @@ applyHaversine(locations){
 
     toRad(x){
         return x * Math.PI / 180;
+    }
+
+
+
+
+
+
+
+
+    loadCalendar(datasetId:String, page:number=0, pageSize:number=10) {
+
+        var currentDay = moment(new Date()).format("YYYY-MM-DD")
+
+        var urlAPI = this.urlApi + '/datasets/' + datasetId + '?q={"when_d":{$gte:{"$date":"' + currentDay + 'T00:00:00.000Z"}}}&page=' + page + '&pagesize=' + pageSize;
+
+        // this.http.get(calendarUrlAPI)
+        this.http.get(urlAPI)
+            .map(res => res.json())
+            .subscribe(data => {
+                // we've got back the raw data, now generate the core schedule data
+                // and save the data for later reference
+                //  this.data = data;
+                //resolve(this.data);
+
+                // console.log("loaded records: ", data);
+
+                if (data.length > 0) {
+                    for (let element of data) {
+
+                        // console.log("RecordService.element._location:  ", element._location );
+                        // console.log("RecordService.element._latitude: ", element._latitude);
+                        // console.log("RecordService.element._longitude: ", element._longitude);
+
+                        if ((element._location && element._location[0] && element._location[1]) || (element._latitude && element._longitude)) {
+                            this.events.publish('show-map-within-toolbar', true); 
+                            break; // at least 1 item has coordinates. stop the iteration
+                        }
+                    };
+                } else {
+                    this.events.publish('show-map-within-toolbar', false); 
+                }
+            
+
+                /*   this.data = this.applyHaversine(data);
+                */
+
+            });
+
+        // don't have the data yet
+        return new Promise(resolve => {
+            // We're using Angular HTTP provider to request the data,
+            // then on the response, it'll map the JSON data to a parsed JS object.
+            // Next, we process the data and resolve the promise with the new data.
+            this.http.get(urlAPI)
+            .map(res => res.json())
+            .subscribe(data => {
+                // we've got back the raw data, now generate the core schedule data
+                // and save the data for later reference
+            //  this.data = data;
+            //resolve(this.data);
+
+            resolve(data);
+
+            /*   this.data = this.applyHaversine(data);
+                */
+
+            });
+        });
     }
 }

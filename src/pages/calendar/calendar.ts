@@ -60,9 +60,11 @@ export class CalendarPage {
   }
 
   loadRecords(datasetId) {
-    this.recordService.load(datasetId)
+    this.recordService.loadCalendar(datasetId)
       .then(data => {
         // records retrieved 
+
+        console.log(data);
         this.records = data;
       });
   }
