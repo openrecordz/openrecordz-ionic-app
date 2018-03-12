@@ -43,6 +43,7 @@ export class NotificationHistoryProvider {
       this.http.get('https://onesignal.com/api/v1/notifications?app_id=' + this.oneSignalAppId /*+ '&limit=' + limit + '&offset=' + offset*/, options)
         .map(res => res.json())
         .subscribe(notifications => {
+          console.log(notifications);
           // we've got back the raw data, now generate the core schedule data
           // and save the data for later reference
           this.notifications = notifications;
