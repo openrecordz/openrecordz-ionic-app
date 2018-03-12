@@ -14,7 +14,7 @@
 <ion-content>
 
   <!-- calendar available -->
-  <div *ngIf="records else calendarUnavailable">
+  <div *ngIf="records && records.length > 0 else calendarUnavailable">
     <ion-list>
       <ion-card *ngFor="let record of records" (click)="onClick(record)">
 

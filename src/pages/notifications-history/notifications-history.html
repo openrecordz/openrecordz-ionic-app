@@ -14,7 +14,7 @@
     </ion-refresher-content>
   </ion-refresher>
   
-  <div *ngIf="notifications else notificationsUnavailable">
+  <div *ngIf="notifications && notifications.length > 0 else notificationsUnavailable">
     <ion-list>
         <div *ngFor="let notification of notifications">
           <ion-card (click)="onNotificationClick(notification.url)">   
