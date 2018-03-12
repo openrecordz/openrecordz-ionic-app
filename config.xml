@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="it.openrecordz.soleto" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Soleto Open Data</name>
-    <description>La App ufficiale degli Opend Data del Comune di Soleto.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">info@openrecordz.com</author>
+<widget id="it.frontiere21.android.ciaotrip" version="2.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Soleto</name>
+    <description>La App ufficiale degli open data del Comune di Soleto.</description>
+    <author email="hi@ionicframework" href="http://ionicframework.com/">soleto.openrecordz@gmail.com</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
