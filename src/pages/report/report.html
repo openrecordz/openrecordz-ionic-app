@@ -21,6 +21,12 @@
 
   <form [formGroup]="form">
 
+    <!-- fullName -->
+    <ion-item>
+      <ion-label text-wrap floating> {{ 'page_report_fullName_label' | translate }}</ion-label>
+      <ion-input text-wrap type="text" formControlName="fullName"></ion-input>
+    </ion-item>
+
     <!-- email -->
     <ion-item>
       <ion-label text-wrap floating>  {{ 'page_report_email_label' | translate }}</ion-label>

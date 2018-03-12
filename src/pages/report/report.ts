@@ -35,6 +35,7 @@ export class ReportPage {
     // ########### end translations ###########
 
     this.form = this.formBuilder.group({
+      fullName: ['', Validators.required],
       email: ['', Validators.required],
       phone: ['', Validators.required],
       address: ['', Validators.required],
@@ -72,6 +73,8 @@ export class ReportPage {
     // console.log("dearUserLabel", dearUserLabel);
     var labelMessage = this.translate.get('page_report_email_template_label_message')['value'];
     // console.log("labelMessage", labelMessage);
+    var labelFullname = this.translate.get('page_report_email_template_label_fullName')['value'];
+    // console.log("labelFullname", labelFullname);
     var labelEmail = this.translate.get('page_report_email_template_label_email')['value'];
     // console.log("labelEmail", labelEmail);
     var labelPhone = this.translate.get('page_report_email_template_label_phone')['value'];
@@ -91,6 +94,8 @@ export class ReportPage {
       "label_title": labelTitle,
       "dear_user_label" : dearUserLabel,
       "label_message": labelMessage,
+      "label_fullName": labelFullname,
+      "fullName": this.form.value.fullName,
       "label_email":  labelEmail, 
       "email": this.form.value.email,
       "label_phone": labelPhone,
