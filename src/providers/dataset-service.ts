@@ -31,19 +31,22 @@ export class DatasetService {
           // we've got back the raw data, now generate the core schedule data
           // and save the data for later reference
 
-          // iterate each dataset
-          datasets.forEach(dataset => {
-            // check if the dataset contains tags
-            if (dataset._tags) {
-              dataset = this.addInAppPosition(dataset);
-            }
-          });
+          if(datasets) {
+            // iterate each dataset
+            datasets.forEach(dataset => {
+              // check if the dataset contains tags
+              if (dataset._tags) {
+                dataset = this.addInAppPosition(dataset);
+              }
+            });
 
-          // console.log("BEFORE SORT", datasets);
-          datasets = this.sortByPostion(datasets);
-          console.log("AFTER SORT", datasets);
+            // console.log("BEFORE SORT", datasets);
+            datasets = this.sortByPostion(datasets);
+            console.log("AFTER SORT", datasets);
+          }
 
           this.datasets = datasets;
+
           resolve(this.datasets);
         });
     });
