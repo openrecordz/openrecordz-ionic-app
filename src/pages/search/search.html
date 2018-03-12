@@ -43,11 +43,19 @@
   </ion-list>
 
   <!-- title valid -->
-  <ng-template #emptyTemplate>
+  <!-- <ng-template #emptyTemplate>
     <ion-card class="empty-ion-card" *ngIf="!isFirstSearch && !hasResults">
       <img class="empty-ion-card-img" src="assets/imgs/error_view_cloud.png" />
       <div  text-wrap class="empty-ion-card-title">{{ 'page_search_no_results_title' | translate }}</div>
       <div text-wrap  class="empty-ion-card-subtitle">{{ 'page_search_no_results_subtitle' | translate }}</div>
     </ion-card>
+  </ng-template> -->
+
+
+  <ng-template #emptyTemplate>
+    <div *ngIf="!isFirstSearch && !hasResults" padding>
+      <p>{{ 'page_search_no_results_title' | translate }}</p>
+      <p >{{ 'page_search_no_results_subtitle' | translate }}</p>
+    </div>
   </ng-template>
 </ion-content>
