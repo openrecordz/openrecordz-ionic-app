@@ -87,6 +87,7 @@ export class ReportPage {
     // console.log("labelGreetings", labelGreetings);
     var labelDeveloper = this.translate.get('page_report_email_template_label_developer')['value'];
     // console.log("labelDeveloper", labelDeveloper);
+    var labelTeamName = this.translate.get('page_report_email_template_label_teamName')['value'];
 
     
     let TEMPLATE:string = "";
@@ -106,7 +107,7 @@ export class ReportPage {
       "description": this.form.value.description,
       "label_greetings" : labelGreetings,
       "label_developer": labelDeveloper,
-      "developer":  MyApp.appConfig.developer
+      "developer": labelTeamName
     };
     this.translate.get("page_report_email_template", parametres).subscribe((res:string) => {
         TEMPLATE += res;

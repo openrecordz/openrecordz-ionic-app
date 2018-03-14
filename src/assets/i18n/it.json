@@ -5,7 +5,7 @@
     "page_about_settings_title": "Impostazioni",
     "page_about_setting_notification": "Notifiche push",
 
-    "page_calendar_title": "Calendario",
+    "page_calendar_title": "Calendario RSU",
     "page_calendar_loading_data": "Caricamento..",
     "page_calendar_unavailable": "Calendario non disponibile",
 
@@ -32,7 +32,7 @@
     "page_notifications_history_unavailable": "Nessuna notifica disponibile",
 
     "page_report_title": "Prenotazione raccolta rifiuti",
-    "page_report_message_label": "Prenota la raccolta di rifiuti ingombranti. Specificare le dimensioni del rifiuto, data e ora preferite per il ritiro. Sarete contattati dallo staff per fissare un appuntamento.",
+    "page_report_message_label": "Prenota la raccolta di rifiuti ingombranti. Specificare le dimensioni del rifiuto. Sarete contattati nel più breve tempo possibile.",
     "page_report_btn_example_label": "Vedi un esempio",  
     "page_report_alert_example_title": "Esempio",
     "page_report_alert_example_message": "Oggetto: frigorifero; Dimensioni: 67,5 x 171,5 x 66,8 cm. Sarei disponibile mercoledì 21 Marzo verso le 17.30",
@@ -53,9 +53,10 @@
     "page_report_email_template_label_phone" : "Numero di telefono:",
     "page_report_email_template_label_place" : "Luogo del ritiro:",
     "page_report_email_template_label_description" : "Richiesta:",
-    "page_report_email_template_label_greetings" : "Cordiali saluti:",
-    "page_report_email_template_label_developer" : "Il team di ",
-     "page_report_fullName_label" : "Nome e cognome",
+    "page_report_email_template_label_greetings" : "Cordiali saluti",
+    "page_report_email_template_label_developer" : "",
+    "page_report_email_template_label_teamName": "Assessorato all'Ambiente",
+    "page_report_fullName_label" : "Nome e cognome",
     "page_report_email_label" : "Email",
     "page_report_phone_label" : "Telefono",
     "page_report_address_label" : "Indirizzo",
