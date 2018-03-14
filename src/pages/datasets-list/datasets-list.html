@@ -18,7 +18,7 @@
   </ion-refresher>
 
   <!-- datasets available -->
-  <div *ngIf="dataset else datasetsUnavailable">
+  <!-- <div *ngIf="dataset else datasetsUnavailable"> -->
     <ion-list>
       <div *ngFor="let dataset of datasets" (click)="onDatasetClicked(dataset)">
         <!-- shows the dataset only if it contains the tags "inApp" and "inHome" -->
@@ -46,7 +46,7 @@
         </ion-card>
       </div>
     </ion-list>
-  </div>
+  <!-- </div> -->
 
   <!-- datasets unavailable -->
   <ng-template #datasetsUnavailable>
