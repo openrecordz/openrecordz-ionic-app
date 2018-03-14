@@ -102,11 +102,17 @@ will generate the following result
 
 <img src="https://preview.ibb.co/cD5H3H/Screenshot_20180301_161547.png" width="250">
 
+## Test
+
+#### Web (Dev mode)
+
+`$ ionic serve`
 
 ## Run 
 ### Supported platforms
 
-The supported platforms are Android and iOS
+The supported platforms are Web, Android and iOS
+
 
 #### Android 
 
