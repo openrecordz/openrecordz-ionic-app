@@ -16,13 +16,13 @@
 
 <ion-content *ngIf="record">
   <ion-card>
-    <ion-item>
+    <!-- <ion-item>
       <ion-avatar item-start>
         <img src="assets/imgs/ic_avatar_circle_gray.png">
       </ion-avatar>
       <h2 text-wrap>{{record._createdby}}</h2>
       <p text-wrap>{{record._createdon | date: 'dd/MM/yyyy'}}</p>
-    </ion-item>
+    </ion-item> -->
 
     <img *ngIf="record._main_image" src="{{record._main_image}}" class="record-details-image" imageViewer />
 
