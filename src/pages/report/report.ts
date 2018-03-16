@@ -134,7 +134,7 @@ export class ReportPage {
           text: btnConfirm,
           handler: () => {
             alert.dismiss();
-            this.dismiss();
+            // this.dismiss();
           }
         }, ]
     });
@@ -142,23 +142,23 @@ export class ReportPage {
     alert.present();
   }
 
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
+  // dismiss() {
+  //   this.viewCtrl.dismiss();
+  // }
 
-  private promptExample() {
-    var title = this.translate.get('page_report_alert_example_title')['value'];
-    var message = this.translate.get('page_report_alert_example_message')['value'];
-    var btnConfirm = this.translate.get('page_report_alert_btn_confirm')['value'];
+  // private promptExample() {
+  //   var title = this.translate.get('page_report_alert_example_title')['value'];
+  //   var message = this.translate.get('page_report_alert_example_message')['value'];
+  //   var btnConfirm = this.translate.get('page_report_alert_btn_confirm')['value'];
 
-    let alert = this.alertCtrl.create({
-      title: title,
-      subTitle: message,
-      buttons: [btnConfirm]
-    });
+  //   let alert = this.alertCtrl.create({
+  //     title: title,
+  //     subTitle: message,
+  //     buttons: [btnConfirm]
+  //   });
 
-    alert.present();
-  }
+  //   alert.present();
+  // }
 
   private promtEmailNotSent() {
 
@@ -173,7 +173,7 @@ export class ReportPage {
           text: btnConfirm,
           handler: () => {
             alert.dismiss();
-            this.dismiss();
+            // this.dismiss();
           }
         }, ]
     });

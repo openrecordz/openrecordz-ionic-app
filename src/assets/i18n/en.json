@@ -1,5 +1,5 @@
 {
-    "page_about_title": "About",
+    "page_about_title": "Informations",
     "page_about_powered_by": "Powered by",
     "page_about_see_dev_website": "See website",
     "page_about_settings_title" : "Settings", 
@@ -32,6 +32,7 @@
     "page_notifications_history_unavailable": "No notification available",
 
     "page_report_title" : "Waste collection reservation",
+    "page_report_tab_title": "Reservation",
     "page_report_message_label" : "Book the collection of bulky waste. Specify the size of the waste. You will be contacted as soon as possible.",
     "page_report_btn_example_label": "See an example", 
     "page_report_alert_example_title": "Example",
