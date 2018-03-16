@@ -13,7 +13,7 @@ For more details follow the [Offical Documentation](https://ionicframework.com/d
 ### Other requirements
 Sign in on [Openrecordz](http://www.openrecordz.com) and access to your dashboard
 
-For the use of the [console](http://apps.openrecordz.com/dashboard) refer to the [wiki](https://github.com/openrecordz/openrecordz-ionic-app/wiki)
+For the use of the [console](http://apps.openrecordz.com/dashboard) refer to the [wiki](https://github.com/openrecordz/openrecordz-web-console/wiki)
 
 ## Install
 Clone or download Openrecordz Ionic [Sample App](https://github.com/openrecordz/openrecordz-ionic-app) on your envirnoment
