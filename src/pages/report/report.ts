@@ -62,8 +62,11 @@ export class ReportPage {
 
     var context = this;
 
-    let from = "stefano.depascalis@frontiere21.it";
-    let to = "stefano.depascalis@frontiere21.it";
+    let from = this.form.value.email;
+    let to = "ingombranti@comune.soleto.le.it";
+
+    // let from = "stefano.depascalis@frontiere21.it";
+    // let to = "stefano.depascalis@frontiere21.it";
 
     var labelSubject = this.translate.get('page_report_email_template_subject_label')['value'];
      // console.log("labelSubject", labelSubject);
