@@ -19,7 +19,7 @@ $ git clone https://github.com/openrecordz/openrecordz-ionic-app.git
 # Setting up the project
 
 ```
-$ cd  cd openrecordz-ionic-app/ 
+$ cd openrecordz-ionic-app/ 
 $ npm install
 ```
 
