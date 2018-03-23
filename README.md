@@ -1,31 +1,29 @@
-# Openrecordz Sample App
+# Pre requisites
 
-## Pre-requisites
-### Technical requirements 
-To create an Openrecordz App make sure you have installed:
-* the last version of [Apache Cordova](http://cordova.apache.org/)
-* the last version of [Node.js](https://nodejs.org/en/)
-* [Ionic 3](https://ionicframework.com/docs/v1/overview/#download) 
-* A compatible IDE. It is suggested [Visual Studio Code](https://code.visualstudio.com/download)
+## Configuring environment
+Follow the [installation guide](https://github.com/openrecordz/openrecordz-ionic-app/wiki/Installation-guide) to set up your working environment 
 
-For more details follow the [Offical Documentation](https://ionicframework.com/docs/v1/guide/installation.html)
-
-### Other requirements
+## Signin to Openrecordz
 Sign in on [Openrecordz](http://www.openrecordz.com) and access to your dashboard
 
 For the use of the [console](http://apps.openrecordz.com/dashboard) refer to the [wiki](https://github.com/openrecordz/openrecordz-web-console/wiki)
 
-## Install
-Clone or download Openrecordz Ionic [Sample App](https://github.com/openrecordz/openrecordz-ionic-app) on your envirnoment
+# Clone repository
 
-Extract the archive. 
+Change to your prefered directory and type
 
-Move to the root of the project and run 
+```
+$ git clone https://github.com/openrecordz/openrecordz-ionic-app.git 
+```
 
-`$ npm install` 
+# Setting up the project
 
+```
+$ cd  cd openrecordz-ionic-app/ 
+$ npm install
+```
 
-## Configuration
+## Customizations
 
 Open the file  **app-config.ts** under **/src/** and edit it with your settings:
 
@@ -102,38 +100,38 @@ will generate the following result
 
 <img src="https://preview.ibb.co/cD5H3H/Screenshot_20180301_161547.png" width="250">
 
-## Test
+# Platforms
 
-#### Web (Dev mode)
+## Web (Dev mode)
+
+### Run
 
 `$ ionic serve`
 
-## Run 
-### Supported platforms
+## Android
 
-The supported platforms are Web, Android and iOS
+```
+ionic cordova platform add android
+```
 
+### Run 
 
-#### Android 
+Attaach your device and authorize it. Check if it is attached successfully
 
-Add the platform with 
+```
+$ adb devices
+```
 
-`$ ionic cordova platform add android`  
+The previous instruction will prompts something like
 
-To run on an **emulator** run the following
+```
+root@ubuntu:/opt/android-sdk/tools# adb devices
+List of devices attached
+05a7df5c0a74af63	device
+```
 
-`$ ionic cordova emulate android --prod`
+Run on the device 
 
-To run on a **real device** run the following 
-
-`$ ionic cordova run android --device --prod`
-
-#### iOS
-
-Add the platform with 
-
-`$ ionic cordova platform add ios`
-
-To run on an **emulator** run the following
-
-`$ ionic cordova emulate ios --prod` 
+```
+ionic cordova run android --device --prod
+```
