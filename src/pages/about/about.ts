@@ -26,7 +26,7 @@ export class AboutPage {
   private aboutMap : Array<any>;
 
   private versionNumber : any;
-  private versionCode : any;
+  // private versionCode : any;
   private appName : any;
 
   constructor(
@@ -61,11 +61,11 @@ export class AboutPage {
         this.versionNumber = versionNumber;
       });
 
-      // get the version code
-      this.appVersion.getVersionCode().then(versionCode => {
-        console.log('VERSION CODE ', versionCode);
-        this.versionCode = versionCode;
-      });
+      // // get the version code
+      // this.appVersion.getVersionCode().then(versionCode => {
+      //   console.log('VERSION CODE ', versionCode);
+      //   this.versionCode = versionCode;
+      // });
 
       // get the app name
       this.appVersion.getAppName().then(appName => {
