@@ -22,9 +22,9 @@ export class RecordDetailsPage {
   private recordLat : any;
   private recordLon: any;
 
-  // current location
-  private currentLat : any;
-  private currentLon : any;
+  // // current location
+  // private currentLat : any;
+  // private currentLon : any;
 
   private keys: any;
 
@@ -58,24 +58,25 @@ export class RecordDetailsPage {
   ionViewDidLoad() {
     // console.log('ionViewDidLoad');
 
-    this.currentLat =  MyApp.currentLat;
-    this.currentLon = MyApp.currentLon ;
+    // this.currentLat =  MyApp.currentLat;
+    // this.currentLon = MyApp.currentLon ;
     // console.log('ionViewDidLoad: MyApp.currentLat: ', this.currentLat, ', MyApp.currentLon: ', this.currentLon);
 
     // update url
-    this.upsetClickableMapUrl(this.currentLat, this.currentLon);
+    // this.upsetClickableMapUrl(this.currentLat, this.currentLon);
+    this.upsetClickableMapUrl();
 
-    // looks for last coordiantes
-    this.events.subscribe('current-location', (lat, lon) => {
-      console.log('ionViewDidLoad.subscribe: currentLat: ', lat, ', currentLon: ', lon);
+    // // looks for last coordiantes
+    // this.events.subscribe('current-location', (lat, lon) => {
+    //   console.log('ionViewDidLoad.subscribe: currentLat: ', lat, ', currentLon: ', lon);
 
-      this.currentLat = lat;
-      this.currentLon = lon;
+    //   this.currentLat = lat;
+    //   this.currentLon = lon;
 
-      // update url
-      this.upsetClickableMapUrl(this.currentLat, this.currentLon);
+    //   // update url
+    //   this.upsetClickableMapUrl(this.currentLat, this.currentLon);
 
-    });
+    // });
 
     this.keys = Object.keys(this.record);
 
@@ -89,12 +90,12 @@ export class RecordDetailsPage {
     this.excludeReservedData();
   }
 
-  // Runs when the page is about to be destroyed and have its elements removed.
-  ionViewWillUnload() {
-    this.events.unsubscribe('current-location');
+  // // Runs when the page is about to be destroyed and have its elements removed.
+  // ionViewWillUnload() {
+  //   this.events.unsubscribe('current-location');
 
-    console.log('ionViewWillUnload.unsubscribe');
-  } 
+  //   console.log('ionViewWillUnload.unsubscribe');
+  // } 
 
   // set recordLat and recordLon
   private setRecordCoordiantes() {
@@ -178,9 +179,13 @@ export class RecordDetailsPage {
     }
   }
 
-  private upsetClickableMapUrl(currentLat, currentLon) {
-    this.clickableMapUrl = "https://www.google.com/maps/dir/?api=1&origin=" + currentLat + "," + currentLon +
-     "&destination=" + this.recordLat + "," + this.recordLon + "&travelmode=walking";
+  private upsetClickableMapUrl() {
+  // private upsetClickableMapUrl(currentLat, currentLon) {
+    // this.clickableMapUrl = "https://www.google.com/maps/dir/?api=1&origin=" + currentLat + "," + currentLon + "&destination=" + this.recordLat + "," + this.recordLon + "&travelmode=walking";
+    
+    this.clickableMapUrl = "https://www.google.com/maps/dir/?api=1&destination=" + this.recordLat + "," + this.recordLon + "&travelmode=walking";
+
+    // console.log(this.clickableMapUrl);
   }
 
   private onMapClicked() {

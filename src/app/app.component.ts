@@ -7,7 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 
 // providers
-import { LocationTrackerProvider } from '../providers/location-tracker';
+// import { LocationTrackerProvider } from '../providers/location-tracker';
 import { OneSignal } from '@ionic-native/onesignal';
 
 // custom configurations
@@ -18,7 +18,7 @@ import { TAG_NOTIFICATION_RECYCLING } from '../utils/Constants';
 
 @Component({
   templateUrl: 'app.html',
-  providers: [LocationTrackerProvider]
+  // providers: [LocationTrackerProvider]
 })
 
 
@@ -26,15 +26,15 @@ export class MyApp {
 
   rootPage:any = TabsPage;
 
-  public static currentLat: any;
-  public static currentLon : any;
+  // public static currentLat: any;
+  // public static currentLon : any;
   public static appConfig: ApplicationConfig;
 
   constructor(
     platform: Platform, 
     statusBar: StatusBar, 
     splashScreen: SplashScreen,
-    public locationTracker: LocationTrackerProvider, 
+    // public locationTracker: LocationTrackerProvider, 
     public events: Events, 
     private oneSignal: OneSignal,
     @Inject(APP_CONFIG_TOKEN) private config: ApplicationConfig) {
@@ -47,17 +47,17 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
 
-      this.locationTracker = locationTracker;
-      this.locationTracker.startTracking();
+      // this.locationTracker = locationTracker;
+      // this.locationTracker.startTracking();
 
-      // looks for last coordiantes
-      this.events.subscribe('current-location', (lat, lon) => {
-        // console.log('MyApp: lat: ', lat, ', lon: ', lon);
+      // // looks for last coordiantes
+      // this.events.subscribe('current-location', (lat, lon) => {
+      //   // console.log('MyApp: lat: ', lat, ', lon: ', lon);
 
-        MyApp.currentLat = lat;
-        MyApp.currentLon = lon;
+      //   MyApp.currentLat = lat;
+      //   MyApp.currentLon = lon;
 
-      });
+      // });
 
       this.initOneSignal(platform);
     });

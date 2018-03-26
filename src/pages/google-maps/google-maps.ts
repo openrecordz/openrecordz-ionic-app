@@ -36,9 +36,9 @@ export class GoogleMapsPage {
   mapInitialised: boolean = false;
   apiKey: any;
 
-  // current location
-  private currentLat: any;
-  private currentLon: any;
+  // // current location
+  // private currentLat: any;
+  // private currentLon: any;
 
   public records: any;
   private recordsLoaded = false;
@@ -73,18 +73,18 @@ export class GoogleMapsPage {
   }
 
   ionViewDidLoad() {
-    this.currentLat = MyApp.currentLat;
-    this.currentLon = MyApp.currentLon;
-    // console.log('ionViewDidLoad: MyApp.currentLat: ', this.currentLat, ', MyApp.currentLon: ', this.currentLon);
+    // this.currentLat = MyApp.currentLat;
+    // this.currentLon = MyApp.currentLon;
+    // // console.log('ionViewDidLoad: MyApp.currentLat: ', this.currentLat, ', MyApp.currentLon: ', this.currentLon);
 
-    // looks for last coordiantes
-    this.events.subscribe('current-location', (lat, lon) => {
-      // console.log('ionViewDidLoad.subscribe: currentLat: ', lat, ', currentLon: ', lon);
+    // // looks for last coordiantes
+    // this.events.subscribe('current-location', (lat, lon) => {
+    //   // console.log('ionViewDidLoad.subscribe: currentLat: ', lat, ', currentLon: ', lon);
 
-      this.currentLat = lat;
-      this.currentLon = lon;
+    //   this.currentLat = lat;
+    //   this.currentLon = lon;
 
-    });
+    // });
 
     this.loadGoogleMaps();
   }
@@ -135,10 +135,10 @@ export class GoogleMapsPage {
 
     this.mapInitialised = true;
 
-      let latLng = new google.maps.LatLng(this.currentLat, this.currentLon);
+      // let latLng = new google.maps.LatLng(this.currentLat, this.currentLon);
 
       let mapOptions = {
-        center: latLng,
+        // center: latLng,
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }

@@ -31,7 +31,7 @@ import { IonicStorageModule } from '@ionic/storage';
 
 // begin position
 import { Geolocation } from '@ionic-native/geolocation';
-import { LocationTrackerProvider } from '../providers/location-tracker';
+// import { LocationTrackerProvider } from '../providers/location-tracker';
 import { GoogleMapsClusterProvider } from '../providers/google-maps-cluster';
 // end position
 
@@ -106,7 +106,7 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     StatusBar,
     SplashScreen,
     Geolocation,
-    LocationTrackerProvider,
+    // LocationTrackerProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ConnectivityProvider,
     GoogleMapsClusterProvider,
