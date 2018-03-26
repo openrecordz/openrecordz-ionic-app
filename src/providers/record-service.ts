@@ -20,7 +20,7 @@ export class RecordService {
     this.urlApi = MyApp.appConfig.urlApi;
   }
 
-load(datasetId:String, page:number=0, pageSize:number=10) {
+load(datasetId:String, page:number=0, pageSize:number=20) {
 
     this.http.get(this.urlApi + '/datasets/' + datasetId + '?page=' + 0 + "&pagesize=" + pageSize)
         .map(res => res.json())
