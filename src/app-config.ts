@@ -41,9 +41,12 @@ export const APP_CONFIG: ApplicationConfig = {
            ]
        }
     ],
-    oneSignalAppId: "0e1c23bc-c1bd-455f-a408-da2739870c4f",
-    oneSignalRestApiKey: "ZDRlY2Q2ZjUtODBlMi00NzVhLTliODEtMzc0Y2JmMzNkNzgz",
-    firebaseSenderId: "537289267777",
+    // oneSignalAppId: "0e1c23bc-c1bd-455f-a408-da2739870c4f",
+    oneSignalAppId: "73fe3e5c-7e0f-45bb-bd2a-939aa1586185",
+    // oneSignalRestApiKey: "ZDRlY2Q2ZjUtODBlMi00NzVhLTliODEtMzc0Y2JmMzNkNzgz",
+    oneSignalRestApiKey: "ZmE2NmY0N2UtODZmNS00ZjVkLWEzODctNDI3NzdkYTk0NzJi", 
+    // firebaseSenderId: "537289267777",
+    firebaseSenderId: "447400359251",
     mailgunUrl: "sandbox208ae9b676e04fd88e5674984a56aad6.mailgun.org",
     mailgunApiKey: "api:key-bb704680746b52474673275176ae7216"
 };
