@@ -46,12 +46,14 @@
             <ng-template #templateTitle>
               <h1 text-wrap> {{record._title}}</h1>
             </ng-template>
-
             <ion-icon clear item-right name="ios-arrow-forward"></ion-icon>
           </ion-item>
-    
+
           <!-- description -->
           <p text-wrap *ngIf="record._description">{{record._description}}</p>
+
+          <!-- date -->
+          <p *ngIf="dataset._slug !== 'recycling-glossary'" text-wrap no-padding>{{record._createdon | date: 'dd/MM/yyyy'}}</p>
       
         </ion-card-content>
       </ion-card>
