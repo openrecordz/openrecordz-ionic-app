@@ -33,7 +33,7 @@
 
     "page_report_title": "Prenotazione ingombranti",
     "page_report_tab_title": "Prenotazione",
-    "page_report_message_label": "Prenota la raccolta di rifiuti ingombranti. Specificare le dimensioni del rifiuto. Sarete contattati nel più breve tempo possibile.",
+    "page_report_message_label": "Prenota la raccolta di rifiuti ingombranti. Specificare il rifiuto e le dimensioni. Sarete contattati per la conferma della data.",
     "page_report_btn_example_label": "Vedi un esempio",  
     "page_report_alert_example_title": "Esempio",
     "page_report_alert_example_message": "Oggetto: frigorifero; Dimensioni: 67,5 x 171,5 x 66,8 cm. Sarei disponibile mercoledì 21 Marzo verso le 17.30",

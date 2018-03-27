@@ -33,7 +33,7 @@
 
     "page_report_title" : "Bulky reservation",
     "page_report_tab_title": "Reservation",
-    "page_report_message_label" : "Book the collection of bulky waste. Specify the size of the waste. You will be contacted as soon as possible.",
+    "page_report_message_label" : "Book the collection of bulky waste. Specify the waste and its size. You will be contacted to confirm the date.",
     "page_report_btn_example_label": "See an example", 
     "page_report_alert_example_title": "Example",
     "page_report_alert_example_message": "Object: refrigerator; Dimensions: 67.5 x 171.5 x 66.8 cm. I would be available on Wednesday, March 21st at about 5.30pm",
