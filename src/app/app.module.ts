@@ -75,7 +75,9 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     BrowserModule, HttpModule,// http
     BrowserModule,
     IonicImageViewerModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '', // remove the text
+    }),
     IonicStorageModule.forRoot(),
     HttpClientModule,
     // source : https://ionicframework.com/docs/developer-resources/ng2-translate/
