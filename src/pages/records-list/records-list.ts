@@ -25,6 +25,8 @@ export class RecordsListPage {
   private pageSize: number = 10;
   private showMapWithInToolbar : false;
 
+  private direction : String = "desc";
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -39,6 +41,9 @@ export class RecordsListPage {
     // ########### end translations ###########
 
     this.dataset = navParams.get('dataset');
+
+    if (this.dataset._slug === 'recycling-glossary') this.direction = "asc";
+
     this.domain = MyApp.appConfig.domain;
   }
 
@@ -62,7 +67,7 @@ export class RecordsListPage {
   } 
 
   loadRecords(datasetId, refresher) {
-    this.recordService.load(datasetId)
+    this.recordService.load(datasetId, 0, 20, this.direction)
       .then(data => {
         this.records = data;
 
@@ -105,7 +110,7 @@ export class RecordsListPage {
   doInfinite(infiniteScroll) {
     // console.log('Begin async operation');
     this.currentPage++;
-    this.recordService.load(this.dataset.id, this.currentPage, this.pageSize)
+    this.recordService.load(this.dataset.id, this.currentPage, this.pageSize, this.direction)
       .then(data => {
         /* this.records = data;*/
         let dataAsArray: any = data;

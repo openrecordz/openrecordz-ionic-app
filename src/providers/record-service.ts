@@ -20,7 +20,7 @@ export class RecordService {
     this.urlApi = MyApp.appConfig.urlApi;
   }
 
-load(datasetId:String, page:number=0, pageSize:number=20) {
+load(datasetId:String, page:number=0, pageSize:number=20, direction:String="desc") {
 
     this.http.get(this.urlApi + '/datasets/' + datasetId + '?page=' + 0 + "&pagesize=" + pageSize)
         .map(res => res.json())
@@ -59,7 +59,7 @@ load(datasetId:String, page:number=0, pageSize:number=20) {
     // We're using Angular HTTP provider to request the data,
     // then on the response, it'll map the JSON data to a parsed JS object.
     // Next, we process the data and resolve the promise with the new data.
-      this.http.get(this.urlApi + '/datasets/' + datasetId + '?page=' + page + "&type=record&sort=_createdon&direction=desc")
+      this.http.get(this.urlApi + '/datasets/' + datasetId + '?page=' + page + "&type=record&sort=_createdon&direction=" + direction)
     //   this.http.get(this.urlApi + '/datasets/' + datasetId + ".map?q=&page=" + page + "&pagesize=" + pageSize + "&type=record&sort=_createdon&direction=desc")
       .map(res => res.json())
       .subscribe(data => {
