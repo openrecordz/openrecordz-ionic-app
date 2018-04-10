@@ -86,10 +86,29 @@ export class CalendarPage {
   }
 
   doInfinite(infiniteScroll) {
-    // console.log('Begin async operation');
+    // // console.log('Begin async operation');
+    // this.currentPage++;
+    // // this.recordService.load(this.dataset.id, this.currentPage)
+    // this.recordService.load(this.datasetId, this.currentPage)
+    //   .then(data => {
+    //     /* this.records = data;*/
+    //     let dataAsArray: any = data;
+    //     for (let record of dataAsArray) {
+    //       this.records.push(record);
+    //     }
+
+    //     // console.log("infiniteScroll records:");
+    //     // console.log(this.records);
+
+    //     // resolve(true);
+
+    //     infiniteScroll.complete();
+    //   });
+
+
+
     this.currentPage++;
-    // this.recordService.load(this.dataset.id, this.currentPage)
-    this.recordService.load(this.datasetId, this.currentPage)
+    this.recordService.loadCalendar(this.datasetId, this.currentPage)
       .then(data => {
         /* this.records = data;*/
         let dataAsArray: any = data;
