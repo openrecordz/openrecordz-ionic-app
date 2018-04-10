@@ -138,7 +138,7 @@ applyHaversine(locations){
 
 
 
-    loadCalendar(datasetId:String, page:number=0, pageSize:number=10) {
+    loadCalendar(datasetId:String, page:number=0, pageSize:number=20) {
 
         var currentDay = moment(new Date()).format("YYYY-MM-DD")
 
@@ -189,6 +189,8 @@ applyHaversine(locations){
                 // and save the data for later reference
             //  this.data = data;
             //resolve(this.data);
+
+            // console.log(data);
 
             resolve(data);
 
