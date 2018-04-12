@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-packageName="it.frontiere21.android.ciaotrip" ios-CFBundleIdentifier="it.ciaotrip.soleto" version="2.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-packageName="it.frontiere21.android.ciaotrip" android-versionCode="20202" ios-CFBundleIdentifier="it.ciaotrip.soleto" ios-CFBundleVersion="1.2.5" version="2.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Soleto</name>
     <description>La App ufficiale degli open data del Comune di Soleto.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">soleto.openrecordz@gmail.com</author>
@@ -79,6 +79,8 @@
     <allow-navigation href="http://192.168.1.8:8101" />
     <allow-navigation href="http://192.168.1.25:8100" />
     <allow-navigation href="http://192.168.1.34:8100" />
+    <allow-navigation href="http://192.168.1.31:8100" />
+    <allow-navigation href="http://192.168.1.119:8101" />
     <plugin name="cordova-plugin-geolocation" spec="~4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
@@ -96,11 +98,8 @@
         <variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Show your location on the map" />
         <variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Trace your location on the map" />
     </plugin>
-    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
-    <allow-navigation href="http://192.168.1.31:8100" />
-    <allow-navigation href="http://192.168.1.119:8101" />
+    <plugin name="mx.ferreyra.callnumber" spec="0.0.2" />
     <plugin name="cordova-sqlite-storage" spec="^2.2.1" />
-    <plugin name="onesignal-cordova-plugin" spec="^2.3.3" />
-    <engine name="osx" spec="4.0.1" />
     <engine name="android" spec="7.0.0" />
+    <engine name="ios" spec="4.5.4" />
 </widget>
