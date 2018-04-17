@@ -46,19 +46,19 @@ export class ReportPage {
   ionViewDidLoad() {
     // email not sent 
     this.events.subscribe('email-sent:false', (err) => {
-      // console.log('error', err);
+      console.log('error', err);
       this.promtEmailNotSent();
     });
 
     // email  sent
     this.events.subscribe('email-sent:true', (res) => {
-      // console.log('response', res);
+      console.log('response', res);
       this.promptEmailSent();
     });
   }
 
   private subtmitForm() {
-    console.log(this.form.value);
+    // console.log(this.form.value);
 
     var context = this;
 
@@ -136,6 +136,7 @@ export class ReportPage {
       buttons: [{
           text: btnConfirm,
           handler: () => {
+            this.form.reset(); // clear the form
             alert.dismiss();
             // this.dismiss();
           }

@@ -47,8 +47,8 @@ export const APP_CONFIG: ApplicationConfig = {
     oneSignalRestApiKey: "ZmE2NmY0N2UtODZmNS00ZjVkLWEzODctNDI3NzdkYTk0NzJi", 
     // firebaseSenderId: "537289267777",
     firebaseSenderId: "447400359251",
-    mailgunUrl: "sandbox208ae9b676e04fd88e5674984a56aad6.mailgun.org",
-    mailgunApiKey: "api:key-bb704680746b52474673275176ae7216"
+    mailgunUrl: "openrecordz.com",
+    mailgunApiKey: "api:key-f68d61b6aef1214cae7ca94a3314537c"
 };
 
 // Create a config token to avoid naming conflicts
