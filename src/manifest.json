@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "OpenRecordz App",
+  "short_name": "OpenRecordzApp",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{

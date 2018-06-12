@@ -12,6 +12,9 @@
 
 
 <ion-content>
+
+  <button class="btn" ion-button full (click)="add_to_home(event)" *ngIf="showBtn" >Install on your Device</button>
+
   <ion-refresher (ionRefresh)="doRefresh($event)">
       <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles" refreshingText="{{ 'page_datasets_list_refreshing_text' | translate }}">
     </ion-refresher-content>
@@ -58,4 +61,5 @@
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab> -->
+
 </ion-content>

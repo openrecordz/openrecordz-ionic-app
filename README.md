@@ -104,9 +104,21 @@ will generate the following result
 
 ## Web (Dev mode)
 
-### Run
+Run the app in dev mode with: 
 
 `$ ionic serve`
+
+Build with : 
+`npm run ionic:build --prod`
+
+Deploy on AWS S3 with(Prerequisite: AWS CLI installed):
+
+`aws s3 sync ./www s3://<AWS_S3_BUCKET>`
+
+For example:
+
+`aws s3 sync ./www s3://openrecordz-com-webapp`. (Example demo app published here http://openrecordz-com-webapp.s3-website-eu-west-1.amazonaws.com/)
+
 
 ## Android
 
