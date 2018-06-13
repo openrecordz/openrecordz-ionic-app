@@ -22,9 +22,9 @@ export interface ApplicationConfig {
 // Configuration values for our app
 export const APP_CONFIG: ApplicationConfig = {
     defaultLanguage: "it",
-    urlApi: "http://soleto.api.openrecordz.com/service/v1",
+    // urlApi: "http://soleto.api.openrecordz.com/service/v1",
     // HTTPS OpenRecordz Endpoint for PWA
-    // urlApi: "https://tgbqfc2di8.execute-api.us-east-1.amazonaws.com/dev",
+    urlApi: "https://api.openrecordz.com/v1/soleto",
     domain: "soleto.openrecordz.com",
     developer: "Openrecordz",
     devWebSite: "http://soleto.openrecordz.com/datasets#",

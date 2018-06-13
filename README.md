@@ -109,7 +109,10 @@ Run the app in dev mode with:
 `$ ionic serve`
 
 Build with : 
-`npm run ionic:build --prod`
+`npm run ionic:build --base-href /soleto/`
+
+or in prod with:
+`npm run ionic:build --prod --base-href /soleto/`
 
 Deploy on AWS S3 with(Prerequisite: AWS CLI installed):
 
