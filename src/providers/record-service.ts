@@ -143,7 +143,12 @@ applyHaversine(locations){
 
         var currentDay = moment(new Date()).format("YYYY-MM-DD")
 
-        var urlAPI = this.urlApi + '/datasets/' + datasetId + '?q={"when_d":{$gte:{"$date":"' + currentDay + 'T00:00:00.000Z"}}}&page=' + page + '&pagesize=' + pageSize;
+        var query = '{"when_d":{$gte:{"$date":"' + currentDay + 'T00:00:00.000Z"}}}';
+        query = 'q='+  encodeURI(query);
+        console.log("query", query);
+        
+        var urlAPI = this.urlApi + '/datasets/' + datasetId + '?'+query+'&page=' + page + '&pagesize=' + pageSize;
+        // var urlAPI = this.urlApi + '/datasets/' + datasetId + '?q={"when_d":{$gte:{"$date":"' + currentDay + 'T00:00:00.000Z"}}}&page=' + page + '&pagesize=' + pageSize;
 
         // this.http.get(calendarUrlAPI)
         this.http.get(urlAPI)

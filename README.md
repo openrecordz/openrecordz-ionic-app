@@ -120,7 +120,7 @@ Deploy on AWS S3 with(Prerequisite: AWS CLI installed):
 
 For example:
 
-`aws s3 sync ./www s3://openrecordz-com-webapp/soleto`. (Example demo app published here http://openrecordz-com-webapp.s3-website-eu-west-1.amazonaws.com/soleto/)
+`aws s3 sync ./www s3://openrecordz-com-webapp/soleto`. (Example demo app published here https://app.openrecordz.com/soleto/index.html)
 
 
 ## Android
