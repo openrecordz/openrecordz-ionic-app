@@ -108,6 +108,8 @@ Run the app in dev mode with:
 
 `$ ionic serve`
 
+Remember to modifiy  the parameter OneSignal.setDefaultNotificationUrl presente into index.html
+
 Build with : 
 `npm run ionic:build --base-href /soleto/`
 
