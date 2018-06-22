@@ -123,6 +123,11 @@ For example:
 `aws s3 sync ./www s3://openrecordz-com-webapp/soleto`. (Example demo app published here https://app.openrecordz.com/soleto/index.html)
 
 
+
+Invalidate with: 
+
+ `aws cloudfront create-invalidation --distribution-id EIO8LJQKD0TL1 --paths "/*"`
+
 ## Android
 
 ```

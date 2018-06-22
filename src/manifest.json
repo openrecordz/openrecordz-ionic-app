@@ -1,6 +1,6 @@
 {
-  "name": "OpenRecordz App",
-  "short_name": "OpenRecordzApp",
+  "name": "Soleto App",
+  "short_name": "Soleto App powered by OpenRecordz",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
