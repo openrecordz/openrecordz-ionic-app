@@ -15,7 +15,7 @@ export class TabsPage {
 
   tab1Root = DatasetsListPage;
   tab2Root = CalendarPage;
-  tabBot = BotPage;
+  // tabBot = BotPage;
   tab3Root = ReportPage;
   tab4Root = NotificationsHistoryPage;
   tab5Root = AboutPage;
