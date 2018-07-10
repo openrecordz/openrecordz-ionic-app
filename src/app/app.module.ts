@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 // ############# pages #############
 import { AboutPage } from '../pages/about/about';
 import { CalendarPage } from '../pages/calendar/calendar';
+import { BotPage } from '../pages/bot/bot';
 import { DatasetsListPage } from '../pages/datasets-list/datasets-list';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RecordsListPage } from '../pages/records-list/records-list';
@@ -59,6 +60,7 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     //pages
     AboutPage,
     CalendarPage,
+    BotPage,
     DatasetsListPage,
     TabsPage,
     RecordsListPage,
@@ -94,6 +96,7 @@ import { APP_CONFIG_TOKEN, APP_CONFIG, ApplicationConfig } from '../app-config';
     MyApp,
     AboutPage,
     CalendarPage,
+    BotPage,
     DatasetsListPage,
     TabsPage,
     RecordsListPage,

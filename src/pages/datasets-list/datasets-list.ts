@@ -12,6 +12,7 @@ import { SearchPage } from '../search/search';
 
 // context
 import { MyApp } from '../../app/app.component';
+import { BotPage } from '../bot/bot';
 
 @Component({
   selector: 'page-datasets-list',
@@ -120,6 +121,9 @@ export class DatasetsListPage {
     this.loadDatasets(refresher);
   }
 
+  private openBotClick() {
+    this.navCtrl.push(BotPage);
+  }
   // private onSendReportClick() {
   //   console.log("DatasetsListPage.onSendReportClick");
 
